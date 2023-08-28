@@ -1,0 +1,30 @@
+* the CGE model is ONLY solved - there is no inserting of the whole routine here. So the io("GAS","ELE") is not reinitialized in the CGE model.
+Solve CGE_link_MTD USING MCP;
+eta_p(runit)=0;
+eta_p(cuts)=eta.l(cuts);
+
+
+display eta.L;
+display eta_p;
+*display cuts$(eta(cuts));
+
+        U = prod( sec, (C.L(sec) - muH(sec))**alphaHLES(sec) ) ;
+        y0ge=io("GAS","ELE")*XD.L("ELE");
+
+REPORT("%run%",runit,"U","_")=U;
+REPORT("%run%",runit,"OBJZ","_")=OBJZ.L;
+REPORT("%run%",runit,"HOU",I)=C.L(I);
+REPORT("%run%",runit,"P_",I)=PD.L(I);
+REPORT("%run%",runit,"PF","K")=PK.L;
+REPORT("%run%",runit,"PF","L")=PL.L;
+REPORT("%run%",runit,"Y_O",I)=XD.L(I);
+REPORT("%run%",runit,"COST_ele",t)=COST_("ELE",t);
+REPORT("%run%",runit,"COST_gas",t)=COST_("GAS",t);
+REPORT("%run%",runit,"CSHR_ele",t)=COST_shr("ELE",t);
+REPORT("%run%",runit,"CSHR_gas",t)=COST_shr("GAS",t);
+REPORT("%run%",runit,"D_mult","_")=D_mult;
+REPORT("%run%",runit,"Y0ge","_")=io("GAS","ELE")*XD.L("ELE");
+
+VAR_ACT_iter("%run%",runit,t,p)=VAR_ACT.L("REGION1",t,t,p,"ANNUAL");
+
+*DISPLAY REPORT;

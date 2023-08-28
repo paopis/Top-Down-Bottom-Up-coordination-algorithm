@@ -1,0 +1,86 @@
+
+--- Job TIMES_simple_LP_Aug.GMS Start 08/22/21 20:16:23 24.7.3 r58181 WEX-WEI x86 64bit/MS Windows
+GAMS 24.7.3   Copyright (C) 1987-2016 GAMS Development. All rights reserved
+Licensee: Small MUD - 5 User License                     G160810:1105AO-GEN
+          Norwegian University of Science and Technology, Industrial DC7530
+          License for teaching and research at degree granting institutions
+          License Admin: Ruud Egging, rudolf.egging@iot.ntnu.no            
+--- Starting compilation
+--- TIMES_simple_LP_Aug.GMS(79) 3 Mb
+--- .parameter_values.gms(175) 3 Mb
+--- TIMES_simple_LP_Aug.GMS(161) 3 Mb
+--- GDXin=C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\jacobian.gdx
+--- TIMES_simple_LP_Aug.GMS(325) 3 Mb
+--- Starting execution: elapsed 0:00:00.006
+--- TIMES_simple_LP_Aug.GMS(327) 4 Mb
+--- Generating LP model TIMES_simple
+--- TIMES_simple_LP_Aug.GMS(328) 4 Mb
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CONVERTD: elapsed 0:00:00.015
+
+ConvertD 0.1     24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Reading parameter(s) from "C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\convertd.opt"
+>>  dictmap
+>>  jacobian
+Finished reading from "C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\convertd.opt"
+--- Writing DictMap     : dictmap.gdx 
+--- Writing Jacobian    : jacobian.gdx 
+--- Restarting execution
+--- TIMES_simple_LP_Aug.GMS(328) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:00.127
+--- TIMES_simple_LP_Aug.GMS(355) 3 Mb
+--- GDXin=C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\dictmap.gdx
+--- TIMES_simple_LP_Aug.GMS(372) 3 Mb
+--- Generating LP model TIMES_simple
+--- TIMES_simple_LP_Aug.GMS(375) 3 Mb
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:00.146
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =            96.236140
+Iteration:    62   Dual objective     =         52237.057826
+LP status(1): optimal
+Cplex Time: 0.01sec (det. 0.32 ticks)
+
+Optimal solution found.
+Objective :       52237.090123
+
+--- Restarting execution
+--- TIMES_simple_LP_Aug.GMS(375) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:00.244
+--- TIMES_simple_LP_Aug.GMS(460) 3 Mb
+--- GDX File C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\basis.gdx
+--- TIMES_simple_LP_Aug.GMS(461) 3 Mb
+ ----------------------------------------
+ INVERT: matrix inversion
+ ----------------------------------------
+ GDX library version: 
+ GDX Library      24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows
+ GDX input file: basis.gdx
+ Input set: i1
+ Input parameter: BB
+ Calling LAPACK DGESV, n =   133
+ GDX output file: D.gdx
+ Output parameter: invb
+ Done
+--- TIMES_simple_LP_Aug.GMS(462) 3 Mb
+--- GDXin=C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\D.gdx
+--- TIMES_simple_LP_Aug.GMS(475) 3 Mb
+--- GDX File C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\Tableau.gdx
+--- TIMES_simple_LP_Aug.GMS(499) 3 Mb
+*** Status: Normal completion
+--- Job TIMES_simple_LP_Aug.GMS Stop 08/22/21 20:16:23 elapsed 0:00:00.526

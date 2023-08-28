@@ -1,0 +1,66 @@
+In this document I describe all the variables/sets/etc. used in the GAMS project SmallLink,
+written by Paolo Pisciella.
+
+runit		run iteration (outer loop)
+cuts(runit)	dynamic sat of cuts (initially empty)
+
+converged	flag for convergence
+checkout	flag signaling end of inner loop
+iter_ord	reports number of outer iterations
+iter_in		reports number of inner iterations
+
+checks		set of convergence checks: (objz, y0ge, d_mult)
+objz		objective value of BU
+y0ge		amount of gas purchased by elec sector in year 0 (from TD)
+d_mult		demand multiplier (for demand projections) (from TD)
+
+i, i1, ii1	index set for tableau rows (1-133)
+j, j1, jj1	index set for tableau columns (1-145)
+
+I, J, sec	index set for sector in CGE model
+
+A		original jacobian
+Slack		matrix that indicates which equations need slack variables
+Tab		LP tableau in terms of equality constraints
+
+IB		list of inverse basis matrices 
+dvar		list of dual variables (corresp to constraints)
+dx		list of reduced costs (corresp to variables)
+
+dualx		reduced cost of the variables
+duale		shadow price of the constraints (dual variables)
+x		solution values
+b		RHS of equations
+y		indicates whether variable/equation is basic
+data, d		index set combining i and j (both equations and variables)
+q		indicates how manyth basic variable/equation this is
+qx		indicates how manyth basic variable this is
+qxx		(same as qx?)
+qe		
+ne		total number of basic equations
+nx		total number of basic variables
+ind		indicates the position of basic variables/equations
+Base		basis matrix, extracted from Tab
+invb		inverse basis matrix (inverse of BB)
+BB		base, but defined using a single index
+Sens		inverse basis matrix times RHS (yields prediction in terms of basic variables)
+test		dual variables times b (dual objective value, should equal primal objective)
+
+
+new1		list of new convergence measures
+prev1		list of old convergence measures
+asave		used to store OBJZ.L
+bsave		used to store D_mult
+csave		used to store y0ge
+eta_p		mcp variable that indicates which cut/basis matrix is active
+yout		translates Sens to a decision vector y 
+eout		
+counter		
+map		
+iter		set of iteration numbers for outer loop
+dev		deviation measure for predicted solution
+chksens		smallest predicted value (should be at least zero)
+converg		maximum deviation measure
+
+dictmap		file that maps the rows/columns of the jacobian to the equations/variables in the model
+

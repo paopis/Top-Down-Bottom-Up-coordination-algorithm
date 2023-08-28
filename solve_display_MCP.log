@@ -1,0 +1,103 @@
+
+--- Job solve_display_MCP.gms Start 08/22/21 18:40:23 24.7.3 r58181 WEX-WEI x86 64bit/MS Windows
+GAMS 24.7.3   Copyright (C) 1987-2016 GAMS Development. All rights reserved
+Licensee: Small MUD - 5 User License                     G160810:1105AO-GEN
+          Norwegian University of Science and Technology, Industrial DC7530
+          License for teaching and research at degree granting institutions
+          License Admin: Ruud Egging, rudolf.egging@iot.ntnu.no            
+--- Starting compilation
+--- solve_display_MCP.gms(2) 2 Mb 3 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown symbol
+*** Error 241 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Model has not been defined
+*** Error 257 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Solve statement not checked because of previous errors
+--- solve_display_MCP.gms(3) 3 Mb 5 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown symbol
+*** Error 120 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown identifier entered as set
+--- solve_display_MCP.gms(4) 3 Mb 7 Errors
+*** Error 120 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown identifier entered as set
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown symbol
+--- solve_display_MCP.gms(11) 3 Mb 12 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown symbol
+*** Error 120 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown identifier entered as set
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown symbol
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown symbol
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown symbol
+--- solve_display_MCP.gms(12) 3 Mb 17 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown symbol
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown symbol
+*** Error 116 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Label is unknown
+*** Error 116 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Label is unknown
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown symbol
+--- solve_display_MCP.gms(14) 3 Mb 18 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown symbol
+--- solve_display_MCP.gms(15) 3 Mb 19 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown symbol
+--- solve_display_MCP.gms(16) 3 Mb 21 Errors
+*** Error 120 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown identifier entered as set
+*** Error 340 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    A label/element with the same name exist. You may have forgotten
+       to quote a label/element reference. For example,
+       set i / a,b,c /; parameter x(i); x('a') = 10;
+--- solve_display_MCP.gms(17) 3 Mb 22 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown symbol
+--- solve_display_MCP.gms(18) 3 Mb 23 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown symbol
+--- solve_display_MCP.gms(19) 3 Mb 24 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown symbol
+--- solve_display_MCP.gms(21) 3 Mb 27 Errors
+*** Error 120 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown identifier entered as set
+*** Error 340 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    A label/element with the same name exist. You may have forgotten
+       to quote a label/element reference. For example,
+       set i / a,b,c /; parameter x(i); x('a') = 10;
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown symbol
+--- solve_display_MCP.gms(23) 3 Mb 28 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown symbol
+--- solve_display_MCP.gms(25) 3 Mb 29 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown symbol
+--- solve_display_MCP.gms(28) 3 Mb 35 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown symbol
+*** Error 120 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown identifier entered as set
+*** Error 340 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    A label/element with the same name exist. You may have forgotten
+       to quote a label/element reference. For example,
+       set i / a,b,c /; parameter x(i); x('a') = 10;
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Unknown symbol
+*** Error 116 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Label is unknown
+*** Error 116 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+    Label is unknown
+--- solve_display_MCP.gms(30) 3 Mb 35 Errors
+*** Status: Compilation error(s)
+--- Job solve_display_MCP.gms Stop 08/22/21 18:40:24 elapsed 0:00:00.165
+Exit code = 2

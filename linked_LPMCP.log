@@ -1,0 +1,4873 @@
+
+--- Job linked_LPMCP.gms Start 08/21/21 19:16:29 24.7.3 r58181 WEX-WEI x86 64bit/MS Windows
+GAMS 24.7.3   Copyright (C) 1987-2016 GAMS Development. All rights reserved
+Licensee: Small MUD - 5 User License                     G160810:1105AO-GEN
+          Norwegian University of Science and Technology, Industrial DC7530
+          License for teaching and research at degree granting institutions
+          License Admin: Ruud Egging, rudolf.egging@iot.ntnu.no            
+--- Starting compilation
+--- linked_LPMCP.gms(11) 2 Mb
+--- .TIMES_simple_LP.GMS(77) 3 Mb
+--- ..parameter_values.gms(175) 3 Mb
+--- .TIMES_simple_LP.GMS(147) 3 Mb
+--- linked_LPMCP.gms(13) 3 Mb
+--- .CGE-4sec_mcp_orient.GMS(345) 3 Mb
+--- linked_LPMCP.gms(68) 3 Mb
+--- .solve_display_LPMCP_init.gms(56) 3 Mb
+--- linked_LPMCP.gms(105) 3 Mb
+--- .solve_display_LPMCP_init.gms(56) 3 Mb
+--- linked_LPMCP.gms(130) 3 Mb
+--- .solve_display_LPMCP.gms(49) 3 Mb
+--- linked_LPMCP.gms(139) 3 Mb
+--- .solve_display_LPMCP.gms(49) 3 Mb
+--- linked_LPMCP.gms(180) 3 Mb
+--- Starting execution: elapsed 0:00:00.074
+--- linked_LPMCP.gms(727) 4 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(737) 6 Mb
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(737) 4 Mb
+--- Executing PATH: elapsed 0:00:00.082
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5141e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  4.2000e+000 eqn: (EQINCOME)
+Maximum of Grad F . . . . . . .  1.2051e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.8649e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6048e+000 eqn: (EQC(GAS))
+Maximum Column Norm . . . . . .  2.4194e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  1.9600e+000 var: (C(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             7.6653e+000             0.0e+000 (EQINCOME)
+    1     1     0    22 2.0097e-001  1.0e+000    0.0e+000 (EQC(NON))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 2.0097e-001           I 0.0e+000 1.4e-001 (EQC(NON))
+    1     1     3     3 1.3457e-004  1.0e+000 SO 0.0e+000 1.0e-004 (EQC(NON))
+    2     1     4     4 2.9557e-011  1.0e+000 SO 0.0e+000 2.1e-011 (EQK(NON))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  2.0932e-009 eqn: (EQPROFIT(NON))
+Inf-Norm of Normal Map. . . . .  2.0847e-011 eqn: (EQK(NON))
+Inf-Norm of Minimum Map . . . .  2.0847e-011 eqn: (EQK(NON))
+Inf-Norm of Fischer Function. .  2.0847e-011 eqn: (EQK(NON))
+Inf-Norm of Grad Fischer Fcn. .  2.3689e-009 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  2.4024e-009
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4700e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.0847e-011 eqn: (EQK(NON))
+Maximum of Grad F . . . . . . .  1.1700e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.031000
+Residual. . . . . . . . 2.955725e-011
+
+--- Restarting execution
+--- linked_LPMCP.gms(737) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:00.262
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(738) 3 Mb
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:00.267
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =            96.236140
+Iteration:    62   Dual objective     =         52237.057826
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.32 ticks)
+
+Optimal solution found.
+Objective :       52237.090123
+
+--- Restarting execution
+--- linked_LPMCP.gms(738) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:00.393
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(830) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(830) 3 Mb
+--- Executing PATH: elapsed 0:00:00.399
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4700e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  6.0000e+000 eqn: (EQINCOME)
+Maximum of Grad F . . . . . . .  1.1700e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.8354e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6048e+000 eqn: (EQC(GAS))
+Maximum Column Norm . . . . . .  2.3400e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (C(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.1798e+000             0.0e+000 (EQINCOME)
+    1     1     0    22 2.8971e-001  1.0e+000    0.0e+000 (EQC(NON))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 2.8971e-001           I 0.0e+000 2.1e-001 (EQC(NON))
+    1     1     3     3 1.4458e-004  1.0e+000 SO 0.0e+000 1.1e-004 (EQC(NON))
+    2     1     4     4 1.9606e-012  1.0e+000 SO 0.0e+000 1.6e-012 (EQC(NON))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  7.5265e-011 eqn: (EQPROFIT(NON))
+Inf-Norm of Normal Map. . . . .  1.6200e-012 eqn: (EQC(NON))
+Inf-Norm of Minimum Map . . . .  1.6200e-012 eqn: (EQC(NON))
+Inf-Norm of Fischer Function. .  1.6200e-012 eqn: (EQC(NON))
+Inf-Norm of Grad Fischer Fcn. .  2.1975e-010 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  2.2072e-010
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5577e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.6200e-012 eqn: (EQC(NON))
+Maximum of Grad F . . . . . . .  1.2398e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.000000
+Residual. . . . . . . . 1.960594e-012
+
+--- Restarting execution
+--- linked_LPMCP.gms(830) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:00.534
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(831) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:00.544
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         52237.090123
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       52237.090123
+
+--- Restarting execution
+--- linked_LPMCP.gms(831) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:00.663
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(911) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run01
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(911) 3 Mb
+--- Executing PATH: elapsed 0:00:00.670
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5577e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.6200e-012 eqn: (EQC(NON))
+Maximum of Grad F . . . . . . .  1.2398e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9249e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6602e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4796e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             1.9606e-012             0.0e+000 (EQC(NON))
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 1.9606e-012           I 0.0e+000 1.6e-012 (EQC(NON))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  7.5265e-011 eqn: (EQPROFIT(NON))
+Inf-Norm of Normal Map. . . . .  1.6200e-012 eqn: (EQC(NON))
+Inf-Norm of Minimum Map . . . .  1.6200e-012 eqn: (EQC(NON))
+Inf-Norm of Fischer Function. .  1.6200e-012 eqn: (EQC(NON))
+Inf-Norm of Grad Fischer Fcn. .  2.1975e-010 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  2.2072e-010
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5577e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.6200e-012 eqn: (EQC(NON))
+Maximum of Grad F . . . . . . .  1.2398e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.078000
+Residual. . . . . . . . 1.960594e-012
+
+--- Restarting execution
+--- linked_LPMCP.gms(911) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:01.049
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(912) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run01
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:01.061
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         54864.023943
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       54864.023943
+
+--- Restarting execution
+--- linked_LPMCP.gms(912) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:01.241
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(969) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run01
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(969) 3 Mb
+--- Executing PATH: elapsed 0:00:01.247
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5577e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  4.1255e-001 eqn: (EQPROFIT(ELE))
+Maximum of Grad F . . . . . . .  1.2398e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9249e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6602e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4796e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             5.2661e-001             0.0e+000 (EQPROFIT(ELE))
+    1     1     0    22 1.9879e-003  1.0e+000    0.0e+000 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 1.9879e-003           I 0.0e+000 1.5e-003 (EQC(ELE))
+    1     1     3     3 9.6986e-008  1.0e+000 SO 0.0e+000 7.4e-008 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  9.3492e-007 eqn: (EQC(NON))
+Inf-Norm of Normal Map. . . . .  7.4086e-008 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  7.4086e-008 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  7.4086e-008 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  3.3349e-006 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  3.7967e-006
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5596e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  7.4086e-008 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2414e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 1
+Minor Iterations. . . . 1
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 3
+Gradient Evaluations. . 3
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.125000
+Residual. . . . . . . . 9.698563e-008
+
+--- Restarting execution
+--- linked_LPMCP.gms(969) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:01.662
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(970) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run01
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:01.670
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         54864.023943
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       54864.023943
+
+--- Restarting execution
+--- linked_LPMCP.gms(970) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:01.791
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(911) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run02
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(911) 3 Mb
+--- Executing PATH: elapsed 0:00:01.842
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5596e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  7.4086e-008 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2414e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9275e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6616e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4827e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             9.6986e-008             0.0e+000 (EQC(ELE))
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 9.6986e-008           I 0.0e+000 7.4e-008 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  9.3492e-007 eqn: (EQC(NON))
+Inf-Norm of Normal Map. . . . .  7.4086e-008 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  7.4086e-008 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  7.4086e-008 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  3.3349e-006 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  3.7967e-006
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5596e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  7.4086e-008 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2414e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.031000
+Residual. . . . . . . . 9.698563e-008
+
+--- Restarting execution
+--- linked_LPMCP.gms(911) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:02.012
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(912) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run02
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:02.018
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         54333.903876
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       54333.903876
+
+--- Restarting execution
+--- linked_LPMCP.gms(912) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:02.188
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(969) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run02
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(969) 3 Mb
+--- Executing PATH: elapsed 0:00:02.219
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5596e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.0299e-001 eqn: (EQPROFIT(ELE))
+Maximum of Grad F . . . . . . .  1.2414e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9275e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6616e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4827e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             2.6996e-001             0.0e+000 (EQPROFIT(ELE))
+    1     1     0    22 4.9366e-004  1.0e+000    0.0e+000 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 4.9366e-004           I 0.0e+000 3.7e-004 (EQC(ELE))
+    1     1     3     3 6.1252e-009  1.0e+000 SO 0.0e+000 4.7e-009 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  5.1544e-008 eqn: (EQC(NON))
+Inf-Norm of Normal Map. . . . .  4.6899e-009 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  4.6899e-009 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  4.6899e-009 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  1.9069e-007 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  2.2190e-007
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5606e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  4.6899e-009 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2421e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 1
+Minor Iterations. . . . 1
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 3
+Gradient Evaluations. . 3
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.031000
+Residual. . . . . . . . 6.125197e-009
+
+--- Restarting execution
+--- linked_LPMCP.gms(969) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:02.387
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(970) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run02
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:02.394
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         54333.903876
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       54333.903876
+
+--- Restarting execution
+--- linked_LPMCP.gms(970) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:02.511
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(911) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run03
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(911) 3 Mb
+--- Executing PATH: elapsed 0:00:02.517
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5606e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  4.6899e-009 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2421e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9288e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6623e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4842e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.1252e-009             0.0e+000 (EQC(ELE))
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 6.1252e-009           I 0.0e+000 4.7e-009 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  5.1544e-008 eqn: (EQC(NON))
+Inf-Norm of Normal Map. . . . .  4.6899e-009 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  4.6899e-009 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  4.6899e-009 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  1.9069e-007 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  2.2190e-007
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5606e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  4.6899e-009 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2421e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.109000
+Residual. . . . . . . . 6.125197e-009
+
+--- Restarting execution
+--- linked_LPMCP.gms(911) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:02.882
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(912) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run03
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:02.889
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         54073.026892
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       54073.026892
+
+--- Restarting execution
+--- linked_LPMCP.gms(912) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:03.000
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(969) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run03
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(969) 3 Mb
+--- Executing PATH: elapsed 0:00:03.008
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5606e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.0127e-001 eqn: (EQPROFIT(ELE))
+Maximum of Grad F . . . . . . .  1.2421e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9288e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6623e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4842e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             1.3764e-001             0.0e+000 (EQPROFIT(ELE))
+    1     1     0    22 1.2444e-004  1.0e+000    0.0e+000 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 1.2444e-004           I 0.0e+000 9.3e-005 (EQC(ELE))
+    1     1     3     3 3.9376e-010  1.0e+000 SO 0.0e+000 3.0e-010 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  3.0858e-009 eqn: (EQC(NON))
+Inf-Norm of Normal Map. . . . .  3.0176e-010 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  3.0176e-010 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  3.0176e-010 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  1.1656e-008 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  1.3733e-008
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5611e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  3.0176e-010 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2425e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 1
+Minor Iterations. . . . 1
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 3
+Gradient Evaluations. . 3
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.000000
+Residual. . . . . . . . 3.937607e-010
+
+--- Restarting execution
+--- linked_LPMCP.gms(969) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:03.145
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(970) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run03
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:03.151
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         54073.026892
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       54073.026892
+
+--- Restarting execution
+--- linked_LPMCP.gms(970) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:03.377
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(911) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run04
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(911) 3 Mb
+--- Executing PATH: elapsed 0:00:03.409
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5611e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  3.0176e-010 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2425e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9294e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6627e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4850e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             3.9376e-010             0.0e+000 (EQC(ELE))
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 3.9376e-010           I 0.0e+000 3.0e-010 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  3.0858e-009 eqn: (EQC(NON))
+Inf-Norm of Normal Map. . . . .  3.0176e-010 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  3.0176e-010 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  3.0176e-010 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  1.1656e-008 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  1.3733e-008
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5611e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  3.0176e-010 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2425e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.093000
+Residual. . . . . . . . 3.937607e-010
+
+--- Restarting execution
+--- linked_LPMCP.gms(911) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:03.651
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(912) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run04
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:03.662
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53942.880564
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53942.880564
+
+--- Restarting execution
+--- linked_LPMCP.gms(912) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:03.816
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(969) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run04
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(969) 3 Mb
+--- Executing PATH: elapsed 0:00:03.849
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5611e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  5.0866e-002 eqn: (EQPROFIT(ELE))
+Maximum of Grad F . . . . . . .  1.2425e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9294e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6627e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4850e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.9904e-002             0.0e+000 (EQPROFIT(ELE))
+    1     1     0    22 3.1599e-005  1.0e+000    0.0e+000 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 3.1599e-005           I 0.0e+000 2.4e-005 (EQC(ELE))
+    1     1     3     3 2.5518e-011  1.0e+000 SO 0.0e+000 2.0e-011 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.9399e-010 eqn: (EQC(NON))
+Inf-Norm of Normal Map. . . . .  1.9572e-011 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  1.9572e-011 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  1.9572e-011 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  7.2890e-010 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  8.6653e-010
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5613e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.9572e-011 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2427e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 1
+Minor Iterations. . . . 1
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 3
+Gradient Evaluations. . 3
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.156000
+Residual. . . . . . . . 2.551812e-011
+
+--- Restarting execution
+--- linked_LPMCP.gms(969) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:04.246
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(970) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run04
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:04.252
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53942.880564
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53942.880564
+
+--- Restarting execution
+--- linked_LPMCP.gms(970) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:04.453
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(911) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run05
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(911) 3 Mb
+--- Executing PATH: elapsed 0:00:04.511
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5613e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.9572e-011 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2427e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9297e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6629e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4853e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             2.5518e-011             0.0e+000 (EQC(ELE))
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 2.5518e-011           I 0.0e+000 2.0e-011 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.9399e-010 eqn: (EQC(NON))
+Inf-Norm of Normal Map. . . . .  1.9572e-011 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  1.9572e-011 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  1.9572e-011 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  7.2890e-010 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  8.6653e-010
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5613e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.9572e-011 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2427e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.062000
+Residual. . . . . . . . 2.551812e-011
+
+--- Restarting execution
+--- linked_LPMCP.gms(911) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:04.813
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(912) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run05
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:04.821
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53877.510786
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53877.510786
+
+--- Restarting execution
+--- linked_LPMCP.gms(912) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:05.026
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(969) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run05
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(969) 3 Mb
+--- Executing PATH: elapsed 0:00:05.033
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5613e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.5636e-002 eqn: (EQPROFIT(ELE))
+Maximum of Grad F . . . . . . .  1.2427e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9297e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6629e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4853e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             3.5430e-002             0.0e+000 (EQPROFIT(ELE))
+    1     1     0    22 8.0528e-006  1.0e+000    0.0e+000 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 8.0528e-006           I 0.0e+000 6.0e-006 (EQC(ELE))
+    1     1     3     3 1.6611e-012  1.0e+000 SO 0.0e+000 1.3e-012 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.5355e-011 eqn: (EQC(NON))
+Inf-Norm of Normal Map. . . . .  1.2670e-012 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  1.2665e-012 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  1.2670e-012 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  5.0712e-011 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  5.9077e-011
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5614e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.2670e-012 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2428e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 1
+Minor Iterations. . . . 1
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 3
+Gradient Evaluations. . 3
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.094000
+Residual. . . . . . . . 1.661112e-012
+
+--- Restarting execution
+--- linked_LPMCP.gms(969) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:05.410
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(970) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run05
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:05.417
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53877.510786
+LP status(1): optimal
+Cplex Time: 0.01sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53877.510786
+
+--- Restarting execution
+--- linked_LPMCP.gms(970) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:05.538
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(911) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run06
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(911) 3 Mb
+--- Executing PATH: elapsed 0:00:05.588
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5614e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.2670e-012 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2428e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9299e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6630e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4855e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             1.6611e-012             0.0e+000 (EQC(ELE))
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 1.6611e-012           I 0.0e+000 1.3e-012 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.5355e-011 eqn: (EQC(NON))
+Inf-Norm of Normal Map. . . . .  1.2670e-012 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  1.2665e-012 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  1.2670e-012 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  5.0712e-011 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  5.9077e-011
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5614e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.2670e-012 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2428e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.047000
+Residual. . . . . . . . 1.661112e-012
+
+--- Restarting execution
+--- linked_LPMCP.gms(911) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:05.779
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(912) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run06
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:05.787
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53844.564962
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53844.564962
+
+--- Restarting execution
+--- linked_LPMCP.gms(912) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:06.040
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(969) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run06
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(969) 3 Mb
+--- Executing PATH: elapsed 0:00:06.051
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5614e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.2943e-002 eqn: (EQPROFIT(ELE))
+Maximum of Grad F . . . . . . .  1.2428e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9299e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6630e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4855e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             1.7938e-002             0.0e+000 (EQPROFIT(ELE))
+    1     1     0    22 2.0559e-006  1.0e+000    0.0e+000 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 2.0559e-006           I 0.0e+000 1.5e-006 (EQC(ELE))
+    1     1     3     3 1.2494e-013  1.0e+000 SO 0.0e+000 7.9e-014 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  2.7920e-012 eqn: (EQC(NON))
+Inf-Norm of Normal Map. . . . .  7.8604e-014 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  7.8160e-014 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  7.8604e-014 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  9.0365e-012 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  9.4261e-012
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  7.8604e-014 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2428e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 1
+Minor Iterations. . . . 1
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 3
+Gradient Evaluations. . 3
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.109000
+Residual. . . . . . . . 1.249391e-013
+
+--- Restarting execution
+--- linked_LPMCP.gms(969) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:06.646
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(970) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run06
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:06.653
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53844.564962
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53844.564962
+
+--- Restarting execution
+--- linked_LPMCP.gms(970) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:06.936
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(911) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run07
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(911) 3 Mb
+--- Executing PATH: elapsed 0:00:06.948
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  7.8604e-014 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2428e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6630e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4856e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             1.2494e-013             0.0e+000 (EQC(ELE))
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 1.2494e-013           I 0.0e+000 7.9e-014 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  2.7920e-012 eqn: (EQC(NON))
+Inf-Norm of Normal Map. . . . .  7.8604e-014 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  7.8160e-014 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  7.8604e-014 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  9.0365e-012 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  9.4261e-012
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  7.8604e-014 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2428e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.078000
+Residual. . . . . . . . 1.249391e-013
+
+--- Restarting execution
+--- linked_LPMCP.gms(911) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:07.439
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(912) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run07
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:07.449
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53827.932060
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53827.932060
+
+--- Restarting execution
+--- linked_LPMCP.gms(912) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:07.745
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(969) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run07
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(969) 3 Mb
+--- Executing PATH: elapsed 0:00:07.752
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  6.5399e-003 eqn: (EQPROFIT(ELE))
+Maximum of Grad F . . . . . . .  1.2428e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6630e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4856e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             9.0769e-003             0.0e+000 (EQPROFIT(ELE))
+    1     1     0    22 5.2536e-007  1.0e+000    0.0e+000 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 5.2536e-007           I 0.0e+000 3.9e-007 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  4.9591e-006 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  3.9458e-007 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  3.9458e-007 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  3.9458e-007 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  2.3254e-005 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  2.4204e-005
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  3.9458e-007 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2428e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 2
+Gradient Evaluations. . 2
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.078000
+Residual. . . . . . . . 5.253558e-007
+
+--- Restarting execution
+--- linked_LPMCP.gms(969) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:08.241
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(970) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run07
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:08.249
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53827.932060
+LP status(1): optimal
+Cplex Time: 0.01sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53827.932060
+
+--- Restarting execution
+--- linked_LPMCP.gms(970) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:08.492
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(911) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run08
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(911) 3 Mb
+--- Executing PATH: elapsed 0:00:08.512
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  3.9458e-007 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2428e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6630e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             5.2536e-007             0.0e+000 (EQC(ELE))
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 5.2536e-007           I 0.0e+000 3.9e-007 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  4.9591e-006 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  3.9458e-007 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  3.9458e-007 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  3.9458e-007 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  2.3254e-005 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  2.4204e-005
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  3.9458e-007 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2428e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.109000
+Residual. . . . . . . . 5.253558e-007
+
+--- Restarting execution
+--- linked_LPMCP.gms(911) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:08.842
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(912) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run08
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:08.850
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53819.526721
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53819.526721
+
+--- Restarting execution
+--- linked_LPMCP.gms(912) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:09.089
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(969) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run08
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(969) 3 Mb
+--- Executing PATH: elapsed 0:00:09.097
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  3.3061e-003 eqn: (EQPROFIT(ELE))
+Maximum of Grad F . . . . . . .  1.2428e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6630e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             4.5922e-003             0.0e+000 (EQPROFIT(ELE))
+    1     1     0    22 1.3440e-007  1.0e+000    0.0e+000 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 1.3440e-007           I 0.0e+000 1.0e-007 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.2701e-006 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  1.0096e-007 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  1.0096e-007 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  1.0096e-007 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  5.9417e-006 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  6.1855e-006
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.0096e-007 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2428e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 2
+Gradient Evaluations. . 2
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.063000
+Residual. . . . . . . . 1.343957e-007
+
+--- Restarting execution
+--- linked_LPMCP.gms(969) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:09.518
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(970) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run08
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:09.535
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53819.526721
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53819.526721
+
+--- Restarting execution
+--- linked_LPMCP.gms(970) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:09.735
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(911) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run09
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(911) 3 Mb
+--- Executing PATH: elapsed 0:00:09.746
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.0096e-007 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2428e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             1.3440e-007             0.0e+000 (EQC(ELE))
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 1.3440e-007           I 0.0e+000 1.0e-007 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.2701e-006 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  1.0096e-007 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  1.0096e-007 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  1.0096e-007 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  5.9417e-006 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  6.1855e-006
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.0096e-007 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2428e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.062000
+Residual. . . . . . . . 1.343957e-007
+
+--- Restarting execution
+--- linked_LPMCP.gms(911) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:10.146
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(912) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run09
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:10.152
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53815.278340
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53815.278340
+
+--- Restarting execution
+--- linked_LPMCP.gms(912) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:10.419
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(969) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run09
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(969) 3 Mb
+--- Executing PATH: elapsed 0:00:10.429
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.6715e-003 eqn: (EQPROFIT(ELE))
+Maximum of Grad F . . . . . . .  1.2428e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             2.3225e-003             0.0e+000 (EQPROFIT(ELE))
+    1     1     0    22 3.4349e-008  1.0e+000    0.0e+000 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 3.4349e-008           I 0.0e+000 2.6e-008 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  3.2459e-007 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  2.5803e-008 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  2.5803e-008 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  2.5803e-008 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  1.5186e-006 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  1.5809e-006
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.5803e-008 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 2
+Gradient Evaluations. . 2
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.140000
+Residual. . . . . . . . 3.434878e-008
+
+--- Restarting execution
+--- linked_LPMCP.gms(969) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:11.045
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(970) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run09
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:11.051
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53815.278340
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53815.278340
+
+--- Restarting execution
+--- linked_LPMCP.gms(970) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:11.281
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(911) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run10
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(911) 3 Mb
+--- Executing PATH: elapsed 0:00:11.299
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.5803e-008 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             3.4349e-008             0.0e+000 (EQC(ELE))
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 3.4349e-008           I 0.0e+000 2.6e-008 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  3.2459e-007 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  2.5803e-008 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  2.5803e-008 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  2.5803e-008 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  1.5186e-006 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  1.5809e-006
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.5803e-008 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.110000
+Residual. . . . . . . . 3.434878e-008
+
+--- Restarting execution
+--- linked_LPMCP.gms(911) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:11.955
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(912) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run10
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:11.964
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53813.130412
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53813.130412
+
+--- Restarting execution
+--- linked_LPMCP.gms(912) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:12.213
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(969) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run10
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(969) 3 Mb
+--- Executing PATH: elapsed 0:00:12.221
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  8.4518e-004 eqn: (EQPROFIT(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             1.1746e-003             0.0e+000 (EQPROFIT(ELE))
+    1     1     0    22 8.7821e-009  1.0e+000    0.0e+000 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 8.7821e-009           I 0.0e+000 6.6e-009 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  8.2986e-008 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  6.5973e-009 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  6.5973e-009 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  6.5973e-009 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  3.8828e-007 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  4.0420e-007
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  6.5973e-009 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 2
+Gradient Evaluations. . 2
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.063000
+Residual. . . . . . . . 8.782116e-009
+
+--- Restarting execution
+--- linked_LPMCP.gms(969) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:12.657
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(970) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run10
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:12.664
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53813.130412
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53813.130412
+
+--- Restarting execution
+--- linked_LPMCP.gms(970) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:12.859
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(911) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run11
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(911) 3 Mb
+--- Executing PATH: elapsed 0:00:12.867
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  6.5973e-009 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             8.7821e-009             0.0e+000 (EQC(ELE))
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 8.7821e-009           I 0.0e+000 6.6e-009 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  8.2986e-008 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  6.5973e-009 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  6.5973e-009 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  6.5973e-009 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  3.8828e-007 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  4.0420e-007
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  6.5973e-009 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.046000
+Residual. . . . . . . . 8.782116e-009
+
+--- Restarting execution
+--- linked_LPMCP.gms(911) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:13.278
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(912) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run11
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:13.285
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53812.044286
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53812.044286
+
+--- Restarting execution
+--- linked_LPMCP.gms(912) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:13.514
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(969) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run11
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(969) 3 Mb
+--- Executing PATH: elapsed 0:00:13.521
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  4.2740e-004 eqn: (EQPROFIT(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             5.9403e-004             0.0e+000 (EQPROFIT(ELE))
+    1     1     0    22 2.2458e-009  1.0e+000    0.0e+000 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 2.2458e-009           I 0.0e+000 1.7e-009 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  2.1221e-008 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  1.6871e-009 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  1.6871e-009 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  1.6871e-009 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  9.9296e-008 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  1.0337e-007
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.6871e-009 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 2
+Gradient Evaluations. . 2
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.094000
+Residual. . . . . . . . 2.245791e-009
+
+--- Restarting execution
+--- linked_LPMCP.gms(969) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:13.925
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(970) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run11
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:13.933
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53812.044286
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53812.044286
+
+--- Restarting execution
+--- linked_LPMCP.gms(970) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:14.159
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(911) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run12
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(911) 3 Mb
+--- Executing PATH: elapsed 0:00:14.178
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.6871e-009 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             2.2458e-009             0.0e+000 (EQC(ELE))
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 2.2458e-009           I 0.0e+000 1.7e-009 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  2.1221e-008 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  1.6871e-009 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  1.6871e-009 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  1.6871e-009 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  9.9296e-008 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  1.0337e-007
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.6871e-009 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.156000
+Residual. . . . . . . . 2.245791e-009
+
+--- Restarting execution
+--- linked_LPMCP.gms(911) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:14.750
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(912) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run12
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:14.760
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53811.495031
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53811.495031
+
+--- Restarting execution
+--- linked_LPMCP.gms(912) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:14.998
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(969) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run12
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(969) 3 Mb
+--- Executing PATH: elapsed 0:00:15.008
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.1615e-004 eqn: (EQPROFIT(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             3.0042e-004             0.0e+000 (EQPROFIT(ELE))
+    1     1     0    22 5.7437e-010  1.0e+000    0.0e+000 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 5.7437e-010           I 0.0e+000 4.3e-010 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  5.4273e-009 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  4.3147e-010 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  4.3147e-010 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  4.3147e-010 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  2.5396e-008 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  2.6438e-008
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  4.3147e-010 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 2
+Gradient Evaluations. . 2
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.047000
+Residual. . . . . . . . 5.743669e-010
+
+--- Restarting execution
+--- linked_LPMCP.gms(969) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:15.463
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(970) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run12
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:15.476
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53811.495031
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53811.495031
+
+--- Restarting execution
+--- linked_LPMCP.gms(970) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:15.695
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(911) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run13
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(911) 3 Mb
+--- Executing PATH: elapsed 0:00:15.703
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  4.3147e-010 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             5.7437e-010             0.0e+000 (EQC(ELE))
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 5.7437e-010           I 0.0e+000 4.3e-010 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  5.4273e-009 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  4.3147e-010 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  4.3147e-010 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  4.3147e-010 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  2.5396e-008 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  2.6438e-008
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  4.3147e-010 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.094000
+Residual. . . . . . . . 5.743669e-010
+
+--- Restarting execution
+--- linked_LPMCP.gms(911) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:16.203
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(912) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run13
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:16.214
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53811.217262
+LP status(1): optimal
+Cplex Time: 0.02sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53811.217262
+
+--- Restarting execution
+--- linked_LPMCP.gms(912) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:16.420
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(969) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run13
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(969) 3 Mb
+--- Executing PATH: elapsed 0:00:16.430
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.0931e-004 eqn: (EQPROFIT(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             1.5194e-004             0.0e+000 (EQPROFIT(ELE))
+    1     1     0    22 1.4689e-010  1.0e+000    0.0e+000 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 1.4689e-010           I 0.0e+000 1.1e-010 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.3880e-009 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  1.1036e-010 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  1.1036e-010 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  1.1036e-010 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  6.4974e-009 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  6.7636e-009
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.1036e-010 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 2
+Gradient Evaluations. . 2
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.062000
+Residual. . . . . . . . 1.468944e-010
+
+--- Restarting execution
+--- linked_LPMCP.gms(969) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:16.833
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(970) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run13
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:16.847
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53811.217262
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53811.217262
+
+--- Restarting execution
+--- linked_LPMCP.gms(970) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:17.043
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(911) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run14
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(911) 3 Mb
+--- Executing PATH: elapsed 0:00:17.051
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.1036e-010 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             1.4689e-010             0.0e+000 (EQC(ELE))
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 1.4689e-010           I 0.0e+000 1.1e-010 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.3880e-009 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  1.1036e-010 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  1.1036e-010 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  1.1036e-010 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  6.4974e-009 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  6.7636e-009
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.1036e-010 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.062000
+Residual. . . . . . . . 1.468944e-010
+
+--- Restarting execution
+--- linked_LPMCP.gms(911) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:17.432
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(912) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run14
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:17.441
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53811.076786
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53811.076786
+
+--- Restarting execution
+--- linked_LPMCP.gms(912) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:17.717
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(969) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run14
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(969) 3 Mb
+--- Executing PATH: elapsed 0:00:17.728
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  5.5282e-005 eqn: (EQPROFIT(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             7.6840e-005             0.0e+000 (EQPROFIT(ELE))
+    1     1     0    22 3.7564e-011  1.0e+000    0.0e+000 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 3.7564e-011           I 0.0e+000 2.8e-011 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  3.5511e-010 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  2.8221e-011 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  2.8221e-011 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  2.8221e-011 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  1.6572e-009 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  1.7255e-009
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.8221e-011 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 2
+Gradient Evaluations. . 2
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.016000
+Residual. . . . . . . . 3.756358e-011
+
+--- Restarting execution
+--- linked_LPMCP.gms(969) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:17.980
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(970) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run14
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:17.988
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53811.076786
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53811.076786
+
+--- Restarting execution
+--- linked_LPMCP.gms(970) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:18.249
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(911) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run15
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(911) 3 Mb
+--- Executing PATH: elapsed 0:00:18.260
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.8221e-011 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             3.7564e-011             0.0e+000 (EQC(ELE))
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 3.7564e-011           I 0.0e+000 2.8e-011 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  3.5511e-010 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  2.8221e-011 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  2.8221e-011 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  2.8221e-011 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  1.6572e-009 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  1.7255e-009
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.8221e-011 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.109000
+Residual. . . . . . . . 3.756358e-011
+
+--- Restarting execution
+--- linked_LPMCP.gms(911) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:18.731
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(912) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run15
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:18.742
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53811.005742
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53811.005742
+
+--- Restarting execution
+--- linked_LPMCP.gms(912) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:18.963
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(969) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run15
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(969) 3 Mb
+--- Executing PATH: elapsed 0:00:18.972
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.7958e-005 eqn: (EQPROFIT(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             3.8861e-005             0.0e+000 (EQPROFIT(ELE))
+    1     1     0    22 9.6228e-012  1.0e+000    0.0e+000 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 9.6228e-012           I 0.0e+000 7.2e-012 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  9.0863e-011 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  7.2218e-012 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  7.2218e-012 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  7.2218e-012 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  4.2747e-010 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  4.4481e-010
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  7.2218e-012 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 2
+Gradient Evaluations. . 2
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.016000
+Residual. . . . . . . . 9.622822e-012
+
+--- Restarting execution
+--- linked_LPMCP.gms(969) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:19.335
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(970) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run15
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:19.349
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53811.005742
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53811.005742
+
+--- Restarting execution
+--- linked_LPMCP.gms(970) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:19.543
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(911) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run16
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(911) 3 Mb
+--- Executing PATH: elapsed 0:00:19.553
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  7.2218e-012 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             9.6228e-012             0.0e+000 (EQC(ELE))
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 9.6228e-012           I 0.0e+000 7.2e-012 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  9.0863e-011 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  7.2218e-012 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  7.2218e-012 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  7.2218e-012 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  4.2747e-010 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  4.4481e-010
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  7.2218e-012 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.094000
+Residual. . . . . . . . 9.622822e-012
+
+--- Restarting execution
+--- linked_LPMCP.gms(911) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:19.961
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(912) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run16
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:19.968
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53810.969813
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53810.969813
+
+--- Restarting execution
+--- linked_LPMCP.gms(912) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:20.165
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(969) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run16
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(969) 3 Mb
+--- Executing PATH: elapsed 0:00:20.179
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.4140e-005 eqn: (EQPROFIT(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             1.9654e-005             0.0e+000 (EQPROFIT(ELE))
+    1     1     0    22 2.4653e-012  1.0e+000    0.0e+000 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 2.4653e-012           I 0.0e+000 1.8e-012 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  2.3294e-011 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  1.8483e-012 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  1.8483e-012 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  1.8483e-012 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  1.0815e-010 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  1.1272e-010
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.8483e-012 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 2
+Gradient Evaluations. . 2
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.094000
+Residual. . . . . . . . 2.465338e-012
+
+--- Restarting execution
+--- linked_LPMCP.gms(969) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:20.494
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(970) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run16
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:20.501
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53810.969813
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53810.969813
+
+--- Restarting execution
+--- linked_LPMCP.gms(970) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:20.683
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(911) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run17
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(911) 3 Mb
+--- Executing PATH: elapsed 0:00:20.694
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.8483e-012 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             2.4653e-012             0.0e+000 (EQC(ELE))
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 2.4653e-012           I 0.0e+000 1.8e-012 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  2.3294e-011 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  1.8483e-012 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  1.8483e-012 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  1.8483e-012 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  1.0815e-010 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  1.1272e-010
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.8483e-012 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.125000
+Residual. . . . . . . . 2.465338e-012
+
+--- Restarting execution
+--- linked_LPMCP.gms(911) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:21.177
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(912) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run17
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:21.185
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53810.951642
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53810.951642
+
+--- Restarting execution
+--- linked_LPMCP.gms(912) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:21.399
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(969) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run17
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(969) 3 Mb
+--- Executing PATH: elapsed 0:00:21.410
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  7.1509e-006 eqn: (EQPROFIT(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             9.9396e-006             0.0e+000 (EQPROFIT(ELE))
+    1     1     0    22 6.2637e-013  1.0e+000    0.0e+000 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 6.2637e-013           I 0.0e+000 4.7e-013 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  5.6996e-012 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  4.7296e-013 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  4.7251e-013 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  4.7296e-013 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  2.9573e-011 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  3.0582e-011
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  4.7296e-013 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 2
+Gradient Evaluations. . 2
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.078000
+Residual. . . . . . . . 6.263703e-013
+
+--- Restarting execution
+--- linked_LPMCP.gms(969) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:21.854
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(970) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run17
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:21.866
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53810.951642
+LP status(1): optimal
+Cplex Time: 0.01sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53810.951642
+
+--- Restarting execution
+--- linked_LPMCP.gms(970) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:22.176
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(911) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run18
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(911) 3 Mb
+--- Executing PATH: elapsed 0:00:22.184
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  4.7296e-013 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.2637e-013             0.0e+000 (EQC(ELE))
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 6.2637e-013           I 0.0e+000 4.7e-013 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  5.6996e-012 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  4.7296e-013 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  4.7251e-013 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  4.7296e-013 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  2.9573e-011 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  3.0582e-011
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  4.7296e-013 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.031000
+Residual. . . . . . . . 6.263703e-013
+
+--- Restarting execution
+--- linked_LPMCP.gms(911) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:22.560
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(912) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run18
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:22.572
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53810.942452
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53810.942452
+
+--- Restarting execution
+--- linked_LPMCP.gms(912) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:22.846
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(969) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run18
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(969) 3 Mb
+--- Executing PATH: elapsed 0:00:22.859
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  3.6165e-006 eqn: (EQPROFIT(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             5.0269e-006             0.0e+000 (EQPROFIT(ELE))
+    1     1     0    22 1.6444e-013  1.0e+000    0.0e+000 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 1.6444e-013           I 0.0e+000 1.2e-013 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  4.4382e-012 eqn: (EQPROFIT(NON))
+Inf-Norm of Normal Map. . . . .  1.2079e-013 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  1.2079e-013 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  1.2079e-013 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  1.1156e-011 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  1.1335e-011
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.2079e-013 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 2
+Gradient Evaluations. . 2
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.078000
+Residual. . . . . . . . 1.644435e-013
+
+--- Restarting execution
+--- linked_LPMCP.gms(969) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:23.217
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(970) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run18
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:23.230
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53810.942452
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53810.942452
+
+--- Restarting execution
+--- linked_LPMCP.gms(970) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:23.473
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(911) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run19
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(911) 3 Mb
+--- Executing PATH: elapsed 0:00:23.482
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.2079e-013 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             1.6444e-013             0.0e+000 (EQC(ELE))
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 1.6444e-013           I 0.0e+000 1.2e-013 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  4.4382e-012 eqn: (EQPROFIT(NON))
+Inf-Norm of Normal Map. . . . .  1.2079e-013 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  1.2079e-013 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  1.2079e-013 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  1.1156e-011 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  1.1335e-011
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.2079e-013 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.031000
+Residual. . . . . . . . 1.644435e-013
+
+--- Restarting execution
+--- linked_LPMCP.gms(911) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:23.756
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(912) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run19
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:23.765
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53810.937804
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53810.937804
+
+--- Restarting execution
+--- linked_LPMCP.gms(912) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:24.017
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(969) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run19
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(969) 3 Mb
+--- Executing PATH: elapsed 0:00:24.028
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.8290e-006 eqn: (EQPROFIT(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             2.5423e-006             0.0e+000 (EQPROFIT(ELE))
+    1     1     0    22 6.2920e-014  1.0e+000    0.0e+000 (EQC(NON))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 6.2920e-014           I 0.0e+000 2.8e-014 (EQC(NON))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.6571e-012 eqn: (EQL(NON))
+Inf-Norm of Normal Map. . . . .  2.8422e-014 eqn: (EQC(NON))
+Inf-Norm of Minimum Map . . . .  2.8422e-014 eqn: (EQC(NON))
+Inf-Norm of Fischer Function. .  2.8422e-014 eqn: (EQC(NON))
+Inf-Norm of Grad Fischer Fcn. .  1.2331e-012 eqn: (EQMARKETK)
+Two-Norm of Grad Fischer Fcn. .  1.6870e-012
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.8422e-014 eqn: (EQC(NON))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 2
+Gradient Evaluations. . 2
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.016000
+Residual. . . . . . . . 6.291988e-014
+
+--- Restarting execution
+--- linked_LPMCP.gms(969) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:24.279
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(970) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run19
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:24.291
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53810.937804
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53810.937804
+
+--- Restarting execution
+--- linked_LPMCP.gms(970) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:24.544
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(911) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run20
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(911) 3 Mb
+--- Executing PATH: elapsed 0:00:24.553
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.8422e-014 eqn: (EQC(NON))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.2920e-014             0.0e+000 (EQC(NON))
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 6.2920e-014           I 0.0e+000 2.8e-014 (EQC(NON))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.6571e-012 eqn: (EQL(NON))
+Inf-Norm of Normal Map. . . . .  2.8422e-014 eqn: (EQC(NON))
+Inf-Norm of Minimum Map . . . .  2.8422e-014 eqn: (EQC(NON))
+Inf-Norm of Fischer Function. .  2.8422e-014 eqn: (EQC(NON))
+Inf-Norm of Grad Fischer Fcn. .  1.2331e-012 eqn: (EQMARKETK)
+Two-Norm of Grad Fischer Fcn. .  1.6870e-012
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.8422e-014 eqn: (EQC(NON))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.109000
+Residual. . . . . . . . 6.291988e-014
+
+--- Restarting execution
+--- linked_LPMCP.gms(911) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:25.079
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(912) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run20
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:25.094
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53810.935454
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53810.935454
+
+--- Restarting execution
+--- linked_LPMCP.gms(912) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:25.438
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(969) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run20
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(969) 3 Mb
+--- Executing PATH: elapsed 0:00:25.448
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  9.2500e-007 eqn: (EQPROFIT(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             1.2857e-006             0.0e+000 (EQPROFIT(ELE))
+    1     1     0    22 4.3450e-014  1.0e+000    0.0e+000 (EQC(NON))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 4.3450e-014           I 0.0e+000 2.8e-014 (EQC(NON))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  2.7923e-012 eqn: (EQC(NON))
+Inf-Norm of Normal Map. . . . .  2.8422e-014 eqn: (EQC(NON))
+Inf-Norm of Minimum Map . . . .  2.8422e-014 eqn: (EQC(NON))
+Inf-Norm of Fischer Function. .  2.8422e-014 eqn: (EQC(NON))
+Inf-Norm of Grad Fischer Fcn. .  3.0383e-012 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  3.1713e-012
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.8422e-014 eqn: (EQC(NON))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 2
+Gradient Evaluations. . 2
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.188000
+Residual. . . . . . . . 4.344988e-014
+
+--- Restarting execution
+--- linked_LPMCP.gms(969) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:25.918
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(970) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run20
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:25.929
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53810.935454
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53810.935454
+
+--- Restarting execution
+--- linked_LPMCP.gms(970) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:26.198
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(911) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run21
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(911) 3 Mb
+--- Executing PATH: elapsed 0:00:26.211
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.8422e-014 eqn: (EQC(NON))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             4.3450e-014             0.0e+000 (EQC(NON))
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 4.3450e-014           I 0.0e+000 2.8e-014 (EQC(NON))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  2.7923e-012 eqn: (EQC(NON))
+Inf-Norm of Normal Map. . . . .  2.8422e-014 eqn: (EQC(NON))
+Inf-Norm of Minimum Map . . . .  2.8422e-014 eqn: (EQC(NON))
+Inf-Norm of Fischer Function. .  2.8422e-014 eqn: (EQC(NON))
+Inf-Norm of Grad Fischer Fcn. .  3.0383e-012 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  3.1713e-012
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.8422e-014 eqn: (EQC(NON))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.031000
+Residual. . . . . . . . 4.344988e-014
+
+--- Restarting execution
+--- linked_LPMCP.gms(911) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:26.563
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(912) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run21
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:26.574
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53810.934265
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53810.934265
+
+--- Restarting execution
+--- linked_LPMCP.gms(912) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:26.793
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating MCP model CGE_link_MCP
+--- linked_LPMCP.gms(969) 5 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run21
+---   23 rows  25 columns  127 non-zeroes
+---   309 nl-code  72 nl-non-zeroes
+--- linked_LPMCP.gms(969) 3 Mb
+--- Executing PATH: elapsed 0:00:26.807
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 4.7.04 (Mon Jul 11 07:51:42 2016)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  4.6781e-007 eqn: (EQPROFIT(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9300e+002 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6631e+000 eqn: (EQL(ELE))
+Maximum Column Norm . . . . . .  2.4857e+002 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+000 var: (L(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.5025e-007             0.0e+000 (EQPROFIT(ELE))
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 6.5025e-007           I 0.0e+000 4.7e-007 (EQPROFIT(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  4.6781e-007 eqn: (EQMARKETC(GAS))
+Inf-Norm of Normal Map. . . . .  4.6781e-007 eqn: (EQPROFIT(ELE))
+Inf-Norm of Minimum Map . . . .  4.6781e-007 eqn: (EQPROFIT(ELE))
+Inf-Norm of Fischer Function. .  4.6781e-007 eqn: (EQPROFIT(ELE))
+Inf-Norm of Grad Fischer Fcn. .  1.0382e-005 eqn: (EQMARKETC(ELE))
+Two-Norm of Grad Fischer Fcn. .  1.1834e-005
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5615e+002 var: (XD(NON))
+Maximum of F. . . . . . . . . .  4.6781e-007 eqn: (EQPROFIT(ELE))
+Maximum of Grad F . . . . . . .  1.2429e+002 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.032000
+Residual. . . . . . . . 6.502453e-007
+
+--- Restarting execution
+--- linked_LPMCP.gms(969) 2 Mb
+--- Reading solution for model CGE_link_MCP
+--- Executing after solve: elapsed 0:00:27.197
+--- linked_LPMCP.gms(817) 3 Mb
+--- Generating LP model TIMES_simple
+--- linked_LPMCP.gms(970) 3 Mb
+--- LOOPS iterK = 1
+---       iterL = 1
+---       runit = run21
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX: elapsed 0:00:27.211
+
+IBM ILOG CPLEX   24.7.3 r58181 Released Jul 11, 2016 WEI x86 64bit/MS Windows 
+Cplex 12.6.3.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.01 Mb
+Use option 'names no' to turn use of names off
+Tried aggregator 1 time.
+LP Presolve eliminated 61 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.10 ticks)
+Using devex.
+
+Iteration log . . .
+Iteration:     1    Objective     =         53810.934265
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.29 ticks)
+
+Optimal solution found.
+Objective :       53810.934265
+
+--- Restarting execution
+--- linked_LPMCP.gms(970) 2 Mb
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:27.462
+--- linked_LPMCP.gms(1054) 3 Mb
+--- GDX File C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\lpmcp_result.gdx
+--- linked_LPMCP.gms(1055) 3 Mb
+--- GDX File C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\lpmcp_iter.gdx
+--- linked_LPMCP.gms(1056) 3 Mb
+--- GDX File C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\lpmcp_varact_iter.gdx
+*** Status: Normal completion
+--- Job linked_LPMCP.gms Stop 08/21/21 19:16:56 elapsed 0:00:27.467

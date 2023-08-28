@@ -1,0 +1,166 @@
+
+--- Job solve_display_LP_PredForm.gms Start 08/22/21 22:15:31 24.7.3 r58181 WEX-WEI x86 64bit/MS Windows
+GAMS 24.7.3   Copyright (C) 1987-2016 GAMS Development. All rights reserved
+Licensee: Small MUD - 5 User License                     G160810:1105AO-GEN
+          Norwegian University of Science and Technology, Industrial DC7530
+          License for teaching and research at degree granting institutions
+          License Admin: Ruud Egging, rudolf.egging@iot.ntnu.no            
+--- Starting compilation
+--- solve_display_LP_PredForm.gms(4) 3 Mb 7 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+*** Error 120 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown identifier entered as set
+*** Error 120 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown identifier entered as set
+*** Error 120 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown identifier entered as set
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+--- solve_display_LP_PredForm.gms(8) 3 Mb 10 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+*** Error 120 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown identifier entered as set
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+--- solve_display_LP_PredForm.gms(10) 3 Mb 14 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+*** Error 241 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Model has not been defined
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+*** Error 257 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Solve statement not checked because of previous errors
+--- solve_display_LP_PredForm.gms(12) 3 Mb 22 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+*** Error 120 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown identifier entered as set
+*** Error 120 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown identifier entered as set
+*** Error 120 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown identifier entered as set
+*** Error 120 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown identifier entered as set
+*** Error 120 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown identifier entered as set
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+--- solve_display_LP_PredForm.gms(13) 3 Mb 24 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+--- solve_display_LP_PredForm.gms(14) 3 Mb 27 Errors
+*** Error 120 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown identifier entered as set
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+--- solve_display_LP_PredForm.gms(16) 3 Mb 31 Errors
+*** Error 572 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Cannot GDX load/unload this type - only sets, parameters
+       equations and variables can be used
+*** Error 572 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Cannot GDX load/unload this type - only sets, parameters
+       equations and variables can be used
+*** Error 572 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Cannot GDX load/unload this type - only sets, parameters
+       equations and variables can be used
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+--- solve_display_LP_PredForm.gms(34) 3 Mb 32 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+--- solve_display_LP_PredForm.gms(37) 3 Mb 36 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+*** Error 116 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Label is unknown
+*** Error 116 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Label is unknown
+*** Error 116 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Label is unknown
+--- solve_display_LP_PredForm.gms(38) 3 Mb 37 Errors
+*** Error 116 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Label is unknown
+--- solve_display_LP_PredForm.gms(42) 3 Mb 38 Errors
+*** Error 116 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Label is unknown
+--- solve_display_LP_PredForm.gms(43) 3 Mb 39 Errors
+*** Error 116 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Label is unknown
+--- solve_display_LP_PredForm.gms(44) 3 Mb 40 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+--- solve_display_LP_PredForm.gms(46) 3 Mb 41 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+--- solve_display_LP_PredForm.gms(49) 3 Mb 42 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+--- solve_display_LP_PredForm.gms(50) 3 Mb 44 Errors
+*** Error 116 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Label is unknown
+*** Error 116 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Label is unknown
+--- solve_display_LP_PredForm.gms(58) 3 Mb 46 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+--- solve_display_LP_PredForm.gms(60) 3 Mb 50 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+*** Error 120 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown identifier entered as set
+*** Error 340 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    A label/element with the same name exist. You may have forgotten
+       to quote a label/element reference. For example,
+       set i / a,b,c /; parameter x(i); x('a') = 10;
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+--- solve_display_LP_PredForm.gms(61) 3 Mb 51 Errors
+*** Error 141 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+--- solve_display_LP_PredForm.gms(62) 3 Mb 54 Errors
+*** Error 120 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown identifier entered as set
+*** Error 340 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    A label/element with the same name exist. You may have forgotten
+       to quote a label/element reference. For example,
+       set i / a,b,c /; parameter x(i); x('a') = 10;
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+--- solve_display_LP_PredForm.gms(63) 3 Mb 55 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+--- solve_display_LP_PredForm.gms(64) 3 Mb 56 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+--- solve_display_LP_PredForm.gms(65) 3 Mb 57 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+--- solve_display_LP_PredForm.gms(71) 3 Mb 58 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+--- solve_display_LP_PredForm.gms(74) 3 Mb 59 Errors
+*** Error 140 in C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_PredForm.gms
+    Unknown symbol
+--- solve_display_LP_PredForm.gms(76) 3 Mb 59 Errors
+*** Status: Compilation error(s)
+--- Job solve_display_LP_PredForm.gms Stop 08/22/21 22:15:31 elapsed 0:00:00.216
+Exit code = 2

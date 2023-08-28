@@ -1,0 +1,454 @@
+$TITLE CGE
+
+$ontext
+
+         ==============================================================
+               4 sector CGE-model
+
+               Per Ivar Helgesen
+               Based on EcoMod, Global Economic Modeling Network
+               www.ecomod.net
+
+               Per.I.Helgesen@iot.ntnu.no
+               Per.Ivar.Helgesen@enova.no
+
+         ==============================================================
+
+
+Social Accounting Matrix (SAM):
+
+        GAS     ELE     MAN     NON     L       K       HOU     |tot
+GAS              4       2       3                       1      | 10
+ELE      1       1       7       8                       5      | 22
+MAN      1       3       6      26                       2      | 38
+NON      5      10      10      30                      92      |147
+L        1       1       5      53                              | 60
+K        2       3       8      27                              | 40
+HOU                                     60      40              |100
+----------------------------------------------------------------+
+tot     10      22      38      147     60      40      100
+
+
+Purpose:
+4 sector CGE model to be linked with a simplified TIMES energy system model
+
+CGE characteristics:
+        - one household with LES utility function
+        - four commodities, used in production and consumption
+        - six production factors: capital, labor and all commodities
+        - four firms with Leontief technology in value added and
+          intermediate aggregate inputs
+           -CES aggregator function for capital and labor
+           -Leontief aggregator function in intermediate inputs
+        - capital and labor are mobile among sectors and exogenously fixed
+        - no savings and investment
+        - no government
+        - closed economy
+
+$offtext
+
+
+Sets
+         sec  sectors  / GAS, ELE, MAN, NON / ;
+Alias
+         (sec,secc,seccc)
+;
+
+
+Scalars
+         PKZ initial return to capital      / 1 /
+         PLZ initial wage rate              / 1 /
+
+         KSZ initial capital endowment
+         LSZ initial labor endowment
+
+         RAZ initial  income level
+         UZ  initial utility level for the household
+
+         frisch      value of Frisch parameter   / -1.2 /
+         U          utility
+;
+
+Parameters
+     PDZ(sec)      initial commodity price level    /GAS 1, ELE 1, MAN 1, NON 1 /
+
+     sigmaF(sec)   initial CES capital-labor substitution-elasticities firm(sec)
+                   /GAS 0.9, ELE 0.8, MAN 0.9, NON 1.2 /
+
+     elasRA(sec)    initial income elasticities of demand for commodity (sec)
+                   /GAS 0.7, ELE 0.8, MAN 0.9, NON 1.2 /
+
+     XDZ(sec)      initial gross production (output) level
+
+     KZ(sec)       initial capital demand
+     LZ(sec)       initial labor demand
+     CZ(sec)       initial consumer commodity demand
+
+     IOZ(sec,secc) initial intermediate commodity demand
+
+* Parameters to be derived from the database
+     io(sec,secc) technical coefficients
+
+     gammaF(sec)  CES distribution parameter in the production function of
+                  firm(sec)
+     aF(sec)      efficiency parameter of CES production function of
+                  firm(sec)
+
+     alphaHLES(sec) LES power of commodity(sec) in household utility function
+     muH(sec)     subsistence household consumption quantity of commodity(sec)
+;
+
+* ================= Data, initial values, and calibration =====================
+
+* Data on inter-industry commodity flows in the economy
+Table
+     IOZ(sec,secc)
+                GAS     ELE     MAN     NON
+        GAS              4       2       3
+        ELE      1       1       7       8
+        MAN      1       3       6      26
+        NON      5      10      10      30
+;
+
+
+* Data on capital, labor and consumer demand
+Table
+     dataz(*,sec)
+                GAS     ELE     MAN     NON
+        LZ       1       1       5      53
+        KZ       2       3       8      27
+        CZ       1       5       2      92
+;
+
+* Reading data and assigning initial values
+         KZ(sec) = dataz("KZ",sec) ;
+         LZ(sec) = dataz("LZ",sec) ;
+         CZ(sec) = dataz("CZ",sec) ;
+
+* Assigning initial values and calibration
+
+* Factor endowments
+    KSZ = sum(sec, KZ(sec)) ;
+    LSZ = sum(sec, LZ(sec)) ;
+
+* Output
+     XDZ(sec) =  sum(secc, ioz(secc,sec)) + KZ(sec) + LZ(sec) ;
+
+* Income = value added
+     RAZ = PKZ*KSZ + PLZ*LSZ  ;
+
+* Technical coefficients
+     io(sec,secc) =  IOZ(sec,secc) / XDZ(secc) ;
+
+* Parameters of LES utility function
+     alphaHLES(sec) = elasRA(sec)* PDZ(sec)*CZ(sec) / RAZ ;
+
+scalar aux   rescaling of marginal budgetshares ;
+     aux = sum(sec, alphaHLES(sec)) ;
+     alphaHLES(sec) = alphaHLES(sec)/aux ;
+     muH(sec)    = CZ(sec) + alphaHLES(sec)*RAZ/( PDZ(sec)*frisch ) ;
+
+* Initial utility level
+    UZ = prod(sec, (CZ(sec) - muH(sec))**alphaHLES(sec)) ;
+
+* Parameters of CES production function
+       gammaF(sec)  = 1/( 1+(PLZ/PKZ)*(KZ(sec)/LZ(sec))**(-1/sigmaF(sec)) ) ;
+
+       aF(sec)      = XDZ(sec)/(  gammaF(sec)*KZ(sec)**
+                               ( (sigmaF(sec)-1)/sigmaF(sec) ) +
+                               (1 - gammaF(sec))*LZ(sec)**
+                               ( (sigmaF(sec)-1)/sigmaF(sec) ) )
+                               **( sigmaF(sec)/(sigmaF(sec) - 1) ) ;
+*display
+*                alphaHLES
+*                muH
+*                gammaF
+*                    aF
+*                    UZ
+*;
+
+* ===================== Declaration of model variables =========================
+
+Variables
+
+         PK        return to capital
+         PL        wage rate
+         PD(sec)   commodity prices
+
+         KS        capital endowment (exogenous)
+         LS        labor endowment (exogenous)
+         XD(sec)   gross output
+
+         K(sec)    capital demand by firms
+         L(sec)    labor demand by firms
+         C(sec)    consumer commodity demand
+
+         RA         household's income
+
+         DUMMY     artificial objective variable
+;
+
+Positive variables
+
+         PK, PL, PD, KS, LS, XD, K, L, C, RA
+;
+* ========================= Declaration of model equations =====================
+Equations
+
+* HOUSEHOLDS
+
+                EQC(sec)              consumer demand for commodity(sec)
+
+* FIRMS
+
+                EQK(sec)              capital demand function firm(sec)
+                EQL(sec)              labor demand function firm(sec)
+
+
+* MARKET CLEARING
+
+                EQMARKETL             market clearing for labor
+                EQMARKETK             market clearing for capital
+                EQMARKETC(sec)        market clearing for commodities
+
+* DEFINITIONS
+
+                EQINCOME              income
+                EQPROFIT(sec)         profit function firm(sec)
+
+* OBJECTIVE FUNCTION
+
+                OBJECTIVE             objective function
+
+;
+
+* ======================= Specification of model equations =====================
+
+* HOUSEHOLDS
+*         alphaHLES(sec)  (marginal budget shares) sum equals one
+*         as required for a constant returns to scale utility function
+
+        EQC(sec).. PD(sec)*C(sec) =E= PD(sec)*muH(sec) + alphaHLES(sec)*
+                                     (RA - sum(secc, muH(secc)*PD(secc)) ) ;
+
+* FIRMS
+
+        EQK(sec).. K(sec) =E= ( XD(sec)/aF(sec) )*
+                              ( gammaF(sec)/PK )**sigmaF(sec)*
+                              ( gammaF(sec)**sigmaF(sec)*PK**(1-sigmaF(sec))
+                          + (1-gammaF(sec))**sigmaF(sec)*PL**(1-sigmaF(sec))
+                              ) **( sigmaF(sec)/(1-sigmaF(sec)) ) ;
+
+        EQL(sec).. L(sec) =E= ( XD(sec)/aF(sec) )*
+                              ( (1-gammaF(sec))/PL )**sigmaF(sec)*
+                              ( gammaF(sec)**sigmaF(sec)*PK**(1-sigmaF(sec))
+                          + (1-gammaF(sec))**sigmaF(sec)*PL**(1-sigmaF(sec))
+                              ) **( sigmaF(sec)/(1-sigmaF(sec)) ) ;
+
+* MARKET CLEARING
+        EQMARKETL..                              LS =G= sum(sec, L(sec)) ;
+        EQMARKETK..                              KS =G= sum(sec, K(sec)) ;
+        EQMARKETC(sec).. XD(sec) =G= C(sec) + sum(secc,io(sec,secc)*XD(secc)) ;
+
+* DEFINITIONS
+        EQINCOME..                    RA =E= PK*KS + PL*LS ;
+
+* Zero profit
+        EQPROFIT(sec)..         PK*K(sec) + PL*L(sec) + sum(secc,io(secc,sec)*XD(sec)*PD(secc))
+                                =G= PD(sec)*XD(sec) ;
+
+* ARTIFICIAL OBJECTIVE
+        OBJECTIVE..               DUMMY =E= 1 ;
+
+* ======================= Model definition =====================================
+* The above set of equations augmented with closure equations and
+* the numeraire constitute the model in GAMS-code.
+
+* Model declaration in NLP format
+Model CGE_link_nlp /
+         EQC,
+         EQK,
+         EQL,
+         EQMARKETK,
+         EQMARKETL,
+         EQMARKETC,
+         EQINCOME,
+         EQPROFIT
+         OBJECTIVE /;
+
+* Model declaration in MCP format
+MODEL CGE_link_MCP /
+         EQC.C,
+         EQK.K,
+         EQL.L,
+         EQMARKETK.PK,
+         EQMARKETL.PL,
+         EQMARKETC.PD,
+         EQINCOME.RA,
+         EQPROFIT.XD/;
+
+
+* ===================== Variable initialization and bounds =====================
+* Include initial (equilibrium) levels for the endogenous variables
+
+         PK.L       = PKZ     ;
+         PL.L       = PLZ     ;
+         PD.L(sec)  = PDZ(sec);
+         XD.L(sec)  = XDZ(sec);
+         K.L(sec)   = KZ(sec) ;
+         L.L(sec)   = LZ(sec) ;
+         C.L(sec)   = CZ(sec) ;
+         RA.L       = RAZ     ;
+         DUMMY.L    = 1       ;
+
+         PK.L       = PKZ     *0.97  ;
+         PL.L       = PLZ     *1.02  ;
+         PD.L(sec)  = PDZ(sec)*0.96  ;
+         XD.L(sec)  = XDZ(sec)*1.03  ;
+         K.L(sec)   = KZ(sec) *0.94  ;
+         L.L(sec)   = LZ(sec) *1.08  ;
+         C.L(sec)   = CZ(sec) *1.04  ;
+         RA.L       = RAZ     *1.03  ;
+
+$ontext
+* Include lower boundaries to prevent numerical problems in optimization
+         PK.LO      = 0.001*PKZ     ;
+         PL.LO      = 0.001*PLZ     ;
+         PD.LO(sec) = 0.001*PDZ(sec);
+         XD.LO(sec) = 0.001*XDZ(sec);
+         K.LO(sec)  = 0.001*KZ(sec) ;
+         L.LO(sec)  = 0.001*LZ(sec) ;
+         C.LO(sec)  = 0.001*CZ(sec) ;
+         RA.LO      = 0.001*RAZ     ;
+$offtext
+
+* ==================== Model closure and numeraire =============================
+
+* Exogenously fixed: capital and labor endowments
+
+         KS.FX = KSZ;
+         LS.FX = LSZ;
+
+* Fixing of the numeraire
+*
+         PL.FX = PLZ;
+
+
+* =================== Model solution in different formats ======================
+
+*Option iterlim = 0 ;
+CGE_link_nlp.holdfixed = 1 ;
+CGE_link_nlp.TOLINFREP   = .000001 ;
+
+*option nlp = pathnlp ;
+
+$exit
+
+*Solve CGE_link_nlp using CNS;
+Solve CGE_link_MCP USING MCP;
+*Solve   CGE_link_nlp using NLP maximizing DUMMY ;
+
+
+$ontext
+* Homogeneity test
+         PL.FX = 2*PLZ ;
+Solve   CGE_link_nlp using NLP maximizing DUMMY ;
+         PL.FX = PLZ ;
+$offtext
+
+
+*$ontext
+* Policy simulation: increase in labor supply
+*         LS.FX = 1.11*LSZ ;
+*Solve   CGE_link_mcp using mcp;
+*Solve   CGE_link_nlp using NLP maximizing DUMMY ;
+*         LS.FX = LSZ ;
+*$offtext
+
+
+
+* ============================ Display Results =================================
+
+* Calculate utility
+
+      U = prod( sec, (C.L(sec) - muH(sec))**alphaHLES(sec) ) ;
+
+display
+        KS.L
+        LS.L
+        PK.L
+        PL.L
+        PD.L
+        K.L
+        L.L
+        XD.L
+        C.L
+        RA.L
+        U
+;
+
+* Report percentage changes in variables induced by policy scenario
+* relative to the baseline scenario(index=100)
+* nomenclature: variablename_index
+scalars
+         PK_index       index of return to capital
+         PL_index       wage rate index
+         KS_index       index of capital endowment
+         LS_index       index of labor endowment
+         RA_index       index of household income
+          U_index       index of utility level
+;
+          PK_index  = 100*(PK.L/PKZ-1) ;
+          PL_index  = 100*(PL.L/PLZ-1) ;
+          KS_index  = 100*(KS.L/KSZ-1) ;
+          LS_index  = 100*(LS.L/LSZ-1) ;
+          RA_index  = 100*(RA.L/RAZ-1) ;
+           U_index  = 100*(U/UZ-1)     ;
+
+parameters
+         PD_index(sec)   commodity price index
+         XD_index(sec)   output index
+         K_index(sec)    index of capital demand
+         L_index(sec)    index of labor demand
+         C_index(sec)    index of consumer demand for commodities
+;
+          PD_index(sec) = 100*(PD.L(sec)/PDZ(sec)-1) ;
+          XD_index(sec) = 100*(XD.L(sec)/XDZ(sec)-1) ;
+          K_index(sec)  = 100*(K.L(sec)/KZ(sec)-1) ;
+          L_index(sec)  = 100*(L.L(sec)/LZ(sec)-1) ;
+          C_index(sec)  = 100*(C.L(sec)/CZ(sec)-1) ;
+
+display
+* Nominal variables
+         PK_index
+         PL_index
+         PD_index
+         RA_index
+
+* Real variables
+         KS_index
+         LS_index
+         XD_index
+          K_index
+          L_index
+          C_index
+
+* Utility change
+          U_index
+
+;
+
+* Check whether Walras Law holds:
+scalar   walras ;
+         walras = sum(sec,L.L(sec)) - LS.L ;
+display  walras ;
+
+* Create the SAM based on the equilibrium solution
+PARAMETER SAM_result(*,*);
+        SAM_result(secc, sec) = io(secc,sec)*XD.L(sec)*PD.L(secc);
+        SAM_result("L",sec) = L.L(sec)*PL.L;
+        SAM_result("K",sec) = K.L(sec)*PK.L;
+        SAM_result("HOU","L") = LS.L*PL.L;
+        SAM_result("HOU","K") = KS.L*PK.L;
+        SAM_result(sec,"HOU") = C.L(sec)*PD.L(sec);
+display SAM_result;

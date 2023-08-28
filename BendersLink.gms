@@ -1,0 +1,566 @@
+$TITLE Hardlinking
+$ontext
+
+         ==============================================================
+         =                                                            =
+         =        A top-down/bottom-up coordination algorithm         =
+         =                                                            =
+         =                            by                              =
+         =                                                            =
+         =           Paolo Pisciella and Ruben van Beesten            =
+         =                         Feb 2022                           =
+         =             original code by Per Ivar Helgesen             =
+         =                         Nov 2018                           =
+         =                                                            =
+         ==============================================================
+
+We develop a Benders-type coordination algorithm for a linked top-down MCP and bottom-up LP
+
+The main idea is to use previous optimal basis matrices to predict solutions to the bottom-up model
+If the prediction is correct, we can skip solution of the bottom-up LP, essentially skipping an iteration
+
+We use the top-down (TD) model REMES, which is a CGE
+REMES models the economy on a high level
+
+We use the bottom-up (BU) model TIMES, which is an LP
+TIMES models the energy sector in an economy in a detailed way
+
+We link the TD and BU models using the linking formulas developed in Helgesen et al. (2018)
+
+More details can be found in the accompanying paper: Pisciella and van Beesten (2023)
+
+*Remember to change the paths in the various files to point to the correct location in your PC*
+
+============================================================================================================
+$offtext
+
+
+**************************************
+** Some parameters for debugging *****
+**************************************
+
+parameter       flag_display        Flag indicating where we are displaying stuff /1/;
+
+
+*********************************************************
+** Switch for turning coordination algorithm on/off *****
+*********************************************************
+
+parameter       use_coordination  Flag indicating whether we will use the coordination algorithm (if 1) or whether we use a naive procedure (if 0);
+
+use_coordination = 1;
+
+*===========================================================================================================
+
+
+**********************************************
+** Start defining the algorithm and model ****
+**********************************************
+
+* Define sets for the outer iterations and stored cuts
+set iter_out       outer iterations / iter_out01*iter_out50 /;
+set cuts(iter_out) dynamic set of outer iterations in which a new cut was added;
+cuts(iter_out)=no;
+
+*Initialize the BU model
+$INCLUDE C:\Users\pisciell.WIN-NTNU-NO\Desktop\TDBU\SmallLinkExp\TIMES_simple_LP_Aug.GMS
+
+*--Define parameters to be used for storing basis matrices etc. ---------------------------
+parameter       IB(i1,i1,iter_out)    inverse basis matrix found in iteration iter_out,
+                dvar(i1,iter_out)     dual variables (corresp. to constraints) found in iteration iter_out,
+                ne_new                newest amount of basic equations (i.e. slack variables),
+                ne_cur                current amount of basic equations (i.e. slack variables),
+                ne_vec(iter_out)      vector of amount of basic equations (i.e. slack variables) per iter_out
+;
+
+* initialize the dual variables to zero at the first iteration. No update yet.
+dvar(i1,iter_out)=0;
+
+*Initialize the TD model
+$INCLUDE C:\Users\pisciell.WIN-NTNU-NO\Desktop\TDBU\SmallLinkExp\MasterTopDown-4sec_mcp_orient.GMS
+
+*Set some options (what do they do?)
+option decimals=4;
+option limcol=0;
+option limrow=0;
+
+
+*--- Needed for iterations -------------------------------------------------
+set             checks                  set of parameters used to check convergence / objz, y0ge, d_mult /;
+scalar          converged               Flag for signaling sufficient convergence  /0/,
+                end_outer               Flag for signaling end of outer loop /0/,
+                end_inner               Flag for signaling end of internal loop /0/,
+                cur_outer_iteration     Reports the current outer iteration
+                cur_inner_iteration     Reports the current inner iteration
+;
+
+*--- Some reporting variables -------------------------------------------------
+parameter       HOU__(I)                unused,
+                COST_TOT(t)             Bottom-Up objective function value per period,
+                COST_(*,t)              production cost for each energy service,
+                COST_SHR(*,t)           share of total costs for the two energy services,
+                prev                    used to store checks from previous outer iteration,
+                new                     used to store checks from current outer iteration,
+                dev                     deviations between checks from current and previous outer iterations,
+                prev1                   used to store checks from previous inner iteration,
+                new1                    used to store checks from current inner iteration,
+                dev1                    deviations between checks from current and previous inner iterations,
+                count_inner_iter        counts the total number of inner iterations performed,
+                REPORT(*,*,*,*)         table containing a solution report,
+                VAR_ACT_iter(*,*,*,*)   level of activity from BU model from outer iteration
+                ;
+
+
+
+*--- Information exchange parameters ------------------------------------------
+parameter       y0ge                        amount of gas purchased by the electricity sector in year 0,
+                y0ge_ini                    initial value for y0ge,
+                D_mult                      demand multiplier,
+                basedemand(R,Com)           base demand,
+                COM_PROJ_2010_ini(R,Com)    initial values for COM_PROJ(*.2010.*);
+
+
+
+
+* Initialize y0ge
+y0ge_ini = io("GAS", "ELE")*XDZ("ELE");
+*y0ge_ini = io("GAS", "ELE")*XDZ("ELE") = IOZ("GAS","ELE") (From the CGE model)
+*         = How much gas is purchased by electricity sector
+y0ge = y0ge_ini;
+
+* Read basedemand from initial solution
+basedemand(R,Com)=COM_PROJ(R,"2009",Com);
+* Read COM_PROJ(R,"2010",Com) from calibration solution
+COM_PROJ_2010_ini(R,Com) = COM_PROJ(R,"2010",Com);
+* Initialize D_mult
+D_mult = 1/1000;
+* Define a start demand projection (same as before). In 2020 the demand is --> COM_PROJ(R,"2010",Com)*(1+d_mult)
+COM_PROJ(R,T,Com) =  COM_PROJ(R,"2010",Com) + COM_PROJ(R,"2010",Com)*D_mult*(nYear(T)-2010)/(2020-2010) ;
+COM_PROJ(R,"2009",Com) = basedemand(R,Com);
+
+
+****************************
+* Initial run to calibrate *
+****************************
+
+$SETGLOBAL run calib
+$INCLUDE C:\Users\pisciell.WIN-NTNU-NO\Desktop\TDBU\SmallLinkExp\solve_display_LPMCP_init.gms
+* up till here there is no linking. Only run 0 has been done and the results of the two models have been collected independantly.
+
+
+
+*--- Shock iteration parameters -------------------------------------------------
+set
+                iterK           Capital iterations        / K1*K7 / ,
+                iterL           Labour iterations         / L1*L7/
+*                iterK           Capital iterations        / K1 / ,
+*                iterL           Labour iterations         / L1*L3/
+*                iterL           Labour iterations         / L1/
+;
+scalar          walras          Summary statistic (walras value or something);
+
+parameter
+                Kshock(iterK)   Parameter that scales the amount of capital in the model /K1 1.0, K2 1.05, K3 1.1, K4 1.15, K5 1.2, K6 1.25, K7 1.3/,
+                Lshock(iterL)   Parameter that scales the amount of labour in the model  /L1 1.0, L2 1.05, L3 1.1, L4 1.15, L5 1.2, L6 1.25, L7 1.3/,
+*                Kshock(iterK)   Parameter that scales the amount of capital in the model /K1 1.2/,
+*                Lshock(iterL)   Parameter that scales the amount of labour in the model  /L1 1.1, L2 1.2, L3 1.3/,
+*                Lshock(iterL)   Parameter that scales the amount of labour in the model  /L1 1.2/,
+                cur_Kshock      Tracks the current value for Kshock,
+                cur_Lshock      Tracks the current value for Lshock,
+                iter_shock      Current shock iteration /0/
+;
+
+
+
+*-- Definitions for output of basis matrix ---------------------------------------
+set             data            concatenation of sets i1 (constraints) and j1 (variables) / set.i1, set.j1 /;
+alias           (data,d);
+scalar          counter /0/;
+parameter       dualx(j1)       dual of the variables (reduced cost),
+                duale(i1)       dual of the constraints (shadow price),
+                x(j1)           solution values,
+                b(i1)           RHS of equations,
+                y(*)            indicates whether variable or equation is basic,
+                q(data)         indicates how manyth basic variable or equation this is,
+                qx(data)        indicates how manyth basic variable this is,
+                qxx(j1)         same as qx but with same index as the variables,
+                qe(data)        indicates how manyth basic equation this is,
+                ne              number of total basic equations,
+                nx              number of total basic variables,
+                ind(*)          indicates the position of basic variables and equations,
+                Base(i1,*)      basis matrix (extracted from Tab),
+                BB(i1,i1)       basis matrix but defined using a single index,
+                invb(i1,i1)     inverse basis matrix (inverse of BB),
+                Sens(i1)        prediction of y_basic (inverse basis matrix times RHS),
+                test            dual variables times b (dual objective value. should equal primal objective),
+                eta_p(iter_out) mcp variable that indicates which cut is optimal,
+                yout(j1)        translates Sens to a decision vector y,
+                eout(i1)        ???,
+                asave           used to save check for next inner iteration,
+                bsave           used to save check for next inner iteration,
+                csave           used to save check for next inner iteration,
+                asave_out       used to save check for next outer iteration,
+                bsave_out       used to save check for next outer iteration,
+                csave_out       used to save check for next outer iteration,
+                VAR_ACT_p(R,V,T,P,S)    used in the updates with the projection formula to update the predicted solution from the BU model,
+                EQG_COMBAL_p(R,T,Com,S) used in the updates with the projection formula to update the predicted solution from the BU model,
+                OBJZ_p                  used in the updates with the projection formula to update the predicted solution from the BU model,
+                map(i1,*)       ???
+;
+map(i1,j1)=0;
+map(i1,ii1)=0;
+
+
+
+*-- Some parameters for the inner iterations ------------------------------------------
+set     iter_in         set of inner iterations /iter_in1*iter_in100/;
+parameters
+        chksens         the smallest value of the predicted y variable in Sens. should be postivie (used as sensibility check),
+        converg         the smallest of the convergence check variables. we should stop if this gets very small,
+        pred_correct    Flag indicating if our prediction of BU solution was correct /0/,
+        pred_correct_e  Flag indicating if our prediction of BU solution corresponding to equations (slack variables) was correct /0/,
+        pred_correct_x  Flag indicating if our prediction of BU solution corresponding to variables was correct /0/
+;
+
+*-- Parameters for tracking computation time ---------------------------------------
+parameters
+        start_time      start time of the shock run /0/,
+        end_time        end time of the shock run /0/,
+        diff_time       total run time of the shock run /0/,
+        diff_hour       hour part of total run time /0/,
+        diff_minute     minute part of total run time /0/,
+        diff_sec        seconds part of total run time /0/,
+        diff_millisec   milliseconds part of total run time /0/,
+        run_time        run time translated to total amount of seconds /0/;
+
+
+*-- Parameters for the algorithm loop ----------------------------------------------
+
+set         alg             set of algorithms /coord, naive /;
+parameter   use_coord(alg)  flag for using coordination algorithm /coord 1, naive 0/;
+
+*-- Create a table to store results ------------------------------------------------
+
+*OLD: only one algorithm
+parameter RESULT(*,*,*,*);
+*NEW: multiple algorithms
+*parameter RESULT(*,*,*,*,*);
+
+******************************
+* Algorithm loop starts here *
+******************************
+
+$ontext
+loop( alg,
+
+* Pick the correct algorithm based on alg
+use_coordination = use_coord(alg);
+iter_shock = 0;
+$offtext
+
+**************************
+* Shock loop starts here *
+**************************
+
+loop( (iterK,iterL),
+
+*-- Initialize shock iteration-----------------------------------------------------
+*track time
+start_time = jnow;
+*update shock iteration
+iter_shock = iter_shock + 1;
+cur_Kshock = Kshock(iterK);
+cur_Lshock = Lshock(iterL);
+*update the amount of capital and labour using Kshock and Lshock
+KS.FX = Kshock(iterK) * KSZ ;
+LS.FX = Lshock(iterL) * LSZ ;
+
+$ontext
+*-- Initialize some values from the calibration before the loop---------------------
+* Initialize D_mult
+D_mult = 1/1000;
+* Define a start demand projection (same as before). In 2020 the demand is --> COM_PROJ(R,"2010",Com)*(1+d_mult)
+COM_PROJ(R,T,Com) =  COM_PROJ_2010_ini(R,Com) + COM_PROJ_2010_ini(R,Com)*D_mult*(nYear(T)-2010)/(2020-2010) ;
+COM_PROJ(R,"2009",Com) = basedemand(R,Com);
+* Initialize y0ge
+y0ge = y0ge_ini;
+*io("GAS","ELE") = y0ge_ini;
+$offtext
+
+
+*-- Run the TD model for a reference solution--------------------------------------
+$SETGLOBAL run CGE1
+$INCLUDE C:\Users\pisciell.WIN-NTNU-NO\Desktop\TDBU\SmallLinkExp\solve_display_LPMCP_init.gms
+
+*-- Reset a bunch of parameters to zero -------------------------------------------
+cuts(iter_out)=no;
+dualx(j1) = 0;
+duale(i1) = 0;
+x(j1) = 0;
+b(i1) = 0;
+y(data) = 0;
+q(data) = 0;
+qx(data) = 0;
+qxx(j1) = 0;
+qe(data)= 0;
+ne = 0;
+nx = 0;
+ind(j1) = 0;
+ind(i1) = 0;
+Base(i1,data) = 0;
+invb(i1,i1) = 0;
+BB(i1,i1) = 0;
+Sens(i1) = 0;
+test = 0;
+eta_p(iter_out) = 0;
+yout(j1) = 0;
+eout(i1) = 0;
+counter  = 0;
+asave = 0;
+bsave = 0;
+csave = 0;
+asave_out = 0;
+bsave_out = 0;
+csave_out = 0;
+VAR_ACT_p(R,V,T,P,S) = 0;
+EQG_COMBAL_p(R,T,Com,S) = 0;
+OBJZ_p = 0;
+map(i1,j1)=0;
+map(i1,ii1)=0;
+converged = 0;
+end_outer = 0;
+end_inner  = 0;
+count_inner_iter = 0;
+
+*store initial checks
+asave_out = D_mult;
+bsave_out = OBJZ.L;
+csave_out = y0ge ;
+
+
+*******************************
+** Outer loop starts here *****
+*******************************
+
+loop(iter_out$(not end_outer),
+cur_outer_iteration = ord(iter_out);
+
+
+* [1] Read saved values for the checks (D_mult is from TD, OBJZ is from BU, y0ge is usually from BU but in first iter from TD). Note that objz.l was updated in inner iter if the prediction was correct
+prev(iter_out,"D_mult") = asave_out;
+prev(iter_out,"OBJZ") = bsave_out;
+prev(iter_out,"y0ge" ) = csave_out;
+
+* [2] Linking: update demand for BU based on TD solution
+D_mult = ( XD.L("GAS") + XD.L("ELE") - XDZ("GAS") - XDZ("ELE") ) / (XDZ("GAS") + XDZ("ELE")) ;
+COM_PROJ(R,T,Com) =  COM_PROJ(R,"2010",Com) + COM_PROJ(R,"2010",Com)*D_mult*(nYear(T)-2010)/(2020-2010) ;
+COM_PROJ(R,"2009",Com) = basedemand(R,Com);
+
+* [3] Solve BU with new demand
+$SETGLOBAL run TIMES
+$include C:\Users\pisciell.WIN-NTNU-NO\Desktop\TDBU\SmallLinkExp\solve_display_LP.gms
+
+* [4] Update list of basis matrices and related info. Note: if we are passing here the basis was unexplored
+* n <-- n+1
+cuts(iter_out) = yes;
+* H_n <-- H (basis matrix)
+IB(i1,ii1,iter_out)=invb(i1,ii1);
+* u_n <-- u (dual variables)
+dvar(i1,iter_out)=duale(i1);
+* also update associated lambda for in the MTD problem
+lambda(i1,iter_out) = dvar(i1,iter_out);
+* bar(y) <-- y
+io("GAS","ELE") =  VAR_ACT.L("REGION1","2020","2020","GASPOWER","ANNUAL")/VAR_ACT.L("REGION1","2020","2020","ELE-DEM","ANNUAL") ;
+*update number of basic equations (slack variables)
+ne_vec(iter_out) = ne_new;
+
+* [5] Check convergence
+new(iter_out,"D_mult") = D_mult;
+new(iter_out,"OBJZ") = OBJZ.L;
+new(iter_out,"y0ge" ) = y0ge ;
+* compute difference between previous solution and new solution
+dev(checks) = 1;
+
+*   NEW
+*    dev(checks) = 100* (new(iter_out,checks)/prev(iter_out,checks) - 1);
+    dev(checks) = 100* ((new(iter_out,checks) + 0.001)/(prev(iter_out,checks) + 0.001) - 1);
+
+    display flag_display, prev, new, dev;
+
+* check convergence
+converged$(smax(checks, abs(dev(checks)) ) lt 1e-4 ) = 1;
+* end outer loop if we have converged
+end_outer$(converged eq 1) = 1;
+* skip inner loop if we have converged
+end_inner = 0;
+end_inner$(converged eq 1) = 1;
+
+* [6] Save the results from the outer iteration for future converence checks
+asave=D_mult;
+bsave=OBJZ.L;
+csave=y0ge;
+
+* [7] Perform inner loop
+
+*******************************
+** Inner loop starts here *****
+*******************************
+
+loop(iter_in$(not end_inner),
+cur_inner_iteration=ord(iter_in);
+count_inner_iter = count_inner_iter + 1;
+
+* 1) Update old/new solutions
+* remember the last feasible solution (either previous inner loop solution, or the outer loop solution)
+prev1(iter_in,"D_mult") = asave;
+prev1(iter_in,"OBJZ") = bsave;
+prev1(iter_in,"y0ge" ) = csave ;
+
+* save results before solving the TD model (used for checking convergence in outer loop)
+asave_out=D_mult;
+bsave_out=OBJZ.L;
+csave_out=y0ge;
+
+* 2) Run CGE model with new technology
+$SETGLOBAL run CGE
+$INCLUDE C:\Users\pisciell.WIN-NTNU-NO\Desktop\TDBU\SmallLinkExp\solve_display_MCP.gms
+
+* 3) Update demand dynamics (preparation for prediction)
+D_mult = ( XD.L("GAS") + XD.L("ELE") - XDZ("GAS") - XDZ("ELE") ) / (XDZ("GAS") + XDZ("ELE")) ;
+COM_PROJ(R,T,Com) =  COM_PROJ(R,"2010",Com) + COM_PROJ(R,"2010",Com)*D_mult*(nYear(T)-2010)/(2020-2010) ;
+COM_PROJ(R,"2009",Com) = basedemand(R,Com);
+* Update the RHS vector with the just updated demand information
+b(i1)=sum((R,V,T,P_prod,S)$EQL_CAPACT_EM(i1,R,V,T,P_prod,S),-NCAP_AF(R,P_prod,S)*PRC_CAPACT(R,P_prod)*NCAP_PASTI(R,"2010",P_prod))
++sum((R,T,Com,S)$EQG_COMBAL_EM(i1,R,T,Com,S),COM_PROJ(R,T,Com))
++sum((R,T,Com,S)$EQE_COMPRD_EM(i1,R,T,Com,S),-0)
++sum((R,V,P)$EQ_NCAP_UPPERB_EM(i1,R,V,P),-NCAP_BND(R,V,P));
+
+* 4) Predict the BU solution
+$INCLUDE C:\Users\pisciell.WIN-NTNU-NO\Desktop\TDBU\SmallLinkExp\solve_display_LP_PredForm.gms
+
+* 5) Update old/new solutions
+* update new solution for checking convergence
+new1(iter_in,"D_mult") = D_mult;
+new1(iter_in,"OBJZ") = OBJZ_p;
+new1(iter_in,"y0ge" ) = y0ge ;
+
+* save new solution for future convergence checks
+asave=D_mult;
+bsave=OBJZ_p;
+csave=y0ge;
+
+* 6) Check convergence
+*compute deviation statistics
+
+    display flag_display, use_coordination, prev1, new1, dev;
+
+dev(checks) = 1;
+
+*   NEW
+*    dev(checks) = 100* (new1(iter_in,checks)/prev1(iter_in,checks) - 1);
+    dev(checks) = 100* ((new1(iter_in,checks) + 0.001)/(prev1(iter_in,checks) + 0.001) - 1);
+
+*check if algorithm has converged
+converged$(smax(checks, abs(dev(checks)) ) lt 1e-4 ) = 1;
+*check if prediction was correct
+pred_correct_x = 0;
+pred_correct_e = 0;
+pred_correct = 0;
+*prediction for basic variables corresp to variables should be nonnegative
+pred_correct_x$(smin(i1$(ord(i1) gt ne_cur),Sens(i1)) >= 0) = 1;
+*prediction for basic variables corresp to equations (slack variables) should be nonpositive
+pred_correct_e$(smin(i1$(ord(i1) <= ne_cur),-Sens(i1)) >= 0) = 1;
+pred_correct$(pred_correct_e = 1 and pred_correct_x = 1) = 1;
+*end inner iteration if prediction was incorrect or if we have converged
+end_inner = 0;
+end_inner$(pred_correct eq 0) = 1;
+end_inner$(converged eq 1) = 1;
+*also end inner iteration if we do not want to use the coordination algorithm
+end_inner$(not use_coordination) = 1;
+*end outer iteration if prediction was correct and we have converged
+end_outer$(pred_correct eq 1 and converged eq 1) = 1;
+*compute convergence checks
+converg=smax(checks, abs(dev(checks)));
+chksens=smin(i1$(ord(i1) gt ne_cur),Sens(i1));
+
+*display summary statistics of inner iteration
+display count_inner_iter, cur_outer_iteration, cur_inner_iteration, pred_correct, converged, end_inner, end_outer, converg, chksens, D_mult, objz.l, objz_p;
+
+* update the OF value for TIMES based on the prediction formula
+OBJZ.L=OBJZ_p;
+
+);
+
+*************************
+* Inner loop ends here **
+*************************
+
+* Quitting the inner loop either means we have a wrong prediction for y or we have reached convergence and we stop
+
+);
+*************************
+* Outer loop ends here **
+*************************
+
+* At the end of the outer loop we either have converged or we have hit the max number of outer iterations
+
+* Track time
+end_time = jnow;
+diff_time = end_time - start_time;
+diff_hour = ghour(diff_time);
+diff_minute = gminute(diff_time);
+diff_sec = gsecond(diff_time);
+diff_millisec = gmillisec(diff_time);
+*translate time difference to total amount of seconds
+run_time = 3600*diff_hour + 60*diff_minute + diff_sec + 0.001*diff_millisec;
+
+*Compute summary statistics
+walras = sum(sec,L.L(sec)) - LS.L ;
+U = prod( sec, (C.L(sec) - muH(sec))**alphaHLES(sec) ) ;
+
+*Write results to table
+*$ontext
+*OLD VERSION FOR ONE ALGORITHM
+RESULT(iterK,iterL,"Kshock","_")=Kshock(iterK);
+RESULT(iterK,iterL,"Lshock","_")=Lshock(iterL);
+RESULT(iterK,iterL,"Coordination","_")=use_coordination;
+RESULT(iterK,iterL,"Converged","_")=converged;
+RESULT(iterK,iterL,"Runtime (sec)","_")=run_time;
+RESULT(iterK,iterL,"Outer Iterations","_")=cur_outer_iteration;
+RESULT(iterK,iterL,"Inner Iterations","_")=count_inner_iter;
+RESULT(iterK,iterL,"OBJZ","_")=OBJZ.L;
+*$offtext
+
+$ontext
+*NEW VERSION USING TWO ALGORITHMS
+RESULT(iterK,iterL,alg,"Kshock","_")=Kshock(iterK);
+RESULT(iterK,iterL,alg,"Lshock","_")=Lshock(iterL);
+RESULT(iterK,iterL,alg,"Coordination","_")=use_coordination;
+RESULT(iterK,iterL,alg,"Converged","_")=converged;
+RESULT(iterK,iterL,alg,"Runtime (sec)","_")=run_time;
+RESULT(iterK,iterL,alg,"Outer Iterations","_")=cur_outer_iteration;
+RESULT(iterK,iterL,alg,"Inner Iterations","_")=count_inner_iter;
+RESULT(iterK,iterL,alg,"OBJZ","_")=OBJZ.L;
+$offtext
+
+*summary statistics
+display iter_shock, cur_Kshock, cur_Lshock, use_coordination, converged, cur_outer_iteration, count_inner_iter, run_time, objz.l;
+
+
+);
+
+**************************
+* Shock loop end here    *
+**************************
+
+*);
+
+******************************
+* Algorithm loop end here ****
+******************************
+
+* Write results to files
+execute_unload "lpmcp_result", RESULT;
+execute_unload "lpmcp_iter", REPORT;
+execute_unload "lpmcp_varact_iter", VAR_ACT_iter;
+execute_unload "duals", dvar,IB;

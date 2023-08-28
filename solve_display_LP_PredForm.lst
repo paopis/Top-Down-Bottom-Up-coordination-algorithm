@@ -1,0 +1,149 @@
+GAMS 24.7.3  r58181 Released Jul 11, 2016 WEX-WEI x86 64bit/MS Windows 08/22/21 22:15:31 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1   
+   2   
+   3  * here you need to extract the exact basis linked to that iteration given 
+      the results of the MTD.
+   4  Sens(i1)=sum((ii1,cuts)$(eta_p(cuts) eq 1),IB(i1,ii1,cuts)*b(ii1));
+****     $140,120     $120 $120    $140           $140           $140
+   5   
+   6  * first need to map i1 to the relevant j1.
+   7  * Matrix Base created in TIMES(Aug) has the mapping on the diagonal.
+   8  yout(j1)=sum(i1$(ord(i1)=ne+ord(j1)),Sens(i1));
+****     $140,120               $140
+   9   
+  10  SOLVE TIMES_simple MINIMIZING OBJz using LP ;
+****                   $140,241        $140       $257
+  11   
+  12  x(j1)=sum((R,V,T,P,S )$(VAR_ACT_VM(j1,R,V,T,P,S)),VAR_ACT.L(R,V,T,P,S ))
+****  $140       $120,120,120,120,120  $140                     $140
+  13  +sum((R,V,P  )$(VAR_NCAP_VM(j1,R,V,P )),VAR_NCAP.L(R,V,P ))
+****                            $140                   $140
+  14  +sum((R,T,Com,S )$(VAR_COMPRD_VM(j1,R,T,Com,S )),VAR_COMPRD.L(R,T,Com,S ))
+****              $120               $140                         $140
+      ;
+  15   
+  16  execute_unload "upresTIMES.gdx" x,yout,Sens,qx;
+****                                  $572 $572 $572,140
+  17   
+  18  * then map j1 to the relevant variables in the model.
+  19   
+  20   
+  21  * update the variables of interest out of the solution from the Sensitivit
+      y
+  22  *VAR_ACT_p(R,V,T,P,S)=sum(j1$(VAR_ACT_VM(j1,R,V,T,P,S)),Sens
+  23   
+  24  *sum((R,V,T,P,S )$(VAR_ACT_VM(j1,R,V,T,P,S)),VAR_ACT.L(R,V,T,P,S ))
+  25   
+  26   
+  27  *EQG_COMBAL_p(R,T,Com,S)
+  28   
+  29   
+  30  *$include C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\OutBasis.gms
+  31   
+  32  *        U = prod( sec, (C.L(sec) - muH(sec))**alphaHLES(sec) ) ;
+  33   
+  34          COST_("ELE",t) =
+****              $140
+  35  ***                    U_COMBAL.L("REGION1",t,"EL-DEMAND","ANNUAL")
+  36  ***                    EQG_KKT_COMBAL.M("REGION1",t,"EL-DEMAND","ANNUAL")
+  37                      EQG_COMBAL.M("REGION1",t,"EL-DEMAND","ANNUAL")
+****                                 $140      $116          $116     $116
+  38                     *VAR_ACT.L("REGION1",t,t,"ELE-DEM","ANNUAL") ;
+****                                                      $116
+  39          COST_("GAS",t) =
+  40  ***                    U_COMBAL.L("REGION1",t,"NATGAS","ANNUAL")
+  41  ***                    EQG_KKT_COMBAL.M("REGION1",t,"NATGAS","ANNUAL")
+  42                      EQG_COMBAL.M("REGION1",t,"NATGAS","ANNUAL")
+****                                                      $116
+  43                     *VAR_ACT.L("REGION1",t,t,"GASPROD","ANNUAL")  ;
+****                                                      $116
+  44          COST_tot(t) =  COST_("ELE",t) + COST_("GAS",t) ;
+****                 $140
+  45   
+  46          COST_shr("ELE",t) = COST_("ELE",t) / COST_tot(t);
+****                 $140
+  47          COST_shr("GAS",t) = COST_("GAS",t) / COST_tot(t);
+  48   
+  49          io("GAS","ELE") =
+****           $140
+  50             ( VAR_ACT.L("REGION1","2020","2020","GASPOWER","ANNUAL")
+****                                        $116              $116
+  51  *            * EQG_COMBAL.M("REGION1",t,"EL-DEMAND","ANNUAL")
+  52              )
+  53              /
+  54              (  VAR_ACT.L("REGION1","2020","2020","ELE-DEM","ANNUAL")
+  55  *            * EQG_COMBAL.M("REGION1",t,"EL-DEMAND","ANNUAL")
+  56              ) ;
+  57   
+  58          y0ge=io("GAS","ELE")*XD.L("ELE");
+****             $140                 $140
+  59   
+  60  REPORT("%run%",runit,"U","_")=U;
+****       $140          $120,340   $140
+  61  REPORT("%run%",runit,"OBJZ","_")=OBJZ.L;
+****                                        $141
+  62  REPORT("%run%",runit,"HOU",I)=C.L(I);
+****                             $120,340,140
+  63  REPORT("%run%",runit,"P_",I)=PD.L(I);
+****                                  $140
+  64  REPORT("%run%",runit,"PF","K")=PK.L;
+****                                    $140
+  65  REPORT("%run%",runit,"PF","L")=PL.L;
+****                                    $140
+  66  REPORT("%run%",runit,"Y_O",I)=XD.L(I);
+  67  REPORT("%run%",runit,"COST_ele",t)=COST_("ELE",t);
+  68  REPORT("%run%",runit,"COST_gas",t)=COST_("GAS",t);
+  69  REPORT("%run%",runit,"CSHR_ele",t)=COST_shr("ELE",t);
+  70  REPORT("%run%",runit,"CSHR_gas",t)=COST_shr("GAS",t);
+  71  REPORT("%run%",runit,"D_mult","_")=D_mult;
+****                                          $140
+  72  REPORT("%run%",runit,"Y0ge","_")=io("GAS","ELE")*XD.L("ELE");
+  73   
+  74  VAR_ACT_iter("%run%",runit,t,p)=VAR_ACT.L("REGION1",t,t,p,"ANNUAL");
+****             $140
+  75   
+  76  *DISPLAY REPORT;
+GAMS 24.7.3  r58181 Released Jul 11, 2016 WEX-WEI x86 64bit/MS Windows 08/22/21 22:15:31 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Error Messages
+
+
+116  Label is unknown
+120  Unknown identifier entered as set
+140  Unknown symbol
+141  Symbol declared but no values have been assigned. Check for missing
+        data definition, assignment, data loading or implicit assignment
+        via a solve statement.
+        A wild shot: You may have spurious commas in the explanatory
+        text of a declaration. Check symbol reference list.
+241  Model has not been defined
+257  Solve statement not checked because of previous errors
+340  A label/element with the same name exist. You may have forgotten
+        to quote a label/element reference. For example,
+        set i / a,b,c /; parameter x(i); x('a') = 10;
+572  Cannot GDX load/unload this type - only sets, parameters
+        equations and variables can be used
+
+**** 59 ERROR(S)   0 WARNING(S)
+
+
+COMPILATION TIME     =        0.203 SECONDS      3 MB  24.7.3 r58181 WEX-WEI
+
+
+USER: Small MUD - 5 User License                     G160810:1105AO-GEN
+      Norwegian University of Science and Technology, Industrial DC7530
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_Pred
+           Form.gms
+Output     C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_LP_Pred
+           Form.lst
+
+**** USER ERROR(S) ENCOUNTERED

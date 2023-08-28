@@ -1,0 +1,167 @@
+$TITLE SimplifiedTIMES
+$ontext
+         ==============================================================
+         =                                                            =
+         =                  Simplified TIMES model                    =
+         =                                                            =
+         =                            by                              =
+         =                    Per Ivar Helgesen                       =
+         =                         Oct 2013                           =
+         =                                                            =
+         ==============================================================
+
+The TIMES model consists of:
+
+Goal
+        Minimize Costs = investment costs + fixed costs + variable costs - salvage values
+such that
+        Process activity <= Capacity
+        Supply >= Use
+        Commodity production = Commodity processing
+
+Simplifications: Discount rate is 0, and time periods are given --> can sum directly over years.
+
+The LP-model is reformulated as an LCP-model (linear complementarity problem).
+
+$offtext
+$oneolcom
+option decimals=4;
+Sets
+        r            regions        / REGION1 /
+        years        time periods   / 2009*2060 /
+        byear(years) baseyear       / 2010 /
+        hyear(years) horizon year   / 2020 /
+        t(years)     time periods   / 2009*2020 /
+        s            timeslice      / ANNUAL /
+        CUR          currency       / CUR /
+
+        p            process        / EL-HYDRO, GASPROD, GASPOWER, NGASBURN, ELHEATER, ELE-DEM, HEAT-DEM/
+        p_dem(p)     demand         / ELE-DEM, HEAT-DEM /
+        p_prod(p)    production     / EL-HYDRO, GASPOWER, NGASBURN, ELHEATER /
+        p_sup(p)     supply         / GASPROD /
+
+        com          commodities    / NATGAS, HYDROR, ELC, LTH, EL-DEMAND, HEAT-DEMAND /
+        c_dem(com)   demand         / EL-DEMAND, HEAT-DEMAND /
+        c_prod(com)  production     / NATGAS, ELC, LTH /
+        c_sup(com)   supply         / HYDROR /
+;
+ALIAS
+        (t, v, vv)    !!         v = vintage periods
+        (com, C1, C2)        !! commodities in and out, used by FLO_FUNC
+;
+
+PARAMETERS
+        nYear(years)         year as number
+
+        NCAP_COST(R,V,P)     investmentcost
+        NCAP_BND(R,V,P)      bound on investment (upper)
+        ACT_COST(R,V,P)      activity cost
+        NCAP_PASTI(R,V,P)    capacity from past years
+        NCAP_FOM(R,V,P)      Operating and maintenance cost
+        coeff_salv(R,V,P)    salvage values into objective
+*       coeff_fix(R,V,P)     fixed costs into objective
+*       coeff_actcost(R,V,P) variable costs into objective
+*       coeff_cstprd(R,V,C)  variable costs into objective
+
+        TOP_IN(R,P,Com)         Topology - input commodity to process
+        TOP_OUT(R,P,Com)        Topology - output commodity from process
+
+        NCAP_AF(R,P,S)          Availability of capacity (ex:EL-HYDRO=0.95)
+        PRC_CAPACT(R,P)         Capacity-to-Activity conversion factor MW->GWh
+        FLO_FUNC(R,T,P,C1,C2,S) Conversion factor for process producing commodity2 from commodity1
+
+        COM_CSTPRD(R,T,Com)     Cost on production of a commodity
+        COM_PROJ(R,T,Com)       Demand baseline projection
+;
+
+$INCLUDE C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink\parameter_values.gms
+
+
+POSITIVE VARIABLES
+  VAR_ACT(R,V,T,P,S )                Overall activity of a process       [7x2]
+  VAR_NCAP(R,V,P )                   New capacity of a process           [4x2]
+  VAR_COMPRD(R,T,Com,S )             Total production or consumption of a commodity [1x2]
+;
+
+VARIABLES
+  OBJz           total discounted system cost
+;
+EQUATIONS
+  EQ_OBJ
+  EQL_CAPACT(R,V,T,P,S)  Capacity Utilization
+  EQG_COMBAL(R,T,Com,S)  Commodity Balance
+  EQE_COMPRD(R,T,Com,S)  Commodity Production Limit
+  EQ_NCAP_UPPERB(R,V,P)  Upper bounds on VAR_NCAP
+;
+
+* Objective function: Total costs = investment costs + fixed costs + variable costs - salvage values
+* Have to balance the investment costs towards variable costs in the shadow prices;
+*   divides down to yearly comparable numbers.
+EQ_OBJ..        -OBJZ
+                + SUM((R,CUR,V,P),                     NCAP_COST(R,V,P) * VAR_NCAP(R,V,P) )  !! "OBJINV" investment costs
+                - SUM((R,CUR,V,P), coeff_salv(R,V,P) * NCAP_COST(R,V,P) * VAR_NCAP(R,V,P) )  !! "OBJSAL" salvage value
+                + SUM((R,CUR,V,P),
+                         sum(t$(ord(t)>=ord(v)), NCAP_FOM(R,V,P) * VAR_NCAP(R,V,P) ) )                        !! "OBJFIX" fixed yearly costs
+                + SUM((R,CUR,S  ),                                                           !! "OBJVAR" variable costs
+                         sum((T,P),                     ACT_COST(R,T,P) * VAR_ACT(R,T,T,P,S) )
+                        +sum((T,Com),               COM_CSTPRD(R,T,Com)  * VAR_COMPRD(R,T,Com,S) )  )
+                =E= 0 ;
+
+* Capacity utilization: Process activity <= Capacity
+* Process activity < capacity availability factor * conversion factor * capacity   (both existing and new capacity)
+EQL_CAPACT(R,T,T,P_prod,S) ..  VAR_ACT(R,T,T,P_prod,S)
+                                - SUM(vv$(ORD(vv)<=ORD(T)),
+                                  NCAP_AF(R,P_prod,S)*PRC_CAPACT(R,P_prod)*VAR_NCAP(R,vv,P_prod) )
+                                - NCAP_AF(R,P_prod,S)*PRC_CAPACT(R,P_prod)*NCAP_PASTI(R,"2010",P_prod)
+                                =L= 0 ; !! Cheats on vintage here
+
+* Supply of commodity >= Use of commodity
+* Supply could be: from import, production based on activity, production based on capacity
+* Use could be: demand, use by activity, use by capacity, export
+* TIMES includes VAR_COMPRD(R,T,C,S) here, I use corresponding VAR_ACT instead.
+EQG_COMBAL(R,T,Com,S)$(not C_SUP(Com)) .. (-1)*sum(P, TOP_OUT(R,P,Com)*VAR_ACT(R,T,T,P,S) )
+                        + sum((P,c2)$(FLO_FUNC(R,T,P,Com,C2,S)>0),
+                          TOP_IN(R,P,Com) * VAR_ACT(R,T,T,P,S)/FLO_FUNC(R,T,P,Com,C2,S) )
+                        + COM_PROJ(R,T,Com)
+                        =L= 0;  !! COM_PROJ is the final demand
+
+* Commodity production must correspond with process activities
+EQE_COMPRD(R,T,Com,S)$(COM_CSTPRD(R,T,Com)>0) .. sum(P, TOP_OUT(R,P,Com)*VAR_ACT(R,T,T,P,S)) =E= VAR_COMPRD(R,T,Com,S) ;
+
+* Define upper bounds - parameter NCAP_BND.
+EQ_NCAP_UPPERB(R,V,P)$(NCAP_BND(R,V,P)>0) ..   VAR_NCAP(R,V,P) - NCAP_BND(R,V,P) =L= 0 ;
+
+*option iterlim=0;
+option limrow=99;
+option limcol=99;
+MODEL TIMES_simple / EQ_OBJ,
+                     EQL_CAPACT, EQG_COMBAL, EQE_COMPRD,
+                     EQ_NCAP_UPPERB
+/;
+
+* Get rid of unwanted variables
+VAR_COMPRD.fx(R,T,Com,S )=0;
+VAR_COMPRD.up(R,T,Com,S)$(COM_CSTPRD(R,T,Com)>0) = +INF;
+TIMES_SIMPLE.HOLDFIXED=1;
+
+$exit
+
+
+SOLVE TIMES_simple MINIMIZING OBJz using LP ;
+
+
+PARAMETER VAL_TOT(t), VAL_SHR(*,t);
+         val_shr("ELE",t) =
+                    -EQG_COMBAL.M("REGION1",t,"EL-DEMAND","ANNUAL")
+                   *VAR_ACT.L("REGION1",t,t,"ELE-DEM","ANNUAL") ;
+         val_shr("GAS",t) =
+                    -EQG_COMBAL.M("REGION1",t,"NATGAS","ANNUAL")
+                   *VAR_ACT.L("REGION1",t,t,"GASPROD","ANNUAL")  ;
+         val_tot(t) =  val_shr("ELE",t) + val_shr("GAS",t) ;
+
+display val_shr, val_tot;
+
+        val_shr("ELE",t) = val_shr("ELE",t) / val_tot(t);
+        val_shr("GAS",t) = val_shr("GAS",t) / val_tot(t);
+display val_shr ;
+

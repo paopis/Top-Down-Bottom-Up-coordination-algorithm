@@ -1,0 +1,178 @@
+$TITLE Hardlinking
+$oneolcom
+$ontext
+Linking a CGE model and a TIMES Energy systems model.
+TIMES reads the energy demand from CGE.
+$offtext
+
+
+* (ONE)
+* this inclusion is to tell the master routine that there are certain sets to consider
+$INCLUDE C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink\TIMES_simple_LP_Aug.GMS
+*$INCLUDE TIMES_simple_MCP.GMS
+$INCLUDE C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink\CGE-4sec_mcp_orient.GMS
+* FLAG_CGE should be "MCP" or "NLP".
+$setglobal FLAG_CGE "MCP";
+* inizializzo il flag FLAG_CGE ad MCP perch� in questo test si usa la versione MCP
+option decimals=4;
+option limcol=0;
+option limrow=0;
+
+ALIAS (sec,I,J);
+
+
+*--- Needed for iterations -------------------------------------------------
+SET             runit       used for iterations        / run01*run50 / ,
+                checks      / objz, y0ge, d_mult /;
+scalar          converged   Flag for signaling sufficient convergence  /0/,
+                iter_ord    Reports the number of iterations
+;
+
+*--- Some reporting variables -------------------------------------------------
+PARAMETER       HOU__(I),
+                COST_TOT(t), COST_(*,t), COST_SHR(*,t),
+                y0ge_ini, y0ge, prev, new, dev,
+                REPORT(*,*,*,*), VAR_ACT_iter(*,*,*,*)
+                ;
+
+*y0ge is the
+                y0ge_ini = io("GAS", "ELE")*XDZ("ELE");  !!y0("GAS","ELE");
+*               y0ge_ini = io("GAS", "ELE")*XDZ("ELE") = IOZ("GAS","ELE") (From the CGE model)
+*                        = How much gas is purchased by electricity sector
+
+                y0ge = y0ge_ini;
+*--- Information exchange parameters ------------------------------------------
+PARAMETER
+        D_mult  demand multiplier    /1/ ,
+        basedemand(R,Com)
+        ;
+        basedemand(R,Com)=COM_PROJ(R,"2009",Com) ;
+
+
+
+* (TWO)
+* Define a start demand projection (same as before)
+* in 2020 the demand is --> COM_PROJ(R,"2010",Com)*(1+d_mult)
+        d_mult = 1/1000;
+        COM_PROJ(R,T,Com) =  COM_PROJ(R,"2010",Com)
+                           + COM_PROJ(R,"2010",Com)*D_mult
+                                 *(nYear(T)-2010)/(2020-2010) ;
+        COM_PROJ(R,"2009",Com) = basedemand(R,Com);
+
+
+* (THREE)
+****************************
+* Initial run to calibrate *
+****************************
+$SETGLOBAL run calib
+$if "%FLAG_CGE%" == "MCP" $include C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink\solve_display_LPMCP_init.gms
+*************************
+* Initial run completed *
+*************************
+* up till here there is no linking. Only run 0 has been done and the results of the two models have been collected independantly.
+
+*       Counterfactual:
+* Should now get the same TIMES solution, but new CGE-solution because we put shocks on the labour and capital.
+
+SET
+        iterK     Capital iterations        / 1 / ,
+        iterL     Labour iterations         / 1 /
+;
+scalar   walras ;
+PARAMETER
+        Kshock /1/,
+        Lshock /1/
+;
+PARAMETER RESULT(*,*,*,*);
+
+
+**************************
+* Shock loop starts here *
+**************************
+
+* there is actually only one iterK and only one iterL
+loop( (iterK,iterL),
+* we increase the amount of labour force by 10% in the economic model.
+        Kshock =1;
+        Lshock =1.1;
+
+        KS.FX = Kshock * KSZ ;
+        LS.FX = Lshock * LSZ ;
+
+* (FOUR)
+* Run of both models with shocks on the CGE model. Counterfactual for CGE model. No linking yet.
+$SETGLOBAL run CGE1
+$if "%FLAG_CGE%" == "MCP" $include C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink\solve_display_LPMCP_init.gms
+
+*************************
+* Loop starts here      *
+*************************
+converged = 0;
+loop(runit$(not converged),
+
+* write value for objective function TIMES, muliplier for Demand and amount of gas purchased by electricity sector
+        prev(runit,"OBJZ") = OBJZ.L;
+        prev(runit,"D_mult") = D_mult;
+        prev(runit,"y0ge" ) = y0ge ;
+
+**************************************************************
+* update the demand multiplier based on the solution by the CGE model (% change counterfactual from baseline)
+        D_mult = (XD.L("GAS") + XD.L("ELE") - XDZ("GAS") - XDZ("ELE"))/(XDZ("GAS") + XDZ("ELE")) ;
+* update the demand dynamics to be used in TIMES
+        COM_PROJ(R,T,Com) =  COM_PROJ(R,"2010",Com)
+                           + COM_PROJ(R,"2010",Com)*D_mult
+                                 *(nYear(T)-2010)/(2020-2010) ;
+        COM_PROJ(R,"2009",Com) = basedemand(R,Com);
+
+$SETGLOBAL run TIMES
+$if "%FLAG_CGE%" == "MCP" $include C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink\solve_display_LPMCP.gms
+*risolvo entrambi ma prendo solo le info per il times
+
+**************************************************************
+* Now update CGE with input adjusted from the TIMES results
+io("GAS","ELE") =  VAR_ACT.L("REGION1","2020","2020","GASPOWER","ANNUAL")/VAR_ACT.L("REGION1","2020","2020","ELE-DEM","ANNUAL") ;
+
+
+$SETGLOBAL run CGE
+$if "%FLAG_CGE%" == "MCP" $include C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink\solve_display_LPMCP.gms
+* risolvo il CGE con le info aggiornate dal TIMES
+        new(runit,"OBJZ") = OBJZ.L;
+        new(runit,"D_mult") = D_mult;
+        new(runit,"y0ge" ) = y0ge ;
+
+        dev(checks) = 1;
+        dev(checks) = 100* (new(runit,checks)/prev(runit,checks) - 1);
+
+        converged$(smax(checks, abs(dev(checks)) ) lt 1e-4 ) = 1;
+        iter_ord = ord(runit);
+);
+*************************
+* Loop ends here        *
+*************************
+
+*DISPLAY REPORT;
+        walras = sum(sec,L.L(sec)) - LS.L ;
+        U = prod( sec, (C.L(sec) - muH(sec))**alphaHLES(sec) ) ;
+
+RESULT(iterK,iterL,"U","_")= U;
+RESULT(iterK,iterL,"OBJZ","_")=OBJZ.L;
+RESULT(iterK,iterL,"xd",sec)=XD.L(sec);
+RESULT(iterK,iterL,"VAR_ACT2020","EL-HYDRO") = VAR_ACT.L("REGION1","2020","2020","EL-HYDRO","ANNUAL") ;
+RESULT(iterK,iterL,"VAR_ACT2020","GASPOWER") = VAR_ACT.L("REGION1","2020","2020","GASPOWER","ANNUAL") ;
+RESULT(iterK,iterL,"VAR_NCAP2020","EL-HYDRO") = VAR_NCAP.L("REGION1","2020","EL-HYDRO");
+RESULT(iterK,iterL,"Walras","_")=walras;
+RESULT(iterK,iterL,"Kshock","_")=Kshock;
+RESULT(iterK,iterL,"Lshock","_")=Lshock;
+RESULT(iterK,iterL,"Deviation",checks)=dev(checks);
+RESULT(iterK,iterL,"Iterations","_")=iter_ord;
+RESULT(iterK,iterL,"Converged","_")=converged;
+display iterK;
+)
+**************************
+* Shock loop end here    *
+**************************
+
+execute_unload "lpmcp_result", RESULT;
+execute_unload "lpmcp_iter", REPORT;
+execute_unload "lpmcp_varact_iter", VAR_ACT_iter;
+

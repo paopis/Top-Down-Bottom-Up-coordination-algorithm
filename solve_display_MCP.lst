@@ -1,0 +1,82 @@
+GAMS 24.7.3  r58181 Released Jul 11, 2016 WEX-WEI x86 64bit/MS Windows 08/22/21 18:40:23 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  * the CGE model is ONLY solved - there is no inserting of the whole routin
+      e here. So the io("GAS","ELE") is not reinitialized in the CGE model.
+   2  Solve CGE_link_MTD USING MCP;
+****                   $140,241   $257
+   3  eta_p(runit)=0;
+****      $140  $120
+   4  eta_p(cuts)=eta.l(cuts);
+****           $120   $140
+   5   
+   6   
+   7  display eta.L;
+   8  display eta_p;
+   9  *display cuts$(eta(cuts));
+  10   
+  11          U = prod( sec, (C.L(sec) - muH(sec))**alphaHLES(sec) ) ;
+****          $140        $120  $140       $140             $140
+  12          y0ge=io("GAS","ELE")*XD.L("ELE");
+****             $140,140 $116  $116  $140
+  13   
+  14  REPORT("%run%",runit,"U","_")=U;
+****       $140
+  15  REPORT("%run%",runit,"OBJZ","_")=OBJZ.L;
+****                                        $140
+  16  REPORT("%run%",runit,"HOU",I)=C.L(I);
+****                             $120,340
+  17  REPORT("%run%",runit,"P_",I)=PD.L(I);
+****                                  $140
+  18  REPORT("%run%",runit,"PF","K")=PK.L;
+****                                    $140
+  19  REPORT("%run%",runit,"PF","L")=PL.L;
+****                                    $140
+  20  REPORT("%run%",runit,"Y_O",I)=XD.L(I);
+  21  REPORT("%run%",runit,"COST_ele",t)=COST_("ELE",t);
+****                                  $120,340,140
+  22  REPORT("%run%",runit,"COST_gas",t)=COST_("GAS",t);
+  23  REPORT("%run%",runit,"CSHR_ele",t)=COST_shr("ELE",t);
+****                                            $140
+  24  REPORT("%run%",runit,"CSHR_gas",t)=COST_shr("GAS",t);
+  25  REPORT("%run%",runit,"D_mult","_")=D_mult;
+****                                          $140
+  26  REPORT("%run%",runit,"Y0ge","_")=io("GAS","ELE")*XD.L("ELE");
+  27   
+  28  VAR_ACT_iter("%run%",runit,t,p)=VAR_ACT.L("REGION1",t,t,p,"ANNUAL");
+****             $140              $120,340   $140      $116           $116
+  29   
+  30  *DISPLAY REPORT;
+GAMS 24.7.3  r58181 Released Jul 11, 2016 WEX-WEI x86 64bit/MS Windows 08/22/21 18:40:23 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Error Messages
+
+
+116  Label is unknown
+120  Unknown identifier entered as set
+140  Unknown symbol
+241  Model has not been defined
+257  Solve statement not checked because of previous errors
+340  A label/element with the same name exist. You may have forgotten
+        to quote a label/element reference. For example,
+        set i / a,b,c /; parameter x(i); x('a') = 10;
+
+**** 35 ERROR(S)   0 WARNING(S)
+
+
+COMPILATION TIME     =        0.156 SECONDS      3 MB  24.7.3 r58181 WEX-WEI
+
+
+USER: Small MUD - 5 User License                     G160810:1105AO-GEN
+      Norwegian University of Science and Technology, Industrial DC7530
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.gms
+Output     C:\Users\pisciell.WIN-NTNU-NO\Desktop\SmallLink\solve_display_MCP.lst
+
+**** USER ERROR(S) ENCOUNTERED

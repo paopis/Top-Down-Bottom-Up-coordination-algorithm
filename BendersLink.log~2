@@ -1,0 +1,2976 @@
+--- Job BendersLink.gms Start 02/25/22 17:01:36 36.2.0 r433180e WEX-WEI x86 64bit/MS Windows
+--- Applying:
+    C:\GAMS\36\gmsprmNT.txt
+--- GAMS Parameters defined
+    Input "C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\BendersLink.gms"
+    PageSize 0
+    ScrDir "C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\225a\"
+    SysDir C:\GAMS\36\
+    LogOption 3
+    ErrMsg 1
+    ErrorLog 99
+    IDE 1
+    LstTitleLeftAligned 1
+Licensee: GAMS Community License for Ruben van Beesten   G211122|0002AO-GEN
+          NTNU,                                                      CL2033
+          C:\GAMS\36\data\gamslice.txt
+          Ruben van Beesten, ruben.van.beesten@ntnu.no                     
+          Community license for demonstration and instructional purposes only
+Processor information: 1 socket(s), 4 core(s), and 8 thread(s) available
+GAMS 36.2.0   Copyright (C) 1987-2021 GAMS Development. All rights reserved
+--- Starting compilation
+--- BendersLink.gms(62) 3 Mb
+--- . TIMES_simple_LP_Aug.GMS(79) 3 Mb
+--- .. parameter_values.gms(175) 3 Mb
+--- . TIMES_simple_LP_Aug.GMS(161) 3 Mb
+--- GDXin=C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\jacobian.gdx
+--- GDX File ($gdxIn) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\jacobian.gdx
+--- . TIMES_simple_LP_Aug.GMS(197) 3 Mb
+--- BendersLink.gms(76) 3 Mb
+--- . MasterTopDown-4sec_mcp_orient.GMS(367) 3 Mb
+--- BendersLink.gms(143) 3 Mb
+--- . solve_display_LPMCP_init.gms(56) 3 Mb
+--- BendersLink.gms(289) 3 Mb
+--- . solve_display_LPMCP_init.gms(56) 3 Mb
+--- BendersLink.gms(357) 3 Mb
+--- . solve_display_LP.gms(4) 3 Mb
+--- .. OutBasis.gms(72) 3 Mb
+--- . solve_display_LP.gms(45) 3 Mb
+--- BendersLink.gms(422) 3 Mb
+--- . solve_display_MCP.gms(30) 3 Mb
+--- BendersLink.gms(435) 3 Mb
+--- . solve_display_LP_PredForm.gms(66) 3 Mb
+--- BendersLink.gms(562) 3 Mb
+--- Starting execution: elapsed 0:00:00.018
+--- BendersLink.gms(389) 4 Mb
+--- Generating LP model TIMES_simple
+--- BendersLink.gms(390) 4 Mb
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CONVERTD (Solvelink=2): elapsed 0:00:00.026
+
+CONVERT          36.2.0 r433180e Released Sep  3, 2021 WEI x86 64bit/MS Window
+
+
+Reading parameter(s) from "C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\convertd.opt"
+>>  dictmap
+>>  jacobian
+*** Warning line 2: deprecated option "jacobian"; 
+Finished reading from "C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\convertd.opt"
+
+--- Writing DictMap   : dictmap.gdx 
+--- Writing DumpGDX   : jacobian.gdx 
+
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:00.055
+--- BendersLink.gms(417) 4 Mb
+--- GDXin=C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\dictmap.gdx
+--- GDX File (execute_load) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\dictmap.gdx
+--- BendersLink.gms(874) 4 Mb
+--- Generating MCP model CGE_link_MTD
+--- BendersLink.gms(884) 6 Mb
+---   23 rows  25 columns  127 non-zeroes
+---   2 unmatched fixed column(s) will be ignored
+---   308 nl-code  72 nl-non-zeroes
+--- BendersLink.gms(884) 4 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:00.063
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+*** This solver runs with a community license. No commercial use.
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 5.0.04 (Fri Sep  3 11:48:26 2021)
+Written by Todd Munson, Steven Dirkse, Youngdae Kim, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.5141e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  4.2000e+00 eqn: (EQINCOME)
+Maximum of Grad F . . . . . . .  1.2051e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.8649e+02 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6048e+00 eqn: (EQC(GAS))
+Maximum Column Norm . . . . . .  2.4194e+02 var: (PD(NON))
+Minimum Column Norm . . . . . .  1.9600e+00 var: (C(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             7.6653e+00             0.0e+00 (EQINCOME)
+    1     1     0    22 2.0097e-01  1.0e+00    0.0e+00 (EQC(NON))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 2.0097e-01           I 0.0e+00 1.4e-01 (EQC(NON))
+    1     1     3     3 1.3457e-04  1.0e+00 SO 0.0e+00 1.0e-04 (EQC(NON))
+    2     1     4     4 2.9557e-11  1.0e+00 SO 0.0e+00 2.1e-11 (EQK(NON))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  2.0932e-09 eqn: (EQPROFIT(NON))
+Inf-Norm of Normal Map. . . . .  2.0847e-11 eqn: (EQK(NON))
+Inf-Norm of Minimum Map . . . .  2.0847e-11 eqn: (EQK(NON))
+Inf-Norm of Fischer Function. .  2.0847e-11 eqn: (EQK(NON))
+Inf-Norm of Grad Fischer Fcn. .  2.3689e-09 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  2.4024e-09
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4700e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.0847e-11 eqn: (EQK(NON))
+Maximum of Grad F . . . . . . .  1.1700e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.000000
+Residual. . . . . . . . 2.955725e-11
+
+--- Reading solution for model CGE_link_MTD
+--- Executing after solve: elapsed 0:00:00.094
+--- Generating LP model TIMES_simple
+--- BendersLink.gms(885) 4 Mb
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:00.097
+
+IBM ILOG CPLEX   36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+--- *** This solver runs with a community license. No commercial use.
+--- GMO setup time: 0.00s
+--- Space for names approximately 0.01 Mb
+--- Use option 'names no' to turn use of names off
+--- GMO memory 0.53 Mb (peak 0.53 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 20.1.0.1 link memory 0.00 Mb (peak 0.03 Mb)
+--- Starting Cplex
+
+Version identifier: 20.1.0.1 | 2021-04-07 | 3a818710c
+CPXPARAM_Advance                                 0
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+Tried aggregator 1 time.
+LP Presolve eliminated 60 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.17 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =            96.236140
+Iteration:    62   Dual objective     =         52237.057826
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.39 ticks)
+
+
+Optimal solution found
+Objective:        52237.090123
+
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:00.127
+--- BendersLink.gms(1056) 4 Mb
+--- Generating MCP model CGE_link_MTD
+--- BendersLink.gms(1086) 6 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---   23 rows  25 columns  127 non-zeroes
+---   2 unmatched fixed column(s) will be ignored
+---   308 nl-code  72 nl-non-zeroes
+--- BendersLink.gms(1086) 4 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:00.130
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+*** This solver runs with a community license. No commercial use.
+22 row/cols, 106 non-zeros, 21.90% dense.
+
+Path 5.0.04 (Fri Sep  3 11:48:26 2021)
+Written by Todd Munson, Steven Dirkse, Youngdae Kim, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4700e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.0847e-11 eqn: (EQK(NON))
+Maximum of Grad F . . . . . . .  1.1700e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.8354e+02 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6048e+00 eqn: (EQC(GAS))
+Maximum Column Norm . . . . . .  2.3400e+02 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+00 var: (C(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             2.9557e-11             0.0e+00 (EQK(NON))
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     1     1 2.9557e-11           I 0.0e+00 2.1e-11 (EQK(NON))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  2.0932e-09 eqn: (EQPROFIT(NON))
+Inf-Norm of Normal Map. . . . .  2.0847e-11 eqn: (EQK(NON))
+Inf-Norm of Minimum Map . . . .  2.0847e-11 eqn: (EQK(NON))
+Inf-Norm of Fischer Function. .  2.0847e-11 eqn: (EQK(NON))
+Inf-Norm of Grad Fischer Fcn. .  2.3689e-09 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  2.4024e-09
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4700e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.0847e-11 eqn: (EQK(NON))
+Maximum of Grad F . . . . . . .  1.1700e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 0
+Gradient Steps. . . . . 0
+Function Evaluations. . 1
+Gradient Evaluations. . 1
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.000000
+Residual. . . . . . . . 2.955725e-11
+
+--- Reading solution for model CGE_link_MTD
+--- Executing after solve: elapsed 0:00:00.158
+--- BendersLink.gms(1056) 4 Mb
+--- Generating LP model TIMES_simple
+--- BendersLink.gms(1087) 4 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:00.160
+
+IBM ILOG CPLEX   36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+--- *** This solver runs with a community license. No commercial use.
+--- GMO setup time: 0.00s
+--- Space for names approximately 0.01 Mb
+--- Use option 'names no' to turn use of names off
+--- GMO memory 0.53 Mb (peak 0.53 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 20.1.0.1 link memory 0.00 Mb (peak 0.03 Mb)
+--- Starting Cplex
+
+Version identifier: 20.1.0.1 | 2021-04-07 | 3a818710c
+CPXPARAM_Advance                                 2
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+Tried aggregator 1 time.
+LP Presolve eliminated 60 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.17 ticks)
+Using devex.
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.35 ticks)
+
+
+Optimal solution found
+Objective:        52237.090123
+
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:00.189
+--- BendersLink.gms(1056) 4 Mb
+--- Generating LP model TIMES_simple
+--- BendersLink.gms(1210) 4 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out01
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:00.191
+
+IBM ILOG CPLEX   36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+--- *** This solver runs with a community license. No commercial use.
+--- GMO setup time: 0.00s
+--- Space for names approximately 0.01 Mb
+--- Use option 'names no' to turn use of names off
+--- GMO memory 0.53 Mb (peak 0.53 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 20.1.0.1 link memory 0.00 Mb (peak 0.03 Mb)
+--- Starting Cplex
+
+Version identifier: 20.1.0.1 | 2021-04-07 | 3a818710c
+CPXPARAM_Advance                                 2
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+Tried aggregator 1 time.
+LP Presolve eliminated 60 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.17 ticks)
+Using devex.
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.35 ticks)
+
+
+Optimal solution found
+Objective:        52186.569158
+
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:00.222
+--- BendersLink.gms(1056) 4 Mb
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\basis.gdx
+ ----------------------------------------
+ INVERT: matrix inversion
+ ----------------------------------------
+ GDX library version: 
+ GDX Library      36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+ GDX input file: basis.gdx
+ Input set: i1
+ Input parameter: BB
+ Calling LAPACK DGESV, n =   133
+ GDX output file: D.gdx
+ Output parameter: invb
+ Done
+--- GDXin=C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- BendersLink.gms(1056) 5 Mb
+--- GDX File (execute_load) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\Tableau.gdx
+--- Generating MCP model CGE_link_MTD
+--- BendersLink.gms(1392) 7 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out01
+---       iter_in = iter_in1
+---   25 rows  27 columns  131 non-zeroes
+---   2 unmatched fixed column(s) will be ignored
+---   308 nl-code  72 nl-non-zeroes
+--- BendersLink.gms(1392) 5 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:00.369
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+*** This solver runs with a community license. No commercial use.
+24 row/cols, 110 non-zeros, 19.10% dense.
+
+Path 5.0.04 (Fri Sep  3 11:48:26 2021)
+Written by Todd Munson, Steven Dirkse, Youngdae Kim, and Michael Ferris
+
+Zero:     0 Single:     1 Double:     0
+Preprocessed size   : 22
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4700e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.3487e+00 eqn: (EQMARKETC(GAS))
+Maximum of Grad F . . . . . . .  1.1700e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.8354e+02 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.6048e+00 eqn: (EQC(GAS))
+Maximum Column Norm . . . . . .  2.3400e+02 var: (PD(NON))
+Minimum Column Norm . . . . . .  2.0000e+00 var: (C(GAS))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             1.5429e+00             0.0e+00 (EQPROFIT(ELE))
+    1     1     0    22 2.2871e-02  1.0e+00    0.0e+00 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 2.2871e-02           I 0.0e+00 1.7e-02 (EQC(ELE))
+    1     1     3     3 1.4372e-05  1.0e+00 SO 0.0e+00 1.1e-05 (EQC(ELE))
+    2     1     4     4 6.2962e-12  1.0e+00 SO 0.0e+00 4.7e-12 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  2.4845e-11 eqn: (EQC(ELE))
+Inf-Norm of Normal Map. . . . .  4.7420e-12 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  4.7420e-12 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  4.7420e-12 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  1.0051e-10 eqn: (EQMARKETC(ELE))
+Two-Norm of Grad Fischer Fcn. .  1.4274e-10
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4764e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  4.7420e-12 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.1751e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.015000
+Residual. . . . . . . . 6.296174e-12
+Postsolved residual: 9.6219e-12
+
+--- Reading solution for model CGE_link_MTD
+--- Executing after solve: elapsed 0:00:00.399
+--- BendersLink.gms(1056) 5 Mb
+--- Generating LP model TIMES_simple
+--- BendersLink.gms(1210) 5 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out02
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:00.404
+
+IBM ILOG CPLEX   36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+--- *** This solver runs with a community license. No commercial use.
+--- GMO setup time: 0.00s
+--- Space for names approximately 0.01 Mb
+--- Use option 'names no' to turn use of names off
+--- GMO memory 0.53 Mb (peak 0.53 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 20.1.0.1 link memory 0.00 Mb (peak 0.03 Mb)
+--- Starting Cplex
+
+Version identifier: 20.1.0.1 | 2021-04-07 | 3a818710c
+CPXPARAM_Advance                                 2
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+Tried aggregator 1 time.
+LP Presolve eliminated 60 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.17 ticks)
+Using devex.
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.34 ticks)
+
+
+Optimal solution found
+Objective:        50392.936675
+
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:00.432
+--- BendersLink.gms(1056) 5 Mb
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\basis.gdx
+ ----------------------------------------
+ INVERT: matrix inversion
+ ----------------------------------------
+ GDX library version: 
+ GDX Library      36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+ GDX input file: basis.gdx
+ Input set: i1
+ Input parameter: BB
+ Calling LAPACK DGESV, n =   133
+ GDX output file: D.gdx
+ Output parameter: invb
+ Done
+--- GDXin=C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- BendersLink.gms(1056) 5 Mb
+--- GDX File (execute_load) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\Tableau.gdx
+--- Generating MCP model CGE_link_MTD
+--- BendersLink.gms(1392) 7 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out02
+---       iter_in = iter_in1
+---   26 rows  28 columns  135 non-zeroes
+---   2 unmatched fixed column(s) will be ignored
+---   308 nl-code  72 nl-non-zeroes
+--- BendersLink.gms(1392) 5 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:00.583
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+*** This solver runs with a community license. No commercial use.
+25 row/cols, 114 non-zeros, 18.24% dense.
+
+Path 5.0.04 (Fri Sep  3 11:48:26 2021)
+Written by Todd Munson, Steven Dirkse, Youngdae Kim, and Michael Ferris
+
+MCPR: Imp:    0 IBd:    0 Dup:    1 DBd:    1
+MCPC: Zer:    0 One:    2 Two:    0 Thr:    0
+Preprocessed size   : 22
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4764e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  7.2395e-01 eqn: (EQMARKETC(GAS))
+Maximum of Grad F . . . . . . .  1.1751e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.8442e+02 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.5977e+00 eqn: (EQC(GAS))
+Maximum Column Norm . . . . . .  2.3502e+02 var: (PD(NON))
+Minimum Column Norm . . . . . .  1.9244e+00 var: (C(ELE))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             8.7169e-01             0.0e+00 (EQPROFIT(ELE))
+    1     1     0    22 7.0216e-03  1.0e+00    0.0e+00 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 7.0216e-03           I 0.0e+00 5.3e-03 (EQC(ELE))
+    1     1     3     3 1.4814e-06  1.0e+00 SO 0.0e+00 1.1e-06 (EQC(ELE))
+    2     1     4     4 8.8219e-14  1.0e+00 SO 0.0e+00 6.0e-14 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  3.2015e-13 eqn: (EQC(ELE))
+Inf-Norm of Normal Map. . . . .  5.9508e-14 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  5.9508e-14 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  5.9508e-14 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  8.8945e-13 eqn: (EQMARKETC(MAN))
+Two-Norm of Grad Fischer Fcn. .  1.5143e-12
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4798e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  5.9508e-14 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.1778e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.016000
+Residual. . . . . . . . 8.821887e-14
+Postsolved residual: 8.8219e-14
+
+--- Reading solution for model CGE_link_MTD
+--- Executing after solve: elapsed 0:00:00.618
+--- BendersLink.gms(1056) 5 Mb
+--- Generating LP model TIMES_simple
+--- BendersLink.gms(1210) 5 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out03
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:00.623
+
+IBM ILOG CPLEX   36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+--- *** This solver runs with a community license. No commercial use.
+--- GMO setup time: 0.00s
+--- Space for names approximately 0.01 Mb
+--- Use option 'names no' to turn use of names off
+--- GMO memory 0.53 Mb (peak 0.53 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 20.1.0.1 link memory 0.00 Mb (peak 0.03 Mb)
+--- Starting Cplex
+
+Version identifier: 20.1.0.1 | 2021-04-07 | 3a818710c
+CPXPARAM_Advance                                 2
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+Tried aggregator 1 time.
+LP Presolve eliminated 60 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.17 ticks)
+Using devex.
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.34 ticks)
+
+
+Optimal solution found
+Objective:        49446.759423
+
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:00.651
+--- BendersLink.gms(1056) 5 Mb
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\basis.gdx
+ ----------------------------------------
+ INVERT: matrix inversion
+ ----------------------------------------
+ GDX library version: 
+ GDX Library      36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+ GDX input file: basis.gdx
+ Input set: i1
+ Input parameter: BB
+ Calling LAPACK DGESV, n =   133
+ GDX output file: D.gdx
+ Output parameter: invb
+ Done
+--- GDXin=C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_load) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\Tableau.gdx
+--- Generating MCP model CGE_link_MTD
+--- BendersLink.gms(1392) 7 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out03
+---       iter_in = iter_in1
+---   27 rows  29 columns  139 non-zeroes
+---   2 unmatched fixed column(s) will be ignored
+---   308 nl-code  72 nl-non-zeroes
+--- BendersLink.gms(1392) 5 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:00.808
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+*** This solver runs with a community license. No commercial use.
+26 row/cols, 118 non-zeros, 17.46% dense.
+
+Path 5.0.04 (Fri Sep  3 11:48:26 2021)
+Written by Todd Munson, Steven Dirkse, Youngdae Kim, and Michael Ferris
+
+MCPR: Imp:    0 IBd:    0 Dup:    2 DBd:    2
+MCPC: Zer:    0 One:    2 Two:    0 Thr:    0
+Preprocessed size   : 22
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4798e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  4.0578e-01 eqn: (EQMARKETC(GAS))
+Maximum of Grad F . . . . . . .  1.1778e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.8489e+02 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.5804e+00 eqn: (EQL(GAS))
+Maximum Column Norm . . . . . .  2.3556e+02 var: (PD(NON))
+Minimum Column Norm . . . . . .  1.8851e+00 var: (C(ELE))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             5.1454e-01             0.0e+00 (EQPROFIT(ELE))
+    1     1     0    22 2.2909e-03  1.0e+00    0.0e+00 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 2.2909e-03           I 0.0e+00 1.8e-03 (EQC(ELE))
+    1     1     3     3 1.6486e-07  1.0e+00 SO 0.0e+00 1.3e-07 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  6.8986e-07 eqn: (EQC(ELE))
+Inf-Norm of Normal Map. . . . .  1.2629e-07 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  1.2629e-07 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  1.2629e-07 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  2.9062e-06 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  4.1048e-06
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4817e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.2629e-07 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.1793e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 1
+Minor Iterations. . . . 1
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 3
+Gradient Evaluations. . 3
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.000000
+Residual. . . . . . . . 1.648650e-07
+Postsolved residual: 1.6486e-07
+
+--- Reading solution for model CGE_link_MTD
+--- Executing after solve: elapsed 0:00:00.838
+--- BendersLink.gms(1056) 5 Mb
+--- Generating LP model TIMES_simple
+--- BendersLink.gms(1210) 5 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out04
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:00.846
+
+IBM ILOG CPLEX   36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+--- *** This solver runs with a community license. No commercial use.
+--- GMO setup time: 0.00s
+--- Space for names approximately 0.01 Mb
+--- Use option 'names no' to turn use of names off
+--- GMO memory 0.53 Mb (peak 0.53 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 20.1.0.1 link memory 0.00 Mb (peak 0.03 Mb)
+--- Starting Cplex
+
+Version identifier: 20.1.0.1 | 2021-04-07 | 3a818710c
+CPXPARAM_Advance                                 2
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+Tried aggregator 1 time.
+LP Presolve eliminated 60 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.17 ticks)
+Using devex.
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.34 ticks)
+
+
+Optimal solution found
+Objective:        48921.799028
+
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:00.879
+--- BendersLink.gms(1056) 5 Mb
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\basis.gdx
+ ----------------------------------------
+ INVERT: matrix inversion
+ ----------------------------------------
+ GDX library version: 
+ GDX Library      36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+ GDX input file: basis.gdx
+ Input set: i1
+ Input parameter: BB
+ Calling LAPACK DGESV, n =   133
+ GDX output file: D.gdx
+ Output parameter: invb
+ Done
+--- GDXin=C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_load) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\Tableau.gdx
+--- Generating MCP model CGE_link_MTD
+--- BendersLink.gms(1392) 7 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out04
+---       iter_in = iter_in1
+---   28 rows  30 columns  143 non-zeroes
+---   2 unmatched fixed column(s) will be ignored
+---   308 nl-code  72 nl-non-zeroes
+--- BendersLink.gms(1392) 5 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:01.036
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+*** This solver runs with a community license. No commercial use.
+27 row/cols, 122 non-zeros, 16.74% dense.
+
+Path 5.0.04 (Fri Sep  3 11:48:26 2021)
+Written by Todd Munson, Steven Dirkse, Youngdae Kim, and Michael Ferris
+
+MCPR: Imp:    0 IBd:    0 Dup:    3 DBd:    3
+MCPC: Zer:    0 One:    2 Two:    0 Thr:    0
+Preprocessed size   : 22
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4817e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.3283e-01 eqn: (EQMARKETC(GAS))
+Maximum of Grad F . . . . . . .  1.1793e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.8515e+02 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.5568e+00 eqn: (EQL(GAS))
+Maximum Column Norm . . . . . .  2.3586e+02 var: (PD(NON))
+Minimum Column Norm . . . . . .  1.8634e+00 var: (C(ELE))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             3.0609e-01             0.0e+00 (EQPROFIT(ELE))
+    1     1     0    22 7.7118e-04  1.0e+00    0.0e+00 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 7.7118e-04           I 0.0e+00 5.9e-04 (EQC(ELE))
+    1     1     3     3 1.9130e-08  1.0e+00 SO 0.0e+00 1.5e-08 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  8.0739e-08 eqn: (EQC(ELE))
+Inf-Norm of Normal Map. . . . .  1.4649e-08 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  1.4649e-08 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  1.4649e-08 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  2.9121e-07 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  4.4368e-07
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4827e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.4649e-08 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.1801e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 1
+Minor Iterations. . . . 1
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 3
+Gradient Evaluations. . 3
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.000000
+Residual. . . . . . . . 1.913028e-08
+Postsolved residual: 1.9130e-08
+
+--- Reading solution for model CGE_link_MTD
+--- Executing after solve: elapsed 0:00:01.067
+--- BendersLink.gms(1056) 5 Mb
+--- Generating LP model TIMES_simple
+--- BendersLink.gms(1210) 5 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out05
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:01.072
+
+IBM ILOG CPLEX   36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+--- *** This solver runs with a community license. No commercial use.
+--- GMO setup time: 0.00s
+--- Space for names approximately 0.01 Mb
+--- Use option 'names no' to turn use of names off
+--- GMO memory 0.53 Mb (peak 0.53 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 20.1.0.1 link memory 0.00 Mb (peak 0.03 Mb)
+--- Starting Cplex
+
+Version identifier: 20.1.0.1 | 2021-04-07 | 3a818710c
+CPXPARAM_Advance                                 2
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+Tried aggregator 1 time.
+LP Presolve eliminated 60 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.17 ticks)
+Using devex.
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.34 ticks)
+
+
+Optimal solution found
+Objective:        48622.392905
+
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:01.104
+--- BendersLink.gms(1056) 5 Mb
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\basis.gdx
+ ----------------------------------------
+ INVERT: matrix inversion
+ ----------------------------------------
+ GDX library version: 
+ GDX Library      36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+ GDX input file: basis.gdx
+ Input set: i1
+ Input parameter: BB
+ Calling LAPACK DGESV, n =   133
+ GDX output file: D.gdx
+ Output parameter: invb
+ Done
+--- GDXin=C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_load) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\Tableau.gdx
+--- Generating MCP model CGE_link_MTD
+--- BendersLink.gms(1392) 7 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out05
+---       iter_in = iter_in1
+---   29 rows  31 columns  147 non-zeroes
+---   2 unmatched fixed column(s) will be ignored
+---   308 nl-code  72 nl-non-zeroes
+--- BendersLink.gms(1392) 5 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:01.262
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+*** This solver runs with a community license. No commercial use.
+28 row/cols, 126 non-zeros, 16.07% dense.
+
+Path 5.0.04 (Fri Sep  3 11:48:26 2021)
+Written by Todd Munson, Steven Dirkse, Youngdae Kim, and Michael Ferris
+
+MCPR: Imp:    0 IBd:    0 Dup:    4 DBd:    4
+MCPC: Zer:    0 One:    2 Two:    0 Thr:    0
+Preprocessed size   : 22
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4827e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.3536e-01 eqn: (EQMARKETC(GAS))
+Maximum of Grad F . . . . . . .  1.1801e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.8529e+02 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.5432e+00 eqn: (EQL(GAS))
+Maximum Column Norm . . . . . .  2.3603e+02 var: (PD(NON))
+Minimum Column Norm . . . . . .  1.8511e+00 var: (C(ELE))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             1.8197e-01             0.0e+00 (EQPROFIT(ELE))
+    1     1     0    22 2.6409e-04  1.0e+00    0.0e+00 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 2.6409e-04           I 0.0e+00 2.0e-04 (EQC(ELE))
+    1     1     3     3 2.2733e-09  1.0e+00 SO 0.0e+00 1.7e-09 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  9.6414e-09 eqn: (EQC(ELE))
+Inf-Norm of Normal Map. . . . .  1.7402e-09 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  1.7402e-09 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  1.7402e-09 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  3.3123e-08 eqn: (EQMARKETC(ELE))
+Two-Norm of Grad Fischer Fcn. .  5.0761e-08
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4834e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.7402e-09 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.1806e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 1
+Minor Iterations. . . . 1
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 3
+Gradient Evaluations. . 3
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.000000
+Residual. . . . . . . . 2.273265e-09
+Postsolved residual: 2.2733e-09
+
+--- Reading solution for model CGE_link_MTD
+--- Executing after solve: elapsed 0:00:01.293
+--- BendersLink.gms(1056) 5 Mb
+--- Generating LP model TIMES_simple
+--- BendersLink.gms(1210) 5 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out06
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:01.300
+
+IBM ILOG CPLEX   36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+--- *** This solver runs with a community license. No commercial use.
+--- GMO setup time: 0.00s
+--- Space for names approximately 0.01 Mb
+--- Use option 'names no' to turn use of names off
+--- GMO memory 0.53 Mb (peak 0.53 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 20.1.0.1 link memory 0.00 Mb (peak 0.03 Mb)
+--- Starting Cplex
+
+Version identifier: 20.1.0.1 | 2021-04-07 | 3a818710c
+CPXPARAM_Advance                                 2
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+Tried aggregator 1 time.
+LP Presolve eliminated 60 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.17 ticks)
+Using devex.
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.34 ticks)
+
+
+Optimal solution found
+Objective:        48448.944008
+
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:01.333
+--- BendersLink.gms(1056) 5 Mb
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\basis.gdx
+ ----------------------------------------
+ INVERT: matrix inversion
+ ----------------------------------------
+ GDX library version: 
+ GDX Library      36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+ GDX input file: basis.gdx
+ Input set: i1
+ Input parameter: BB
+ Calling LAPACK DGESV, n =   133
+ GDX output file: D.gdx
+ Output parameter: invb
+ Done
+--- GDXin=C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_load) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\Tableau.gdx
+--- Generating MCP model CGE_link_MTD
+--- BendersLink.gms(1392) 7 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out06
+---       iter_in = iter_in1
+---   30 rows  32 columns  151 non-zeroes
+---   2 unmatched fixed column(s) will be ignored
+---   308 nl-code  72 nl-non-zeroes
+--- BendersLink.gms(1392) 5 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:01.486
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+*** This solver runs with a community license. No commercial use.
+29 row/cols, 130 non-zeros, 15.46% dense.
+
+Path 5.0.04 (Fri Sep  3 11:48:26 2021)
+Written by Todd Munson, Steven Dirkse, Youngdae Kim, and Michael Ferris
+
+MCPR: Imp:    0 IBd:    0 Dup:    5 DBd:    5
+MCPC: Zer:    0 One:    2 Two:    0 Thr:    0
+Preprocessed size   : 22
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4834e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  7.9288e-02 eqn: (EQMARKETC(GAS))
+Maximum of Grad F . . . . . . .  1.1806e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.8538e+02 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.5353e+00 eqn: (EQL(GAS))
+Maximum Column Norm . . . . . .  2.3613e+02 var: (PD(NON))
+Minimum Column Norm . . . . . .  1.8440e+00 var: (C(ELE))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             1.0802e-01             0.0e+00 (EQPROFIT(ELE))
+    1     1     0    22 9.1319e-05  1.0e+00    0.0e+00 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 9.1319e-05           I 0.0e+00 7.1e-05 (EQC(ELE))
+    1     1     3     3 2.7388e-10  1.0e+00 SO 0.0e+00 2.1e-10 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.1649e-09 eqn: (EQC(ELE))
+Inf-Norm of Normal Map. . . . .  2.0961e-10 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  2.0961e-10 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  2.0961e-10 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  4.0134e-09 eqn: (EQMARKETC(ELE))
+Two-Norm of Grad Fischer Fcn. .  5.9874e-09
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4837e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.0961e-10 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.1809e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 1
+Minor Iterations. . . . 1
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 3
+Gradient Evaluations. . 3
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.000000
+Residual. . . . . . . . 2.738824e-10
+Postsolved residual: 2.7388e-10
+
+--- Reading solution for model CGE_link_MTD
+--- Executing after solve: elapsed 0:00:01.515
+--- BendersLink.gms(1056) 5 Mb
+--- Generating LP model TIMES_simple
+--- BendersLink.gms(1210) 5 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out07
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:01.520
+
+IBM ILOG CPLEX   36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+--- *** This solver runs with a community license. No commercial use.
+--- GMO setup time: 0.00s
+--- Space for names approximately 0.01 Mb
+--- Use option 'names no' to turn use of names off
+--- GMO memory 0.53 Mb (peak 0.53 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 20.1.0.1 link memory 0.00 Mb (peak 0.03 Mb)
+--- Starting Cplex
+
+Version identifier: 20.1.0.1 | 2021-04-07 | 3a818710c
+CPXPARAM_Advance                                 2
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+Tried aggregator 1 time.
+LP Presolve eliminated 60 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.17 ticks)
+Using devex.
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.34 ticks)
+
+
+Optimal solution found
+Objective:        48347.555166
+
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:01.551
+--- BendersLink.gms(1056) 5 Mb
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\basis.gdx
+ ----------------------------------------
+ INVERT: matrix inversion
+ ----------------------------------------
+ GDX library version: 
+ GDX Library      36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+ GDX input file: basis.gdx
+ Input set: i1
+ Input parameter: BB
+ Calling LAPACK DGESV, n =   133
+ GDX output file: D.gdx
+ Output parameter: invb
+ Done
+--- GDXin=C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_load) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\Tableau.gdx
+--- Generating MCP model CGE_link_MTD
+--- BendersLink.gms(1392) 7 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out07
+---       iter_in = iter_in1
+---   31 rows  33 columns  155 non-zeroes
+---   2 unmatched fixed column(s) will be ignored
+---   308 nl-code  72 nl-non-zeroes
+--- BendersLink.gms(1392) 5 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:01.724
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+*** This solver runs with a community license. No commercial use.
+30 row/cols, 134 non-zeros, 14.89% dense.
+
+Path 5.0.04 (Fri Sep  3 11:48:26 2021)
+Written by Todd Munson, Steven Dirkse, Youngdae Kim, and Michael Ferris
+
+MCPR: Imp:    0 IBd:    0 Dup:    6 DBd:    6
+MCPC: Zer:    0 One:    2 Two:    0 Thr:    0
+Preprocessed size   : 22
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4837e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  4.6649e-02 eqn: (EQMARKETC(GAS))
+Maximum of Grad F . . . . . . .  1.1809e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.8543e+02 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.5307e+00 eqn: (EQL(GAS))
+Maximum Column Norm . . . . . .  2.3619e+02 var: (PD(NON))
+Minimum Column Norm . . . . . .  1.8399e+00 var: (C(ELE))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.4057e-02             0.0e+00 (EQMARKETC(GAS))
+    1     1     0    22 3.1755e-05  1.0e+00    0.0e+00 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 3.1755e-05           I 0.0e+00 2.5e-05 (EQC(ELE))
+    1     1     3     3 3.3262e-11  1.0e+00 SO 0.0e+00 2.5e-11 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.4171e-10 eqn: (EQC(ELE))
+Inf-Norm of Normal Map. . . . .  2.5453e-11 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  2.5453e-11 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  2.5453e-11 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  4.8900e-10 eqn: (EQMARKETC(ELE))
+Two-Norm of Grad Fischer Fcn. .  7.2076e-10
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4839e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.5453e-11 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.1811e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 1
+Minor Iterations. . . . 1
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 3
+Gradient Evaluations. . 3
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.000000
+Residual. . . . . . . . 3.326166e-11
+Postsolved residual: 3.3262e-11
+
+--- Reading solution for model CGE_link_MTD
+--- Executing after solve: elapsed 0:00:01.763
+--- BendersLink.gms(1056) 5 Mb
+--- Generating LP model TIMES_simple
+--- BendersLink.gms(1210) 5 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out08
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:01.769
+
+IBM ILOG CPLEX   36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+--- *** This solver runs with a community license. No commercial use.
+--- GMO setup time: 0.00s
+--- Space for names approximately 0.01 Mb
+--- Use option 'names no' to turn use of names off
+--- GMO memory 0.53 Mb (peak 0.53 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 20.1.0.1 link memory 0.00 Mb (peak 0.03 Mb)
+--- Starting Cplex
+
+Version identifier: 20.1.0.1 | 2021-04-07 | 3a818710c
+CPXPARAM_Advance                                 2
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+Tried aggregator 1 time.
+LP Presolve eliminated 60 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.17 ticks)
+Using devex.
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.34 ticks)
+
+
+Optimal solution found
+Objective:        48287.977024
+
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:01.801
+--- BendersLink.gms(1056) 5 Mb
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\basis.gdx
+ ----------------------------------------
+ INVERT: matrix inversion
+ ----------------------------------------
+ GDX library version: 
+ GDX Library      36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+ GDX input file: basis.gdx
+ Input set: i1
+ Input parameter: BB
+ Calling LAPACK DGESV, n =   133
+ GDX output file: D.gdx
+ Output parameter: invb
+ Done
+--- GDXin=C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_load) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\Tableau.gdx
+--- Generating MCP model CGE_link_MTD
+--- BendersLink.gms(1392) 7 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out08
+---       iter_in = iter_in1
+---   32 rows  34 columns  159 non-zeroes
+---   2 unmatched fixed column(s) will be ignored
+---   308 nl-code  72 nl-non-zeroes
+--- BendersLink.gms(1392) 5 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:01.969
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+*** This solver runs with a community license. No commercial use.
+31 row/cols, 138 non-zeros, 14.36% dense.
+
+Path 5.0.04 (Fri Sep  3 11:48:26 2021)
+Written by Todd Munson, Steven Dirkse, Youngdae Kim, and Michael Ferris
+
+MCPR: Imp:    0 IBd:    0 Dup:    7 DBd:    7
+MCPC: Zer:    0 One:    2 Two:    0 Thr:    0
+Preprocessed size   : 22
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4839e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.7517e-02 eqn: (EQMARKETC(GAS))
+Maximum of Grad F . . . . . . .  1.1811e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.8546e+02 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.5280e+00 eqn: (EQL(GAS))
+Maximum Column Norm . . . . . .  2.3622e+02 var: (PD(NON))
+Minimum Column Norm . . . . . .  1.8374e+00 var: (C(ELE))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             3.7961e-02             0.0e+00 (EQMARKETC(GAS))
+    1     1     0    22 1.1079e-05  1.0e+00    0.0e+00 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 1.1079e-05           I 0.0e+00 8.6e-06 (EQC(ELE))
+    1     1     3     3 4.0610e-12  1.0e+00 SO 0.0e+00 3.1e-12 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.7285e-11 eqn: (EQC(ELE))
+Inf-Norm of Normal Map. . . . .  3.1011e-12 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  3.1015e-12 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  3.1011e-12 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  5.9629e-11 eqn: (EQMARKETC(ELE))
+Two-Norm of Grad Fischer Fcn. .  8.8347e-11
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4841e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  3.1011e-12 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.1812e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 1
+Minor Iterations. . . . 1
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 3
+Gradient Evaluations. . 3
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.000000
+Residual. . . . . . . . 4.061013e-12
+Postsolved residual: 8.3325e-12
+
+--- Reading solution for model CGE_link_MTD
+--- Executing after solve: elapsed 0:00:01.998
+--- BendersLink.gms(1056) 5 Mb
+--- Generating LP model TIMES_simple
+--- BendersLink.gms(1210) 5 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out09
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:02.002
+
+IBM ILOG CPLEX   36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+--- *** This solver runs with a community license. No commercial use.
+--- GMO setup time: 0.00s
+--- Space for names approximately 0.01 Mb
+--- Use option 'names no' to turn use of names off
+--- GMO memory 0.53 Mb (peak 0.53 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 20.1.0.1 link memory 0.00 Mb (peak 0.03 Mb)
+--- Starting Cplex
+
+Version identifier: 20.1.0.1 | 2021-04-07 | 3a818710c
+CPXPARAM_Advance                                 2
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+Tried aggregator 1 time.
+LP Presolve eliminated 60 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.17 ticks)
+Using devex.
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.34 ticks)
+
+
+Optimal solution found
+Objective:        48252.859787
+
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:02.041
+--- BendersLink.gms(1056) 5 Mb
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\basis.gdx
+ ----------------------------------------
+ INVERT: matrix inversion
+ ----------------------------------------
+ GDX library version: 
+ GDX Library      36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+ GDX input file: basis.gdx
+ Input set: i1
+ Input parameter: BB
+ Calling LAPACK DGESV, n =   133
+ GDX output file: D.gdx
+ Output parameter: invb
+ Done
+--- GDXin=C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_load) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\Tableau.gdx
+--- Generating MCP model CGE_link_MTD
+--- BendersLink.gms(1392) 7 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out09
+---       iter_in = iter_in1
+---   33 rows  35 columns  163 non-zeroes
+---   2 unmatched fixed column(s) will be ignored
+---   308 nl-code  72 nl-non-zeroes
+--- BendersLink.gms(1392) 5 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:02.193
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+*** This solver runs with a community license. No commercial use.
+32 row/cols, 142 non-zeros, 13.87% dense.
+
+Path 5.0.04 (Fri Sep  3 11:48:26 2021)
+Written by Todd Munson, Steven Dirkse, Youngdae Kim, and Michael Ferris
+
+MCPR: Imp:    0 IBd:    0 Dup:    8 DBd:    8
+MCPC: Zer:    0 One:    2 Two:    0 Thr:    0
+Preprocessed size   : 22
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4841e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.6256e-02 eqn: (EQMARKETC(GAS))
+Maximum of Grad F . . . . . . .  1.1812e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.8548e+02 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.5264e+00 eqn: (EQL(GAS))
+Maximum Column Norm . . . . . .  2.3624e+02 var: (PD(NON))
+Minimum Column Norm . . . . . .  1.8360e+00 var: (C(ELE))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             2.2487e-02             0.0e+00 (EQMARKETC(GAS))
+    1     1     0    22 3.8726e-06  1.0e+00    0.0e+00 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 3.8726e-06           I 0.0e+00 3.0e-06 (EQC(ELE))
+    1     1     3     3 4.9743e-13  1.0e+00 SO 0.0e+00 3.8e-13 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  2.1004e-12 eqn: (EQC(ELE))
+Inf-Norm of Normal Map. . . . .  3.7659e-13 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  3.7659e-13 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  3.7659e-13 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  8.2713e-12 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  1.1837e-11
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4841e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  3.7659e-13 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.1813e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 1
+Minor Iterations. . . . 1
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 3
+Gradient Evaluations. . 3
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.000000
+Residual. . . . . . . . 4.974283e-13
+Postsolved residual: 4.9743e-13
+
+--- Reading solution for model CGE_link_MTD
+--- Executing after solve: elapsed 0:00:02.222
+--- BendersLink.gms(1056) 5 Mb
+--- Generating LP model TIMES_simple
+--- BendersLink.gms(1210) 5 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out10
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:02.227
+
+IBM ILOG CPLEX   36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+--- *** This solver runs with a community license. No commercial use.
+--- GMO setup time: 0.00s
+--- Space for names approximately 0.01 Mb
+--- Use option 'names no' to turn use of names off
+--- GMO memory 0.53 Mb (peak 0.53 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 20.1.0.1 link memory 0.00 Mb (peak 0.03 Mb)
+--- Starting Cplex
+
+Version identifier: 20.1.0.1 | 2021-04-07 | 3a818710c
+CPXPARAM_Advance                                 2
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+Tried aggregator 1 time.
+LP Presolve eliminated 60 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.17 ticks)
+Using devex.
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.34 ticks)
+
+
+Optimal solution found
+Objective:        48232.123030
+
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:02.255
+--- BendersLink.gms(1056) 5 Mb
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\basis.gdx
+ ----------------------------------------
+ INVERT: matrix inversion
+ ----------------------------------------
+ GDX library version: 
+ GDX Library      36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+ GDX input file: basis.gdx
+ Input set: i1
+ Input parameter: BB
+ Calling LAPACK DGESV, n =   133
+ GDX output file: D.gdx
+ Output parameter: invb
+ Done
+--- GDXin=C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_load) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\Tableau.gdx
+--- Generating MCP model CGE_link_MTD
+--- BendersLink.gms(1392) 7 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out10
+---       iter_in = iter_in1
+---   34 rows  36 columns  167 non-zeroes
+---   2 unmatched fixed column(s) will be ignored
+---   308 nl-code  72 nl-non-zeroes
+--- BendersLink.gms(1392) 5 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:02.406
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+*** This solver runs with a community license. No commercial use.
+33 row/cols, 146 non-zeros, 13.41% dense.
+
+Path 5.0.04 (Fri Sep  3 11:48:26 2021)
+Written by Todd Munson, Steven Dirkse, Youngdae Kim, and Michael Ferris
+
+MCPR: Imp:    0 IBd:    0 Dup:    9 DBd:    9
+MCPC: Zer:    0 One:    2 Two:    0 Thr:    0
+Preprocessed size   : 22
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4841e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  9.6117e-03 eqn: (EQMARKETC(GAS))
+Maximum of Grad F . . . . . . .  1.1813e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.8549e+02 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.5254e+00 eqn: (EQL(GAS))
+Maximum Column Norm . . . . . .  2.3625e+02 var: (PD(NON))
+Minimum Column Norm . . . . . .  1.8352e+00 var: (C(ELE))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             1.3318e-02             0.0e+00 (EQMARKETC(GAS))
+    1     1     0    22 1.3552e-06  1.0e+00    0.0e+00 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 1.3552e-06           I 0.0e+00 1.1e-06 (EQC(ELE))
+    1     1     3     3 7.9835e-14  1.0e+00 SO 0.0e+00 4.8e-14 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.5149e-12 eqn: (EQL(NON))
+Inf-Norm of Normal Map. . . . .  4.7518e-14 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  4.7962e-14 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  4.7518e-14 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  1.6491e-12 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  2.2266e-12
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4842e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  4.7518e-14 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.1813e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 1
+Minor Iterations. . . . 1
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 3
+Gradient Evaluations. . 3
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.000000
+Residual. . . . . . . . 7.983546e-14
+Postsolved residual: 7.9835e-14
+
+--- Reading solution for model CGE_link_MTD
+--- Executing after solve: elapsed 0:00:02.437
+--- BendersLink.gms(1056) 5 Mb
+--- Generating LP model TIMES_simple
+--- BendersLink.gms(1210) 5 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out11
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:02.442
+
+IBM ILOG CPLEX   36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+--- *** This solver runs with a community license. No commercial use.
+--- GMO setup time: 0.00s
+--- Space for names approximately 0.01 Mb
+--- Use option 'names no' to turn use of names off
+--- GMO memory 0.53 Mb (peak 0.53 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 20.1.0.1 link memory 0.00 Mb (peak 0.03 Mb)
+--- Starting Cplex
+
+Version identifier: 20.1.0.1 | 2021-04-07 | 3a818710c
+CPXPARAM_Advance                                 2
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+Tried aggregator 1 time.
+LP Presolve eliminated 60 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.17 ticks)
+Using devex.
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.34 ticks)
+
+
+Optimal solution found
+Objective:        48219.864854
+
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:02.471
+--- BendersLink.gms(1056) 5 Mb
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\basis.gdx
+ ----------------------------------------
+ INVERT: matrix inversion
+ ----------------------------------------
+ GDX library version: 
+ GDX Library      36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+ GDX input file: basis.gdx
+ Input set: i1
+ Input parameter: BB
+ Calling LAPACK DGESV, n =   133
+ GDX output file: D.gdx
+ Output parameter: invb
+ Done
+--- GDXin=C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_load) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\Tableau.gdx
+--- Generating MCP model CGE_link_MTD
+--- BendersLink.gms(1392) 7 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out11
+---       iter_in = iter_in1
+---   35 rows  37 columns  171 non-zeroes
+---   2 unmatched fixed column(s) will be ignored
+---   308 nl-code  72 nl-non-zeroes
+--- BendersLink.gms(1392) 5 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:02.627
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+*** This solver runs with a community license. No commercial use.
+34 row/cols, 150 non-zeros, 12.98% dense.
+
+Path 5.0.04 (Fri Sep  3 11:48:26 2021)
+Written by Todd Munson, Steven Dirkse, Youngdae Kim, and Michael Ferris
+
+MCPR: Imp:    0 IBd:    0 Dup:   10 DBd:   10
+MCPC: Zer:    0 One:    2 Two:    0 Thr:    0
+Preprocessed size   : 22
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4842e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  5.6862e-03 eqn: (EQMARKETC(GAS))
+Maximum of Grad F . . . . . . .  1.1813e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.8549e+02 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.5249e+00 eqn: (EQL(GAS))
+Maximum Column Norm . . . . . .  2.3626e+02 var: (PD(NON))
+Minimum Column Norm . . . . . .  1.8347e+00 var: (C(ELE))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             7.8864e-03             0.0e+00 (EQMARKETC(GAS))
+    1     1     0    22 4.7457e-07  1.0e+00    0.0e+00 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 4.7457e-07           I 0.0e+00 3.7e-07 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  4.9781e-06 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  3.6801e-07 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  3.6801e-07 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  3.6801e-07 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  1.5792e-05 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  1.7094e-05
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4842e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  3.6801e-07 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.1813e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 2
+Gradient Evaluations. . 2
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.000000
+Residual. . . . . . . . 4.745661e-07
+Postsolved residual: 4.7457e-07
+
+--- Reading solution for model CGE_link_MTD
+--- Executing after solve: elapsed 0:00:02.658
+--- BendersLink.gms(1056) 5 Mb
+--- Generating LP model TIMES_simple
+--- BendersLink.gms(1210) 5 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out12
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:02.663
+
+IBM ILOG CPLEX   36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+--- *** This solver runs with a community license. No commercial use.
+--- GMO setup time: 0.00s
+--- Space for names approximately 0.01 Mb
+--- Use option 'names no' to turn use of names off
+--- GMO memory 0.53 Mb (peak 0.53 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 20.1.0.1 link memory 0.00 Mb (peak 0.03 Mb)
+--- Starting Cplex
+
+Version identifier: 20.1.0.1 | 2021-04-07 | 3a818710c
+CPXPARAM_Advance                                 2
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+Tried aggregator 1 time.
+LP Presolve eliminated 60 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.17 ticks)
+Using devex.
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.34 ticks)
+
+
+Optimal solution found
+Objective:        48212.613273
+
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:02.692
+--- BendersLink.gms(1056) 5 Mb
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\basis.gdx
+ ----------------------------------------
+ INVERT: matrix inversion
+ ----------------------------------------
+ GDX library version: 
+ GDX Library      36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+ GDX input file: basis.gdx
+ Input set: i1
+ Input parameter: BB
+ Calling LAPACK DGESV, n =   133
+ GDX output file: D.gdx
+ Output parameter: invb
+ Done
+--- GDXin=C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_load) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\Tableau.gdx
+--- Generating MCP model CGE_link_MTD
+--- BendersLink.gms(1392) 7 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out12
+---       iter_in = iter_in1
+---   36 rows  38 columns  175 non-zeroes
+---   2 unmatched fixed column(s) will be ignored
+---   308 nl-code  72 nl-non-zeroes
+--- BendersLink.gms(1392) 5 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:02.840
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+*** This solver runs with a community license. No commercial use.
+35 row/cols, 154 non-zeros, 12.57% dense.
+
+Path 5.0.04 (Fri Sep  3 11:48:26 2021)
+Written by Todd Munson, Steven Dirkse, Youngdae Kim, and Michael Ferris
+
+MCPR: Imp:    0 IBd:    0 Dup:   11 DBd:   11
+MCPC: Zer:    0 One:    2 Two:    0 Thr:    0
+Preprocessed size   : 22
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4842e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  3.3654e-03 eqn: (EQMARKETC(GAS))
+Maximum of Grad F . . . . . . .  1.1813e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.8550e+02 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.5245e+00 eqn: (EQL(GAS))
+Maximum Column Norm . . . . . .  2.3626e+02 var: (PD(NON))
+Minimum Column Norm . . . . . .  1.8344e+00 var: (C(ELE))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             4.6700e-03             0.0e+00 (EQMARKETC(GAS))
+    1     1     0    22 1.6636e-07  1.0e+00    0.0e+00 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 1.6636e-07           I 0.0e+00 1.3e-07 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.7463e-06 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  1.2901e-07 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  1.2901e-07 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  1.2901e-07 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  5.5288e-06 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  5.9859e-06
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4842e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.2901e-07 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.1813e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 2
+Gradient Evaluations. . 2
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.000000
+Residual. . . . . . . . 1.663554e-07
+Postsolved residual: 1.6636e-07
+
+--- Reading solution for model CGE_link_MTD
+--- Executing after solve: elapsed 0:00:02.874
+--- BendersLink.gms(1056) 5 Mb
+--- Generating LP model TIMES_simple
+--- BendersLink.gms(1210) 5 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out13
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:02.879
+
+IBM ILOG CPLEX   36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+--- *** This solver runs with a community license. No commercial use.
+--- GMO setup time: 0.00s
+--- Space for names approximately 0.01 Mb
+--- Use option 'names no' to turn use of names off
+--- GMO memory 0.53 Mb (peak 0.53 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 20.1.0.1 link memory 0.00 Mb (peak 0.03 Mb)
+--- Starting Cplex
+
+Version identifier: 20.1.0.1 | 2021-04-07 | 3a818710c
+CPXPARAM_Advance                                 2
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+Tried aggregator 1 time.
+LP Presolve eliminated 60 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.17 ticks)
+Using devex.
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.34 ticks)
+
+
+Optimal solution found
+Objective:        48208.322824
+
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:02.908
+--- BendersLink.gms(1056) 5 Mb
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\basis.gdx
+ ----------------------------------------
+ INVERT: matrix inversion
+ ----------------------------------------
+ GDX library version: 
+ GDX Library      36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+ GDX input file: basis.gdx
+ Input set: i1
+ Input parameter: BB
+ Calling LAPACK DGESV, n =   133
+ GDX output file: D.gdx
+ Output parameter: invb
+ Done
+--- GDXin=C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- BendersLink.gms(1056) 6 Mb
+--- GDX File (execute_load) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\Tableau.gdx
+--- Generating MCP model CGE_link_MTD
+--- BendersLink.gms(1392) 8 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out13
+---       iter_in = iter_in1
+---   37 rows  39 columns  179 non-zeroes
+---   2 unmatched fixed column(s) will be ignored
+---   308 nl-code  72 nl-non-zeroes
+--- BendersLink.gms(1392) 6 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:03.072
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+*** This solver runs with a community license. No commercial use.
+36 row/cols, 158 non-zeros, 12.19% dense.
+
+Path 5.0.04 (Fri Sep  3 11:48:26 2021)
+Written by Todd Munson, Steven Dirkse, Youngdae Kim, and Michael Ferris
+
+MCPR: Imp:    0 IBd:    0 Dup:   12 DBd:   12
+MCPC: Zer:    0 One:    2 Two:    0 Thr:    0
+Preprocessed size   : 22
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4842e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.9917e-03 eqn: (EQMARKETC(GAS))
+Maximum of Grad F . . . . . . .  1.1813e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.8550e+02 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.5243e+00 eqn: (EQL(GAS))
+Maximum Column Norm . . . . . .  2.3627e+02 var: (PD(NON))
+Minimum Column Norm . . . . . .  1.8342e+00 var: (C(ELE))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             2.7648e-03             0.0e+00 (EQMARKETC(GAS))
+    1     1     0    22 5.8268e-08  1.0e+00    0.0e+00 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 5.8268e-08           I 0.0e+00 4.5e-08 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  6.1171e-07 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  4.5189e-08 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  4.5189e-08 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  4.5189e-08 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  1.9362e-06 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  2.0964e-06
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4842e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  4.5189e-08 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.1813e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 2
+Gradient Evaluations. . 2
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.015000
+Residual. . . . . . . . 5.826759e-08
+Postsolved residual: 5.8268e-08
+
+--- Reading solution for model CGE_link_MTD
+--- Executing after solve: elapsed 0:00:03.102
+--- BendersLink.gms(1056) 6 Mb
+--- Generating LP model TIMES_simple
+--- BendersLink.gms(1210) 6 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out14
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:03.107
+
+IBM ILOG CPLEX   36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+--- *** This solver runs with a community license. No commercial use.
+--- GMO setup time: 0.00s
+--- Space for names approximately 0.01 Mb
+--- Use option 'names no' to turn use of names off
+--- GMO memory 0.53 Mb (peak 0.53 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 20.1.0.1 link memory 0.00 Mb (peak 0.03 Mb)
+--- Starting Cplex
+
+Version identifier: 20.1.0.1 | 2021-04-07 | 3a818710c
+CPXPARAM_Advance                                 2
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+Tried aggregator 1 time.
+LP Presolve eliminated 60 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.17 ticks)
+Using devex.
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.34 ticks)
+
+
+Optimal solution found
+Objective:        48205.783665
+
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:03.136
+--- BendersLink.gms(1056) 6 Mb
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\basis.gdx
+ ----------------------------------------
+ INVERT: matrix inversion
+ ----------------------------------------
+ GDX library version: 
+ GDX Library      36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+ GDX input file: basis.gdx
+ Input set: i1
+ Input parameter: BB
+ Calling LAPACK DGESV, n =   133
+ GDX output file: D.gdx
+ Output parameter: invb
+ Done
+--- GDXin=C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_load) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\Tableau.gdx
+--- Generating MCP model CGE_link_MTD
+--- BendersLink.gms(1392) 8 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out14
+---       iter_in = iter_in1
+---   38 rows  40 columns  183 non-zeroes
+---   2 unmatched fixed column(s) will be ignored
+---   308 nl-code  72 nl-non-zeroes
+--- BendersLink.gms(1392) 6 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:03.283
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+*** This solver runs with a community license. No commercial use.
+37 row/cols, 162 non-zeros, 11.83% dense.
+
+Path 5.0.04 (Fri Sep  3 11:48:26 2021)
+Written by Todd Munson, Steven Dirkse, Youngdae Kim, and Michael Ferris
+
+MCPR: Imp:    0 IBd:    0 Dup:   13 DBd:   13
+MCPC: Zer:    0 One:    2 Two:    0 Thr:    0
+Preprocessed size   : 22
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4842e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.1789e-03 eqn: (EQMARKETC(GAS))
+Maximum of Grad F . . . . . . .  1.1813e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.8550e+02 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.5242e+00 eqn: (EQL(GAS))
+Maximum Column Norm . . . . . .  2.3627e+02 var: (PD(NON))
+Minimum Column Norm . . . . . .  1.8341e+00 var: (C(ELE))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             1.6368e-03             0.0e+00 (EQMARKETC(GAS))
+    1     1     0    22 2.0415e-08  1.0e+00    0.0e+00 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 2.0415e-08           I 0.0e+00 1.6e-08 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  2.1433e-07 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  1.5833e-08 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  1.5833e-08 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  1.5833e-08 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  6.7834e-07 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  7.3447e-07
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4843e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.5833e-08 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.1813e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 2
+Gradient Evaluations. . 2
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.000000
+Residual. . . . . . . . 2.041500e-08
+Postsolved residual: 2.0415e-08
+
+--- Reading solution for model CGE_link_MTD
+--- Executing after solve: elapsed 0:00:03.314
+--- BendersLink.gms(1056) 6 Mb
+--- Generating LP model TIMES_simple
+--- BendersLink.gms(1210) 6 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out15
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:03.319
+
+IBM ILOG CPLEX   36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+--- *** This solver runs with a community license. No commercial use.
+--- GMO setup time: 0.00s
+--- Space for names approximately 0.01 Mb
+--- Use option 'names no' to turn use of names off
+--- GMO memory 0.53 Mb (peak 0.53 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 20.1.0.1 link memory 0.00 Mb (peak 0.03 Mb)
+--- Starting Cplex
+
+Version identifier: 20.1.0.1 | 2021-04-07 | 3a818710c
+CPXPARAM_Advance                                 2
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+Tried aggregator 1 time.
+LP Presolve eliminated 60 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.17 ticks)
+Using devex.
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.01sec (det. 0.34 ticks)
+
+
+Optimal solution found
+Objective:        48204.280708
+
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:03.349
+--- BendersLink.gms(1056) 6 Mb
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\basis.gdx
+ ----------------------------------------
+ INVERT: matrix inversion
+ ----------------------------------------
+ GDX library version: 
+ GDX Library      36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+ GDX input file: basis.gdx
+ Input set: i1
+ Input parameter: BB
+ Calling LAPACK DGESV, n =   133
+ GDX output file: D.gdx
+ Output parameter: invb
+ Done
+--- GDXin=C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_load) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\Tableau.gdx
+--- Generating MCP model CGE_link_MTD
+--- BendersLink.gms(1392) 8 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out15
+---       iter_in = iter_in1
+---   39 rows  41 columns  187 non-zeroes
+---   2 unmatched fixed column(s) will be ignored
+---   308 nl-code  72 nl-non-zeroes
+--- BendersLink.gms(1392) 6 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:03.499
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+*** This solver runs with a community license. No commercial use.
+38 row/cols, 166 non-zeros, 11.50% dense.
+
+Path 5.0.04 (Fri Sep  3 11:48:26 2021)
+Written by Todd Munson, Steven Dirkse, Youngdae Kim, and Michael Ferris
+
+MCPR: Imp:    0 IBd:    0 Dup:   14 DBd:   14
+MCPC: Zer:    0 One:    2 Two:    0 Thr:    0
+Preprocessed size   : 22
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4843e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  6.9788e-04 eqn: (EQMARKETC(GAS))
+Maximum of Grad F . . . . . . .  1.1813e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.8550e+02 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.5242e+00 eqn: (EQL(GAS))
+Maximum Column Norm . . . . . .  2.3627e+02 var: (PD(NON))
+Minimum Column Norm . . . . . .  1.8340e+00 var: (C(ELE))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             9.6908e-04             0.0e+00 (EQMARKETC(GAS))
+    1     1     0    22 7.1540e-09  1.0e+00    0.0e+00 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 7.1540e-09           I 0.0e+00 5.5e-09 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  7.5109e-08 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  5.5483e-09 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  5.5483e-09 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  5.5483e-09 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  2.3770e-07 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  2.5737e-07
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4843e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  5.5483e-09 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.1813e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 2
+Gradient Evaluations. . 2
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.000000
+Residual. . . . . . . . 7.154034e-09
+Postsolved residual: 7.1542e-09
+
+--- Reading solution for model CGE_link_MTD
+--- Executing after solve: elapsed 0:00:03.529
+--- BendersLink.gms(1056) 6 Mb
+--- Generating LP model TIMES_simple
+--- BendersLink.gms(1210) 6 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out16
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:03.534
+
+IBM ILOG CPLEX   36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+--- *** This solver runs with a community license. No commercial use.
+--- GMO setup time: 0.00s
+--- Space for names approximately 0.01 Mb
+--- Use option 'names no' to turn use of names off
+--- GMO memory 0.53 Mb (peak 0.53 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 20.1.0.1 link memory 0.00 Mb (peak 0.03 Mb)
+--- Starting Cplex
+
+Version identifier: 20.1.0.1 | 2021-04-07 | 3a818710c
+CPXPARAM_Advance                                 2
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+Tried aggregator 1 time.
+LP Presolve eliminated 60 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.17 ticks)
+Using devex.
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.34 ticks)
+
+
+Optimal solution found
+Objective:        48203.391006
+
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:03.565
+--- BendersLink.gms(1056) 6 Mb
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\basis.gdx
+ ----------------------------------------
+ INVERT: matrix inversion
+ ----------------------------------------
+ GDX library version: 
+ GDX Library      36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+ GDX input file: basis.gdx
+ Input set: i1
+ Input parameter: BB
+ Calling LAPACK DGESV, n =   133
+ GDX output file: D.gdx
+ Output parameter: invb
+ Done
+--- GDXin=C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_load) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\Tableau.gdx
+--- Generating MCP model CGE_link_MTD
+--- BendersLink.gms(1392) 8 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out16
+---       iter_in = iter_in1
+---   40 rows  42 columns  191 non-zeroes
+---   2 unmatched fixed column(s) will be ignored
+---   308 nl-code  72 nl-non-zeroes
+--- BendersLink.gms(1392) 6 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:03.715
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+*** This solver runs with a community license. No commercial use.
+39 row/cols, 170 non-zeros, 11.18% dense.
+
+Path 5.0.04 (Fri Sep  3 11:48:26 2021)
+Written by Todd Munson, Steven Dirkse, Youngdae Kim, and Michael Ferris
+
+MCPR: Imp:    0 IBd:    0 Dup:   15 DBd:   15
+MCPC: Zer:    0 One:    2 Two:    0 Thr:    0
+Preprocessed size   : 22
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4843e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  4.1314e-04 eqn: (EQMARKETC(GAS))
+Maximum of Grad F . . . . . . .  1.1813e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.8550e+02 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.5241e+00 eqn: (EQL(GAS))
+Maximum Column Norm . . . . . .  2.3627e+02 var: (PD(NON))
+Minimum Column Norm . . . . . .  1.8340e+00 var: (C(ELE))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             5.7374e-04             0.0e+00 (EQMARKETC(GAS))
+    1     1     0    22 2.5072e-09  1.0e+00    0.0e+00 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 2.5072e-09           I 0.0e+00 1.9e-09 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  2.6323e-08 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  1.9445e-09 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  1.9445e-09 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  1.9445e-09 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  8.3296e-08 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  9.0191e-08
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4843e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.9445e-09 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.1813e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 2
+Gradient Evaluations. . 2
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.000000
+Residual. . . . . . . . 2.507244e-09
+Postsolved residual: 2.5072e-09
+
+--- Reading solution for model CGE_link_MTD
+--- Executing after solve: elapsed 0:00:03.745
+--- BendersLink.gms(1056) 6 Mb
+--- Generating LP model TIMES_simple
+--- BendersLink.gms(1210) 6 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out17
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:03.750
+
+IBM ILOG CPLEX   36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+--- *** This solver runs with a community license. No commercial use.
+--- GMO setup time: 0.00s
+--- Space for names approximately 0.01 Mb
+--- Use option 'names no' to turn use of names off
+--- GMO memory 0.53 Mb (peak 0.53 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 20.1.0.1 link memory 0.00 Mb (peak 0.03 Mb)
+--- Starting Cplex
+
+Version identifier: 20.1.0.1 | 2021-04-07 | 3a818710c
+CPXPARAM_Advance                                 2
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+Tried aggregator 1 time.
+LP Presolve eliminated 60 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.17 ticks)
+Using devex.
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.34 ticks)
+
+
+Optimal solution found
+Objective:        48202.864303
+
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:03.781
+--- BendersLink.gms(1056) 6 Mb
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\basis.gdx
+ ----------------------------------------
+ INVERT: matrix inversion
+ ----------------------------------------
+ GDX library version: 
+ GDX Library      36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+ GDX input file: basis.gdx
+ Input set: i1
+ Input parameter: BB
+ Calling LAPACK DGESV, n =   133
+ GDX output file: D.gdx
+ Output parameter: invb
+ Done
+--- GDXin=C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_load) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\Tableau.gdx
+--- Generating MCP model CGE_link_MTD
+--- BendersLink.gms(1392) 8 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out17
+---       iter_in = iter_in1
+---   41 rows  43 columns  195 non-zeroes
+---   2 unmatched fixed column(s) will be ignored
+---   308 nl-code  72 nl-non-zeroes
+--- BendersLink.gms(1392) 6 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:04.046
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+*** This solver runs with a community license. No commercial use.
+40 row/cols, 174 non-zeros, 10.88% dense.
+
+Path 5.0.04 (Fri Sep  3 11:48:26 2021)
+Written by Todd Munson, Steven Dirkse, Youngdae Kim, and Michael Ferris
+
+MCPR: Imp:    0 IBd:    0 Dup:   16 DBd:   16
+MCPC: Zer:    0 One:    2 Two:    0 Thr:    0
+Preprocessed size   : 22
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4843e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.4459e-04 eqn: (EQMARKETC(GAS))
+Maximum of Grad F . . . . . . .  1.1813e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.8550e+02 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.5241e+00 eqn: (EQL(GAS))
+Maximum Column Norm . . . . . .  2.3627e+02 var: (PD(NON))
+Minimum Column Norm . . . . . .  1.8340e+00 var: (C(ELE))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             3.3968e-04             0.0e+00 (EQMARKETC(GAS))
+    1     1     0    22 8.7876e-10  1.0e+00    0.0e+00 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 8.7876e-10           I 0.0e+00 6.8e-10 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  9.2262e-09 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  6.8153e-10 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  6.8153e-10 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  6.8153e-10 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  2.9196e-08 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  3.1613e-08
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4843e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  6.8153e-10 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.1813e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 2
+Gradient Evaluations. . 2
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.000000
+Residual. . . . . . . . 8.787637e-10
+Postsolved residual: 8.7876e-10
+
+--- Reading solution for model CGE_link_MTD
+--- Executing after solve: elapsed 0:00:04.080
+--- BendersLink.gms(1056) 6 Mb
+--- Generating LP model TIMES_simple
+--- BendersLink.gms(1210) 6 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out18
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:04.085
+
+IBM ILOG CPLEX   36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+--- *** This solver runs with a community license. No commercial use.
+--- GMO setup time: 0.00s
+--- Space for names approximately 0.01 Mb
+--- Use option 'names no' to turn use of names off
+--- GMO memory 0.53 Mb (peak 0.53 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 20.1.0.1 link memory 0.00 Mb (peak 0.03 Mb)
+--- Starting Cplex
+
+Version identifier: 20.1.0.1 | 2021-04-07 | 3a818710c
+CPXPARAM_Advance                                 2
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+Tried aggregator 1 time.
+LP Presolve eliminated 60 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.17 ticks)
+Using devex.
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.34 ticks)
+
+
+Optimal solution found
+Objective:        48202.552484
+
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:04.115
+--- BendersLink.gms(1056) 6 Mb
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\basis.gdx
+ ----------------------------------------
+ INVERT: matrix inversion
+ ----------------------------------------
+ GDX library version: 
+ GDX Library      36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+ GDX input file: basis.gdx
+ Input set: i1
+ Input parameter: BB
+ Calling LAPACK DGESV, n =   133
+ GDX output file: D.gdx
+ Output parameter: invb
+ Done
+--- GDXin=C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_load) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\Tableau.gdx
+--- Generating MCP model CGE_link_MTD
+--- BendersLink.gms(1392) 8 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out18
+---       iter_in = iter_in1
+---   42 rows  44 columns  199 non-zeroes
+---   2 unmatched fixed column(s) will be ignored
+---   308 nl-code  72 nl-non-zeroes
+--- BendersLink.gms(1392) 6 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:04.271
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+*** This solver runs with a community license. No commercial use.
+41 row/cols, 178 non-zeros, 10.59% dense.
+
+Path 5.0.04 (Fri Sep  3 11:48:26 2021)
+Written by Todd Munson, Steven Dirkse, Youngdae Kim, and Michael Ferris
+
+MCPR: Imp:    0 IBd:    0 Dup:   17 DBd:   17
+MCPC: Zer:    0 One:    2 Two:    0 Thr:    0
+Preprocessed size   : 22
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4843e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  1.4480e-04 eqn: (EQMARKETC(GAS))
+Maximum of Grad F . . . . . . .  1.1813e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.8550e+02 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.5241e+00 eqn: (EQL(GAS))
+Maximum Column Norm . . . . . .  2.3627e+02 var: (PD(NON))
+Minimum Column Norm . . . . . .  1.8339e+00 var: (C(ELE))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             2.0111e-04             0.0e+00 (EQMARKETC(GAS))
+    1     1     0    22 3.0800e-10  1.0e+00    0.0e+00 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 3.0800e-10           I 0.0e+00 2.4e-10 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  3.2337e-09 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  2.3888e-10 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  2.3888e-10 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  2.3888e-10 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  1.0233e-08 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  1.1080e-08
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4843e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  2.3888e-10 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.1813e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 2
+Gradient Evaluations. . 2
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.000000
+Residual. . . . . . . . 3.080012e-10
+Postsolved residual: 3.0800e-10
+
+--- Reading solution for model CGE_link_MTD
+--- Executing after solve: elapsed 0:00:04.301
+--- BendersLink.gms(1056) 6 Mb
+--- Generating LP model TIMES_simple
+--- BendersLink.gms(1210) 6 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out19
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:04.306
+
+IBM ILOG CPLEX   36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+--- *** This solver runs with a community license. No commercial use.
+--- GMO setup time: 0.00s
+--- Space for names approximately 0.01 Mb
+--- Use option 'names no' to turn use of names off
+--- GMO memory 0.53 Mb (peak 0.53 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 20.1.0.1 link memory 0.00 Mb (peak 0.03 Mb)
+--- Starting Cplex
+
+Version identifier: 20.1.0.1 | 2021-04-07 | 3a818710c
+CPXPARAM_Advance                                 2
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+Tried aggregator 1 time.
+LP Presolve eliminated 60 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.17 ticks)
+Using devex.
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.34 ticks)
+
+
+Optimal solution found
+Objective:        48202.367877
+
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:04.336
+--- BendersLink.gms(1056) 6 Mb
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\basis.gdx
+ ----------------------------------------
+ INVERT: matrix inversion
+ ----------------------------------------
+ GDX library version: 
+ GDX Library      36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+ GDX input file: basis.gdx
+ Input set: i1
+ Input parameter: BB
+ Calling LAPACK DGESV, n =   133
+ GDX output file: D.gdx
+ Output parameter: invb
+ Done
+--- GDXin=C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_load) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\D.gdx
+--- GDX File (execute_unload) C:\Users\egbertrv\GAMS\GAMS_projects\TD-BU_Coordination\SmallLink - Backup 4 - used in experiments\Tableau.gdx
+--- Generating MCP model CGE_link_MTD
+--- BendersLink.gms(1392) 8 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out19
+---       iter_in = iter_in1
+---   43 rows  45 columns  203 non-zeroes
+---   2 unmatched fixed column(s) will be ignored
+---   308 nl-code  72 nl-non-zeroes
+--- BendersLink.gms(1392) 6 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:04.483
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+*** This solver runs with a community license. No commercial use.
+42 row/cols, 182 non-zeros, 10.32% dense.
+
+Path 5.0.04 (Fri Sep  3 11:48:26 2021)
+Written by Todd Munson, Steven Dirkse, Youngdae Kim, and Michael Ferris
+
+MCPR: Imp:    0 IBd:    0 Dup:   18 DBd:   18
+MCPC: Zer:    0 One:    2 Two:    0 Thr:    0
+Preprocessed size   : 22
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4843e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  8.5730e-05 eqn: (EQMARKETC(GAS))
+Maximum of Grad F . . . . . . .  1.1813e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.8550e+02 eqn: (EQPROFIT(NON))
+Minimum Row Norm. . . . . . . .  1.5241e+00 eqn: (EQL(GAS))
+Maximum Column Norm . . . . . .  2.3627e+02 var: (PD(NON))
+Minimum Column Norm . . . . . .  1.8339e+00 var: (C(ELE))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             1.1906e-04             0.0e+00 (EQMARKETC(GAS))
+    1     1     0    22 1.0797e-10  1.0e+00    0.0e+00 (EQC(ELE))
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 1.0797e-10           I 0.0e+00 8.4e-11 (EQC(ELE))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.1336e-09 eqn: (EQPROFIT(ELE))
+Inf-Norm of Normal Map. . . . .  8.3731e-11 eqn: (EQC(ELE))
+Inf-Norm of Minimum Map . . . .  8.3731e-11 eqn: (EQC(ELE))
+Inf-Norm of Fischer Function. .  8.3731e-11 eqn: (EQC(ELE))
+Inf-Norm of Grad Fischer Fcn. .  3.5908e-09 eqn: (EQMARKETC(NON))
+Two-Norm of Grad Fischer Fcn. .  3.8874e-09
+
+FINAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  1.4843e+02 var: (XD(NON))
+Maximum of F. . . . . . . . . .  8.3731e-11 eqn: (EQC(ELE))
+Maximum of Grad F . . . . . . .  1.1813e+02 eqn: (EQPROFIT(NON))
+                                            var: (PD(NON))
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 0
+Minor Iterations. . . . 0
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 2
+Gradient Evaluations. . 2
+Basis Time. . . . . . . 0.000000
+Total Time. . . . . . . 0.000000
+Residual. . . . . . . . 1.079683e-10
+Postsolved residual: 1.2459e-10
+
+--- Reading solution for model CGE_link_MTD
+--- Executing after solve: elapsed 0:00:04.513
+--- BendersLink.gms(1056) 6 Mb
+--- Generating LP model TIMES_simple
+--- BendersLink.gms(1210) 6 Mb
+--- LOOPS iterK = K1
+---       iterL = L1
+---       iter_out = iter_out20
+---   133 rows  145 columns  613 non-zeroes
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:04.518
+
+IBM ILOG CPLEX   36.2.0 r433180e Released Sep 03, 2021 WEI x86 64bit/MS Window
+
+--- *** This solver runs with a community license. No commercial use.
+--- GMO setup time: 0.00s
+--- Space for names approximately 0.01 Mb
+--- Use option 'names no' to turn use of names off
+--- GMO memory 0.53 Mb (peak 0.53 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 20.1.0.1 link memory 0.00 Mb (peak 0.03 Mb)
+--- Starting Cplex
+
+Version identifier: 20.1.0.1 | 2021-04-07 | 3a818710c
+CPXPARAM_Advance                                 2
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+Tried aggregator 1 time.
+LP Presolve eliminated 60 rows and 49 columns.
+Reduced LP has 72 rows, 96 columns, and 420 nonzeros.
+Presolve time = 0.00 sec. (0.17 ticks)
+Using devex.
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.34 ticks)
+
+
+Optimal solution found
+Objective:        48202.258582
+
+--- Reading solution for model TIMES_simple
+--- Executing after solve: elapsed 0:00:04.546
+--- BendersLink.gms(1056) 6 Mb
+*** Error at line 1269: Execution halted: Triggered by pending CtrlC event
+--- BendersLink.gms(1056) 6 Mb 1 Error
+*** Status: Execution error(s)
+--- Job BendersLink.gms Stop 02/25/22 17:01:41 elapsed 0:00:04.651
